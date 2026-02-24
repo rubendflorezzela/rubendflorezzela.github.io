@@ -4,21 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ruben Dario Florez-Zela · Computational Neuroengineering Researcher</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0a1628;
-    --navy-mid: #122040;
-    --accent: #2563eb;
-    --accent-light: #3b82f6;
-    --teal: #0d9488;
-    --light: #f0f4ff;
-    --muted: #64748b;
-    --border: #e2e8f0;
-    --white: #ffffff;
+    --navy:        #0a1628;
+    --navy-mid:    #122040;
+    --accent:      #2563eb;
+    --accent-light:#3b82f6;
+    --teal:        #0d9488;
+    --teal-light:  #14b8a6;
+    --light:       #f0f4ff;
+    --muted:       #64748b;
+    --border:      #e2e8f0;
+    --white:       #ffffff;
+    --success:     #34d399;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
 
   body {
     font-family: 'DM Sans', sans-serif;
@@ -27,19 +31,20 @@
     line-height: 1.7;
   }
 
-  /* NAV */
+  /* ── NAV ─────────────────────────────────────────────── */
   nav {
     position: sticky;
     top: 0;
-    z-index: 100;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(10px);
+    z-index: 200;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     padding: 0 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 56px;
+    gap: 1rem;
   }
   .nav-name {
     font-family: 'DM Mono', monospace;
@@ -48,13 +53,15 @@
     color: var(--accent);
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
-  .nav-links {
+  .nav-center {
     display: flex;
     gap: 2rem;
     list-style: none;
   }
-  .nav-links a {
+  .nav-center a {
     font-size: 0.82rem;
     font-weight: 500;
     color: var(--muted);
@@ -62,9 +69,62 @@
     letter-spacing: 0.02em;
     transition: color 0.2s;
   }
-  .nav-links a:hover { color: var(--accent); }
+  .nav-center a:hover { color: var(--accent); }
 
-  /* HERO */
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  /* Language Toggle */
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2px;
+    gap: 2px;
+  }
+  .lang-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.25rem 0.65rem;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    background: transparent;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+  .lang-btn.active {
+    background: var(--accent);
+    color: white;
+  }
+
+  /* CV Download button in nav */
+  .btn-cv-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--navy);
+    color: white;
+    padding: 0.38rem 0.9rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+  .btn-cv-nav:hover { background: var(--accent); transform: translateY(-1px); }
+  .btn-cv-nav svg { width:13px; height:13px; }
+
+  /* ── HERO ────────────────────────────────────────────── */
   .hero {
     background: var(--navy);
     color: white;
@@ -76,16 +136,26 @@
     content: '';
     position: absolute;
     top: -60px; right: -60px;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(37,99,235,0.25) 0%, transparent 70%);
+    width: 520px; height: 520px;
+    background: radial-gradient(circle, rgba(37,99,235,0.28) 0%, transparent 70%);
     pointer-events: none;
   }
   .hero::after {
     content: '';
     position: absolute;
     bottom: -80px; left: 10%;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(13,148,136,0.15) 0%, transparent 70%);
+    width: 420px; height: 420px;
+    background: radial-gradient(circle, rgba(13,148,136,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  /* subtle grid texture */
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 40px 40px;
     pointer-events: none;
   }
   .hero-inner {
@@ -116,8 +186,8 @@
   }
   .hero h1 span { color: var(--accent-light); font-style: italic; }
   .hero-subtitle {
-    font-size: 1.1rem;
-    color: rgba(255,255,255,0.65);
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.6);
     margin: 1.2rem 0 2rem;
     font-weight: 300;
     max-width: 620px;
@@ -128,9 +198,6 @@
     margin-bottom: 2.5rem;
     flex-wrap: wrap;
   }
-  .metric {
-    text-align: left;
-  }
   .metric-num {
     font-family: 'DM Serif Display', serif;
     font-size: 2rem;
@@ -139,15 +206,16 @@
   }
   .metric-label {
     font-size: 0.72rem;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.4);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-top: 0.2rem;
   }
   .hero-links {
     display: flex;
-    gap: 1rem;
+    gap: 0.85rem;
     flex-wrap: wrap;
+    align-items: center;
   }
   .btn-primary {
     background: var(--accent);
@@ -157,32 +225,46 @@
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 500;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.15s;
   }
-  .btn-primary:hover { background: var(--accent-light); }
+  .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+
   .btn-outline {
-    border: 1px solid rgba(255,255,255,0.25);
-    color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.22);
+    color: rgba(255,255,255,0.75);
     padding: 0.65rem 1.4rem;
     border-radius: 4px;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 400;
-    transition: border-color 0.2s, color 0.2s;
+    transition: border-color 0.2s, color 0.2s, transform 0.15s;
   }
-  .btn-outline:hover { border-color: white; color: white; }
+  .btn-outline:hover { border-color: white; color: white; transform: translateY(-1px); }
 
-  /* SECTIONS */
+  /* CV Hero download button */
+  .btn-cv-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: var(--teal);
+    color: white;
+    padding: 0.65rem 1.4rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-cv-hero:hover { background: var(--teal-light); transform: translateY(-1px); }
+  .btn-cv-hero svg { width: 15px; height: 15px; }
+
+  /* ── SECTIONS ────────────────────────────────────────── */
   section {
     padding: 5rem 2rem;
     border-bottom: 1px solid var(--border);
   }
   section:nth-child(even) { background: #fafbff; }
-
-  .section-inner {
-    max-width: 860px;
-    margin: 0 auto;
-  }
+  .section-inner { max-width: 860px; margin: 0 auto; }
   .section-label {
     font-family: 'DM Mono', monospace;
     font-size: 0.7rem;
@@ -200,7 +282,7 @@
     line-height: 1.2;
   }
 
-  /* ABOUT */
+  /* ── ABOUT ───────────────────────────────────────────── */
   .about-text p {
     font-size: 1.05rem;
     color: #334155;
@@ -223,10 +305,10 @@
     border: 1px solid #dbeafe;
   }
 
-  /* RESEARCH INTERESTS */
+  /* ── INTERESTS ───────────────────────────────────────── */
   .interests-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.2rem;
   }
   .interest-card {
@@ -235,102 +317,100 @@
     border-radius: 6px;
     background: white;
     border-left: 3px solid var(--accent);
-    transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s, transform 0.2s;
   }
-  .interest-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
-  .interest-card h4 {
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--navy);
-  }
-  .interest-card p {
-    font-size: 0.82rem;
-    color: var(--muted);
-    line-height: 1.6;
-  }
+  .interest-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
+  .interest-card h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--navy); }
+  .interest-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
 
-  /* CURRENT RESEARCH */
+  /* ── RESEARCH ────────────────────────────────────────── */
   .research-box {
     background: var(--navy);
     color: white;
     border-radius: 8px;
     padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .research-box::after {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(37,99,235,0.2) 0%, transparent 70%);
+    pointer-events: none;
   }
   .research-box h3 {
     font-family: 'DM Serif Display', serif;
     font-size: 1.5rem;
     margin-bottom: 1rem;
     line-height: 1.3;
+    position: relative;
+    z-index: 1;
   }
   .research-box p {
-    color: rgba(255,255,255,0.75);
+    color: rgba(255,255,255,0.72);
     font-size: 0.95rem;
     margin-bottom: 1.2rem;
     max-width: 680px;
+    position: relative;
+    z-index: 1;
   }
   .signal-tags {
     display: flex;
     gap: 0.6rem;
     flex-wrap: wrap;
     margin-top: 1.5rem;
+    position: relative;
+    z-index: 1;
   }
   .signal-tag {
     font-family: 'DM Mono', monospace;
     font-size: 0.72rem;
     padding: 0.3rem 0.75rem;
-    border: 1px solid rgba(59,130,246,0.5);
+    border: 1px solid rgba(59,130,246,0.45);
     color: var(--accent-light);
     border-radius: 3px;
+    transition: background 0.2s;
   }
+  .signal-tag:hover { background: rgba(59,130,246,0.1); }
   .status-pill {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
     font-size: 0.72rem;
-    color: #34d399;
+    color: var(--success);
     font-family: 'DM Mono', monospace;
     margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
   }
   .status-dot {
     width: 6px; height: 6px;
-    background: #34d399;
+    background: var(--success);
     border-radius: 50%;
     animation: pulse 2s infinite;
   }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
 
-  /* PUBLICATIONS */
-  .pub-list { display: flex; flex-direction: column; gap: 1.2rem; }
+  /* ── PUBLICATIONS ────────────────────────────────────── */
+  .pub-list { display: flex; flex-direction: column; gap: 1.1rem; }
   .pub-card {
-    padding: 1.5rem;
+    padding: 1.4rem 1.5rem;
     border: 1px solid var(--border);
     border-radius: 6px;
     background: white;
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 1rem;
-    align-start: start;
-    transition: box-shadow 0.2s;
+    align-items: start;
+    transition: box-shadow 0.2s, border-color 0.2s;
   }
-  .pub-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
-  .pub-title {
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 0.4rem;
-    line-height: 1.4;
-  }
+  .pub-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); border-color: #c7d7f8; }
+  .pub-title { font-size: 0.92rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; line-height: 1.45; }
   .pub-title a { color: inherit; text-decoration: none; }
   .pub-title a:hover { color: var(--accent); }
-  .pub-meta {
-    font-size: 0.78rem;
-    color: var(--muted);
-  }
-  .pub-meta span { margin-right: 1rem; }
+  .pub-meta { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
   .citation-badge {
     background: #eff6ff;
     color: var(--accent);
@@ -343,7 +423,7 @@
     font-family: 'DM Mono', monospace;
   }
 
-  /* TEACHING */
+  /* ── TEACHING ────────────────────────────────────────── */
   .teaching-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -354,28 +434,27 @@
     border: 1px solid var(--border);
     border-radius: 6px;
     background: white;
+    transition: box-shadow 0.2s, transform 0.2s;
   }
+  .course-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); transform: translateY(-2px); }
   .course-card h4 { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.3rem; }
   .course-card p { font-size: 0.75rem; color: var(--muted); }
 
-  /* PEER REVIEW */
-  .review-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  /* ── PEER REVIEW ─────────────────────────────────────── */
+  .review-table { width:100%; border-collapse:collapse; font-size:0.85rem; }
   .review-table th {
     text-align: left;
     padding: 0.6rem 1rem;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-family: 'DM Mono', monospace;
     color: var(--muted);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     border-bottom: 2px solid var(--border);
   }
-  .review-table td {
-    padding: 0.8rem 1rem;
-    border-bottom: 1px solid var(--border);
-    color: #334155;
-  }
+  .review-table td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); color: #334155; }
   .review-table tr:last-child td { border-bottom: none; }
+  .review-table tr:hover td { background: #f8faff; }
   .review-count {
     font-family: 'DM Mono', monospace;
     font-size: 0.78rem;
@@ -387,11 +466,8 @@
   }
   .journal-highlight { font-weight: 600; color: var(--navy); }
 
-  /* CONTACT */
-  .contact-section {
-    background: var(--navy) !important;
-    border-bottom: none;
-  }
+  /* ── CONTACT ─────────────────────────────────────────── */
+  .contact-section { background: var(--navy) !important; border-bottom: none; }
   .contact-section .section-label { color: var(--teal); }
   .contact-section .section-title { color: white; }
   .contact-grid {
@@ -400,107 +476,118 @@
     gap: 3rem;
     align-items: start;
   }
-  .contact-text {
-    font-size: 0.95rem;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-  }
-  .contact-items { display: flex; flex-direction: column; gap: 0.8rem; }
+  .contact-text { font-size:0.95rem; color:rgba(255,255,255,0.62); line-height:1.8; margin-bottom:1.5rem; }
+  .contact-items { display:flex; flex-direction:column; gap:0.8rem; }
   .contact-item {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     font-size: 0.85rem;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.75);
     text-decoration: none;
     transition: color 0.2s;
   }
   .contact-item:hover { color: white; }
   .contact-icon {
     width: 32px; height: 32px;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.07);
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 0.85rem;
     flex-shrink: 0;
+    transition: background 0.2s;
   }
+  .contact-item:hover .contact-icon { background: rgba(255,255,255,0.14); }
   .open-to {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
     border-radius: 8px;
     padding: 1.8rem;
   }
   .open-to h4 {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-family: 'DM Mono', monospace;
     color: var(--teal);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 1rem;
   }
-  .open-to ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
+  .open-to ul { list-style:none; display:flex; flex-direction:column; gap:0.6rem; }
   .open-to li {
     font-size: 0.85rem;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.68);
     display: flex;
     align-items: center;
     gap: 0.5rem;
   }
-  .open-to li::before {
-    content: '→';
-    color: var(--accent-light);
-    font-size: 0.75rem;
-  }
+  .open-to li::before { content:'→'; color:var(--accent-light); font-size:0.75rem; }
 
+  /* ── FOOTER ──────────────────────────────────────────── */
   footer {
     background: #050d1a;
-    color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.25);
     text-align: center;
-    padding: 1.5rem;
-    font-size: 0.75rem;
+    padding: 1.6rem;
+    font-size: 0.72rem;
     font-family: 'DM Mono', monospace;
+    letter-spacing: 0.03em;
   }
 
+  /* ── RESPONSIVE ──────────────────────────────────────── */
   @media (max-width: 640px) {
     .contact-grid { grid-template-columns: 1fr; }
     .hero-metrics { gap: 1.5rem; }
-    .nav-links { display: none; }
+    .nav-center { display: none; }
     .pub-card { grid-template-columns: 1fr; }
+    .btn-cv-nav span { display: none; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ── NAV ─────────────────────────────────────────────────── -->
 <nav>
   <span class="nav-name">R. D. Florez-Zela</span>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#teaching">Teaching</a></li>
-    <li><a href="#contact">Contact</a></li>
+
+  <ul class="nav-center">
+    <li><a href="#about"        data-i18n="nav_about">About</a></li>
+    <li><a href="#research"     data-i18n="nav_research">Research</a></li>
+    <li><a href="#publications" data-i18n="nav_pubs">Publications</a></li>
+    <li><a href="#teaching"     data-i18n="nav_teaching">Teaching</a></li>
+    <li><a href="#contact"      data-i18n="nav_contact">Contact</a></li>
   </ul>
+
+  <div class="nav-right">
+    <!-- Language Toggle -->
+    <div class="lang-toggle" role="group" aria-label="Language selector">
+      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn"        data-lang="es" onclick="setLang('es')">ES</button>
+    </div>
+
+    <!-- CV Download (nav) -->
+    <a href="CV_Florez_EN.pdf" download id="cv-nav-btn" class="btn-cv-nav" title="Download CV">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12h12"/>
+      </svg>
+      <span data-i18n="cv_download">Download CV</span>
+    </a>
+  </div>
 </nav>
 
-<!-- HERO -->
+<!-- ── HERO ────────────────────────────────────────────────── -->
 <div class="hero">
+  <div class="hero-grid"></div>
   <div class="hero-inner">
-    <span class="hero-tag">Computational Neuroengineering · RENACYT Level V</span>
+    <span class="hero-tag" data-i18n="hero_tag">Computational Neuroengineering · RENACYT Level V</span>
     <h1>Ruben Dario<br><span>Florez-Zela</span></h1>
-    <p class="hero-subtitle">AI/ML for Cognitive State Monitoring in Safety-Critical Systems · LIECAR Lab, UNSAAC · Cusco, Peru</p>
+    <p class="hero-subtitle" data-i18n="hero_subtitle">AI/ML for Cognitive State Monitoring in Safety-Critical Systems · LIECAR Lab, UNSAAC · Cusco, Peru</p>
+
     <div class="hero-metrics">
       <div class="metric">
-        <div class="metric-num">142+</div>
-        <div class="metric-label">Citations</div>
+        <div class="metric-num">143+</div>
+        <div class="metric-label" data-i18n="metric_citations">Citations</div>
       </div>
       <div class="metric">
         <div class="metric-num">5</div>
@@ -508,84 +595,97 @@
       </div>
       <div class="metric">
         <div class="metric-num">11</div>
-        <div class="metric-label">Publications</div>
+        <div class="metric-label" data-i18n="metric_pubs">Publications</div>
       </div>
       <div class="metric">
         <div class="metric-num">13</div>
-        <div class="metric-label">Peer Reviews</div>
+        <div class="metric-label" data-i18n="metric_reviews">Peer Reviews</div>
       </div>
     </div>
+
     <div class="hero-links">
-      <a href="#publications" class="btn-primary">View Publications</a>
-      <a href="#contact" class="btn-outline">Contact</a>
-      <a href="https://www.linkedin.com/in/rubenflorez" class="btn-outline">LinkedIn</a>
-      <a href="https://orcid.org/0000-0002-9833-0213" class="btn-outline">ORCID</a>
+      <a href="#publications" class="btn-primary" data-i18n="btn_view_pubs">View Publications</a>
+
+      <!-- CV download hero button -->
+      <a href="CV_Florez_EN.pdf" download id="cv-hero-btn" class="btn-cv-hero">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12h12"/>
+        </svg>
+        <span data-i18n="cv_download">Download CV</span>
+      </a>
+
+      <a href="#contact"     class="btn-outline" data-i18n="nav_contact">Contact</a>
+      <a href="https://www.linkedin.com/in/rubendflorezz/" class="btn-outline">LinkedIn</a>
+      <a href="https://orcid.org/0000-0002-9833-0213"      class="btn-outline">ORCID</a>
     </div>
   </div>
 </div>
 
-<!-- ABOUT -->
+<!-- ── ABOUT ────────────────────────────────────────────────── -->
 <section id="about">
   <div class="section-inner">
-    <div class="section-label">About me</div>
-    <div class="section-title">Building AI that understands<br>the human mind in real time</div>
+    <div class="section-label" data-i18n="about_label">About me</div>
+    <div class="section-title" data-i18n="about_title">Building AI that understands<br>the human mind in real time</div>
     <div class="about-text">
-      <p>I build multimodal AI systems that monitor human cognitive state in real time — with a focus on safety-critical environments where cognitive impairment means lives at risk.</p>
-      <p>My work integrates EEG signal processing, computer vision, and deep learning to design interpretable, deployable architectures that go beyond lab prototypes: systems that run on embedded hardware, handle real-world noise, and produce outputs that can be trusted in high-stakes decisions.</p>
-      <p>I am a researcher at the LIECAR Laboratory and lecturer at the Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), Peru, recognized as a <strong>RENACYT Level V researcher</strong> by CONCYTEC. I serve as a peer reviewer for international scientific publications including <strong>Scientific Reports (Nature Portfolio)</strong> and <strong>ACM Transactions on Intelligent Systems and Technology</strong>.</p>
+      <p data-i18n="about_p1">I build multimodal AI systems that monitor human cognitive state in real time — with a focus on safety-critical environments where cognitive impairment means lives at risk.</p>
+      <p data-i18n="about_p2">My work integrates EEG signal processing, computer vision, and deep learning to design interpretable, deployable architectures that go beyond lab prototypes: systems that run on embedded hardware, handle real-world noise, and produce outputs that can be trusted in high-stakes decisions.</p>
+      <p data-i18n="about_p3">I am a researcher at the LIECAR Laboratory and lecturer at the Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), Peru, recognized as a <strong>RENACYT Level V researcher</strong> by CONCYTEC. I serve as a peer reviewer for international scientific publications including <strong>Scientific Reports (Nature Portfolio)</strong> and <strong>ACM Transactions on Intelligent Systems and Technology</strong>.</p>
     </div>
     <div class="about-badges">
-      <span class="badge">EEG Signal Processing</span>
-      <span class="badge">Multimodal AI</span>
-      <span class="badge">Driver Drowsiness Detection</span>
-      <span class="badge">Embedded Deep Learning</span>
+      <span class="badge" data-i18n="badge1">EEG Signal Processing</span>
+      <span class="badge" data-i18n="badge2">Multimodal AI</span>
+      <span class="badge" data-i18n="badge3">Driver Drowsiness Detection</span>
+      <span class="badge" data-i18n="badge4">Embedded Deep Learning</span>
       <span class="badge">Computer Vision</span>
-      <span class="badge">Safety-Critical Systems</span>
-      <span class="badge">Cognitive Neuroscience</span>
+      <span class="badge" data-i18n="badge5">Safety-Critical Systems</span>
+      <span class="badge" data-i18n="badge6">Cognitive Neuroscience</span>
     </div>
   </div>
 </section>
 
-<!-- RESEARCH INTERESTS -->
+<!-- ── RESEARCH INTERESTS ───────────────────────────────────── -->
 <section>
   <div class="section-inner">
-    <div class="section-label">Focus Areas</div>
-    <div class="section-title">Research Interests</div>
+    <div class="section-label" data-i18n="interests_label">Focus Areas</div>
+    <div class="section-title" data-i18n="interests_title">Research Interests</div>
     <div class="interests-grid">
       <div class="interest-card">
-        <h4>Cognitive State Monitoring</h4>
-        <p>Real-time detection of drowsiness, fatigue, and mental workload in operators of safety-critical systems such as vehicles, aviation, and industrial control.</p>
+        <h4 data-i18n="int1_title">Cognitive State Monitoring</h4>
+        <p data-i18n="int1_desc">Real-time detection of drowsiness, fatigue, and mental workload in operators of safety-critical systems such as vehicles, aviation, and industrial control.</p>
       </div>
       <div class="interest-card">
-        <h4>EEG Signal Processing</h4>
-        <p>Biomarker extraction, artifact removal, and feature engineering from EEG signals for reliable cognitive state classification under real-world conditions.</p>
+        <h4 data-i18n="int2_title">EEG Signal Processing</h4>
+        <p data-i18n="int2_desc">Biomarker extraction, artifact removal, and feature engineering from EEG signals for reliable cognitive state classification under real-world conditions.</p>
       </div>
       <div class="interest-card">
-        <h4>Multimodal AI Fusion</h4>
-        <p>Combining EEG, eye-tracking (RGB–NIR cameras), and facial landmark dynamics for robust, redundant cognitive state inference beyond single-modality limits.</p>
+        <h4 data-i18n="int3_title">Multimodal AI Fusion</h4>
+        <p data-i18n="int3_desc">Combining EEG, eye-tracking (RGB–NIR cameras), and facial landmark dynamics for robust, redundant cognitive state inference beyond single-modality limits.</p>
       </div>
       <div class="interest-card">
-        <h4>Embedded Deep Learning</h4>
-        <p>Deploying CNN and hybrid models on edge platforms (NVIDIA Jetson Nano) for low-latency, on-device inference in real-world applications.</p>
+        <h4 data-i18n="int4_title">Embedded Deep Learning</h4>
+        <p data-i18n="int4_desc">Deploying CNN and hybrid models on edge platforms (NVIDIA Jetson Nano) for low-latency, on-device inference in real-world applications.</p>
       </div>
       <div class="interest-card">
-        <h4>Interpretable AI for Human Factors</h4>
-        <p>Moving beyond black-box models toward systems that are auditable, explainable, and reliable — a critical requirement for high-stakes AI deployment.</p>
+        <h4 data-i18n="int5_title">Interpretable AI for Human Factors</h4>
+        <p data-i18n="int5_desc">Moving beyond black-box models toward systems that are auditable, explainable, and reliable — a critical requirement for high-stakes AI deployment.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CURRENT RESEARCH -->
+<!-- ── CURRENT RESEARCH ─────────────────────────────────────── -->
 <section id="research">
   <div class="section-inner">
-    <div class="section-label">Active project</div>
-    <div class="section-title">Current Research</div>
+    <div class="section-label" data-i18n="research_label">Active project</div>
+    <div class="section-title" data-i18n="research_title">Current Research</div>
     <div class="research-box">
-      <div class="status-pill"><span class="status-dot"></span>Active · Targeting Q1 submission 2026</div>
-      <h3>Multimodal Neuro-Ocular System for<br>Driver Drowsiness Detection</h3>
-      <p>The leading cause of fatal road accidents is not mechanical failure — it's cognitive impairment behind the wheel. This project develops a real-time monitoring system that detects driver drowsiness and mental fatigue by fusing EEG biomarkers, eye-tracking dynamics via RGB and NIR cameras, and facial landmark modeling.</p>
-      <p>Signals are processed through a multimodal deep learning architecture and deployed on an NVIDIA Jetson Nano for real-time, on-vehicle inference. A key focus is interpretability — using attention mechanisms and saliency maps to make model decisions transparent and trustworthy for safety-critical deployment.</p>
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        <span data-i18n="research_status">Active · Targeting Q1 submission 2026</span>
+      </div>
+      <h3 data-i18n="research_h3">Multimodal Neuro-Ocular System for<br>Driver Drowsiness Detection</h3>
+      <p data-i18n="research_p1">The leading cause of fatal road accidents is not mechanical failure — it's cognitive impairment behind the wheel. This project develops a real-time monitoring system that detects driver drowsiness and mental fatigue by fusing EEG biomarkers, eye-tracking dynamics via RGB and NIR cameras, and facial landmark modeling.</p>
+      <p data-i18n="research_p2">Signals are processed through a multimodal deep learning architecture and deployed on an NVIDIA Jetson Nano for real-time, on-vehicle inference. A key focus is interpretability — using attention mechanisms and saliency maps to make model decisions transparent and trustworthy for safety-critical deployment.</p>
       <div class="signal-tags">
         <span class="signal-tag">EEG Biomarkers</span>
         <span class="signal-tag">RGB–NIR Eye-Tracking</span>
@@ -599,221 +699,344 @@
   </div>
 </section>
 
-<!-- PUBLICATIONS -->
+<!-- ── PUBLICATIONS ─────────────────────────────────────────── -->
 <section id="publications">
   <div class="section-inner">
-    <div class="section-label">Academic output</div>
-    <div class="section-title">Selected Publications</div>
+    <div class="section-label" data-i18n="pubs_label">Academic output</div>
+    <div class="section-title" data-i18n="pubs_title">Selected Publications</div>
     <div class="pub-list">
 
       <div class="pub-card">
         <div>
-          <div class="pub-title"><a href="#">A CNN-based approach for driver drowsiness detection by real-time eye state identification</a></div>
-          <div class="pub-meta">
-            <span>R. Florez, F. Palomino-Quispe, RJ Coaquira-Castillo et al.</span><br>
-            <span><em>Applied Sciences</em> 13 (13), 7848</span>
-            <span>· 2023</span>
-          </div>
+          <div class="pub-title"><a href="https://doi.org/10.3390/app13137849" target="_blank">A CNN-based approach for driver drowsiness detection by real-time eye state identification</a></div>
+          <div class="pub-meta">R. Florez, F. Palomino-Quispe, RJ Coaquira-Castillo et al. · <em>Applied Sciences</em> 13 (13), 7849 · 2023</div>
         </div>
-        <div class="citation-badge">81 citations</div>
+        <div class="citation-badge">82 <span data-i18n="cit">citations</span></div>
       </div>
 
       <div class="pub-card">
         <div>
-          <div class="pub-title"><a href="#">A real-time embedded system for driver drowsiness detection based on visual analysis of the eyes and mouth using convolutional neural network and mouth aspect ratio</a></div>
-          <div class="pub-meta">
-            <span>R. Florez, F. Palomino-Quispe, AB Alvarez et al.</span><br>
-            <span><em>Sensors</em> 24 (19), 6261</span>
-            <span>· 2024</span>
-          </div>
+          <div class="pub-title"><a href="https://doi.org/10.3390/s24196261" target="_blank">A real-time embedded system for driver drowsiness detection based on visual analysis of the eyes and mouth using CNN and mouth aspect ratio</a></div>
+          <div class="pub-meta">R. Florez, F. Palomino-Quispe, AB Alvarez et al. · <em>Sensors</em> 24 (19), 6261 · 2024</div>
         </div>
-        <div class="citation-badge">27 citations</div>
+        <div class="citation-badge">27 <span data-i18n="cit">citations</span></div>
       </div>
 
       <div class="pub-card">
         <div>
-          <div class="pub-title"><a href="#">Illumination-Robust Conjunctival Image Preprocessing for Accurate Segmentation and Anemia Detection Using Deep Learning</a></div>
-          <div class="pub-meta">
-            <span>JH Fuentes Beingólea, F. Palomino-Quispe, JC Herrera-Levano, R. Florez et al.</span><br>
-            <span><em>International Journal of Online & Biomedical Engineering</em> 21 (7)</span>
-            <span>· 2025</span>
-          </div>
+          <div class="pub-title"><a href="#" target="_blank">Coffee-leaf diseases and pests detection based on YOLO models</a></div>
+          <div class="pub-meta">J. Fragoso, C. Silva, T. Paixao, AB Alvarez, R. Florez et al. · <em>Applied Sciences</em> 15 (9), 5040 · 2025</div>
         </div>
-        <div class="citation-badge">1 citation</div>
+        <div class="citation-badge">14 <span data-i18n="cit">citations</span></div>
       </div>
 
       <div class="pub-card">
         <div>
-          <div class="pub-title"><a href="#">Coffee-leaf diseases and pests detection based on YOLO models</a></div>
-          <div class="pub-meta">
-            <span>J. Fragoso, C. Silva, T. Paixao, AB Alvarez, R. Florez et al.</span><br>
-            <span><em>Applied Sciences</em> 15 (9), 5040</span>
-            <span>· 2025</span>
-          </div>
+          <div class="pub-title"><a href="#" target="_blank">Illumination-Robust Conjunctival Image Preprocessing for Accurate Segmentation and Anemia Detection Using Deep Learning</a></div>
+          <div class="pub-meta">JH Fuentes Beingólea, F. Palomino-Quispe, JC Herrera-Levano, R. Florez et al. · <em>iJOE</em> 21 (7) · 2025</div>
         </div>
-        <div class="citation-badge">14 citations</div>
+        <div class="citation-badge">1 <span data-i18n="cit">citation</span></div>
       </div>
 
       <div class="pub-card">
         <div>
-          <div class="pub-title"><a href="#">Low-cost mini humanoid robot mechanical design for mini humanoid robot contest Intercon 2021</a></div>
-          <div class="pub-meta">
-            <span>R. Vilavita, F. Justo, R. Florez, N. Figueroa</span><br>
-            <span><em>IEEE XXVIII Intercon</em></span>
-            <span>· 2021</span>
-          </div>
+          <div class="pub-title"><a href="#" target="_blank">Low-cost mini humanoid robot mechanical design for mini humanoid robot contest Intercon 2021</a></div>
+          <div class="pub-meta">R. Vilavita, F. Justo, R. Florez, N. Figueroa · <em>IEEE XXVIII Intercon</em> · 2021</div>
         </div>
-        <div class="citation-badge">5 citations</div>
+        <div class="citation-badge">5 <span data-i18n="cit">citations</span></div>
       </div>
 
     </div>
     <p style="margin-top:1.5rem; font-size:0.82rem; color:var(--muted);">
-      Full list on <a href="https://scholar.google.com/citations?user=Xf8JgfsAAAAJ&hl" style="color:var(--accent);">Google Scholar</a> · <a href="https://www.researchgate.net/profile/Ruben-Florez-Zela" style="color:var(--accent);">ResearchGate</a>
+      <span data-i18n="pubs_full_list">Full list on</span>
+      <a href="https://scholar.google.com/citations?user=Xf8JgfsAAAAJ&hl" style="color:var(--accent);">Google Scholar</a> ·
+      <a href="https://www.researchgate.net/profile/Ruben-Florez-Zela" style="color:var(--accent);">ResearchGate</a>
     </p>
   </div>
 </section>
 
-<!-- TEACHING -->
+<!-- ── TEACHING ──────────────────────────────────────────────── -->
 <section id="teaching">
   <div class="section-inner">
-    <div class="section-label">Education</div>
-    <div class="section-title">Teaching</div>
-    <p style="font-size:0.9rem; color:var(--muted); margin-bottom:1.8rem;">Universidad Nacional de San Antonio Abad del Cusco (UNSAAC) · School of Electronic Engineering · April 2024 – Present</p>
+    <div class="section-label" data-i18n="teaching_label">Education</div>
+    <div class="section-title" data-i18n="teaching_title">Teaching</div>
+    <p style="font-size:0.9rem; color:var(--muted); margin-bottom:1.8rem;" data-i18n="teaching_sub">Universidad Nacional de San Antonio Abad del Cusco (UNSAAC) · School of Electronic Engineering · April 2024 – Present</p>
     <div class="teaching-grid">
       <div class="course-card">
-        <h4>Artificial Intelligence</h4>
-        <p>Undergraduate · Electronic Engineering</p>
+        <h4 data-i18n="course1">Artificial Intelligence</h4>
+        <p data-i18n="course_level">Undergraduate · Electronic Engineering</p>
       </div>
       <div class="course-card">
-        <h4>Digital Image Processing</h4>
-        <p>Undergraduate · Electronic Engineering</p>
+        <h4 data-i18n="course2">Digital Image Processing</h4>
+        <p data-i18n="course_level">Undergraduate · Electronic Engineering</p>
       </div>
       <div class="course-card">
-        <h4>Robotics</h4>
-        <p>Undergraduate · Electronic Engineering</p>
+        <h4 data-i18n="course3">Robotics</h4>
+        <p data-i18n="course_level">Undergraduate · Electronic Engineering</p>
       </div>
       <div class="course-card">
-        <h4>Electronics Laboratory</h4>
-        <p>Undergraduate · Electronic Engineering</p>
+        <h4 data-i18n="course4">Electronics Laboratory</h4>
+        <p data-i18n="course_level">Undergraduate · Electronic Engineering</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PEER REVIEW -->
+<!-- ── PEER REVIEW ───────────────────────────────────────────── -->
 <section>
   <div class="section-inner">
-    <div class="section-label">Scientific service</div>
-    <div class="section-title">Peer Review Activity</div>
+    <div class="section-label" data-i18n="review_label">Scientific service</div>
+    <div class="section-title" data-i18n="review_title">Peer Review Activity</div>
     <table class="review-table">
       <thead>
         <tr>
-          <th>Journal</th>
-          <th>Publisher</th>
-          <th>Reviews</th>
+          <th data-i18n="review_th1">Journal</th>
+          <th data-i18n="review_th2">Publisher</th>
+          <th data-i18n="review_th3">Reviews</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="journal-highlight">Scientific Reports</td>
-          <td>Nature Portfolio</td>
-          <td><span class="review-count">2</span></td>
-        </tr>
-        <tr>
-          <td class="journal-highlight">ACM Transactions on Intelligent Systems and Technology</td>
-          <td>ACM</td>
-          <td><span class="review-count">1</span></td>
-        </tr>
-        <tr>
-          <td>Journal of Ambient Intelligence and Humanized Computing</td>
-          <td>Springer</td>
-          <td><span class="review-count">1</span></td>
-        </tr>
-        <tr>
-          <td>Discover Applied Sciences</td>
-          <td>Springer</td>
-          <td><span class="review-count">3</span></td>
-        </tr>
-        <tr>
-          <td>Discover Artificial Intelligence</td>
-          <td>Springer</td>
-          <td><span class="review-count">1</span></td>
-        </tr>
-        <tr>
-          <td>Discover Electronics</td>
-          <td>Springer</td>
-          <td><span class="review-count">1</span></td>
-        </tr>
-        <tr>
-          <td>Discover Internet of Things</td>
-          <td>Springer</td>
-          <td><span class="review-count">1</span></td>
-        </tr>
-        <tr>
-          <td>IAES International Journal of Artificial Intelligence</td>
-          <td>IAES</td>
-          <td><span class="review-count">2</span></td>
-        </tr>
-        <tr>
-          <td>Indian Journal of Science and Technology</td>
-          <td>IJST</td>
-          <td><span class="review-count">1</span></td>
-        </tr>
+        <tr><td class="journal-highlight">Scientific Reports</td><td>Nature Portfolio</td><td><span class="review-count">2</span></td></tr>
+        <tr><td class="journal-highlight">ACM Trans. on Intelligent Systems and Technology</td><td>ACM</td><td><span class="review-count">1</span></td></tr>
+        <tr><td>Journal of Ambient Intelligence and Humanized Computing</td><td>Springer</td><td><span class="review-count">1</span></td></tr>
+        <tr><td>Discover Applied Sciences</td><td>Springer</td><td><span class="review-count">3</span></td></tr>
+        <tr><td>Discover Artificial Intelligence</td><td>Springer</td><td><span class="review-count">1</span></td></tr>
+        <tr><td>Discover Electronics</td><td>Springer</td><td><span class="review-count">1</span></td></tr>
+        <tr><td>Discover Internet of Things</td><td>Springer</td><td><span class="review-count">1</span></td></tr>
+        <tr><td>IAES Int'l Journal of Artificial Intelligence</td><td>IAES</td><td><span class="review-count">2</span></td></tr>
+        <tr><td>Indian Journal of Science and Technology</td><td>IJST</td><td><span class="review-count">1</span></td></tr>
       </tbody>
     </table>
-    <p style="margin-top:1rem; font-size:0.78rem; color:var(--muted);">Verified via ORCID iD: <a href="https://orcid.org/0000-0002-9833-0213" style="color:var(--accent); font-family:monospace;">0000-0002-9833-0213</a></p>
+    <p style="margin-top:1rem; font-size:0.78rem; color:var(--muted);">
+      <span data-i18n="review_orcid_note">Verified via ORCID iD:</span>
+      <a href="https://orcid.org/0000-0002-9833-0213" style="color:var(--accent); font-family:monospace;">0000-0002-9833-0213</a>
+    </p>
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ── CONTACT ───────────────────────────────────────────────── -->
 <section id="contact" class="contact-section">
   <div class="section-inner">
-    <div class="section-label">Get in touch</div>
-    <div class="section-title">Contact</div>
+    <div class="section-label" data-i18n="contact_label">Get in touch</div>
+    <div class="section-title" data-i18n="contact_title">Contact</div>
     <div class="contact-grid">
       <div>
-        <p class="contact-text">I am open to research collaborations, dataset sharing, joint publications, academic exchanges, and PhD opportunities in neuroengineering, human factors AI, or safety-critical systems.</p>
+        <p class="contact-text" data-i18n="contact_text">I am open to research collaborations, dataset sharing, joint publications, academic exchanges, and PhD opportunities in neuroengineering, human factors AI, or safety-critical systems.</p>
         <div class="contact-items">
           <a href="mailto:rubendfz2206@gmail.com" class="contact-item">
-            <span class="contact-icon">✉</span>
-            rubendfz2206@gmail.com
+            <span class="contact-icon">✉</span>rubendfz2206@gmail.com
           </a>
-          <a href="https://www.linkedin.com/in/rubenflorez" class="contact-item">
-            <span class="contact-icon">in</span>
-            linkedin.com/in/rubenflorez
+          <a href="https://www.linkedin.com/in/rubendflorezz/" class="contact-item">
+            <span class="contact-icon">in</span>linkedin.com/in/rubendflorezz
           </a>
           <a href="https://orcid.org/0000-0002-9833-0213" class="contact-item">
-            <span class="contact-icon">ID</span>
-            ORCID 0000-0002-9833-0213
+            <span class="contact-icon">ID</span>ORCID 0000-0002-9833-0213
           </a>
           <a href="https://scholar.google.com/citations?user=Xf8JgfsAAAAJ&hl" class="contact-item">
-            <span class="contact-icon">GS</span>
-            Google Scholar
+            <span class="contact-icon">GS</span>Google Scholar
           </a>
           <a href="https://www.researchgate.net/profile/Ruben-Florez-Zela" class="contact-item">
-            <span class="contact-icon">RG</span>
-            ResearchGate
+            <span class="contact-icon">RG</span>ResearchGate
           </a>
         </div>
       </div>
       <div class="open-to">
-        <h4>Open to</h4>
+        <h4 data-i18n="open_title">Open to</h4>
         <ul>
-          <li>Research collaborations</li>
-          <li>Dataset sharing</li>
-          <li>Joint publications</li>
-          <li>Academic exchanges</li>
-          <li>PhD opportunities in Neuroengineering</li>
-          <li>Industry partnerships (automotive, aviation, health)</li>
+          <li data-i18n="open1">Research collaborations</li>
+          <li data-i18n="open2">Dataset sharing</li>
+          <li data-i18n="open3">Joint publications</li>
+          <li data-i18n="open4">Academic exchanges</li>
+          <li data-i18n="open5">PhD opportunities in Neuroengineering</li>
+          <li data-i18n="open6">Industry partnerships (automotive, aviation, health)</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ── FOOTER ────────────────────────────────────────────────── -->
 <footer>
-  Ruben Dario Florez-Zela · UNSAAC · Cusco, Peru
+  <span data-i18n="footer">© 2025 Ruben Dario Florez-Zela · UNSAAC · Cusco, Peru · Built with purpose.</span>
 </footer>
+
+<!-- ── LANGUAGE SYSTEM ──────────────────────────────────────── -->
+<script>
+const translations = {
+  en: {
+    nav_about:       "About",
+    nav_research:    "Research",
+    nav_pubs:        "Publications",
+    nav_teaching:    "Teaching",
+    nav_contact:     "Contact",
+    cv_download:     "Download CV",
+    hero_tag:        "Computational Neuroengineering · RENACYT Level V",
+    hero_subtitle:   "AI/ML for Cognitive State Monitoring in Safety-Critical Systems · LIECAR Lab, UNSAAC · Cusco, Peru",
+    metric_citations:"Citations",
+    metric_pubs:     "Publications",
+    metric_reviews:  "Peer Reviews",
+    btn_view_pubs:   "View Publications",
+    about_label:     "About me",
+    about_title:     "Building AI that understands<br>the human mind in real time",
+    about_p1:        "I build multimodal AI systems that monitor human cognitive state in real time — with a focus on safety-critical environments where cognitive impairment means lives at risk.",
+    about_p2:        "My work integrates EEG signal processing, computer vision, and deep learning to design interpretable, deployable architectures that go beyond lab prototypes: systems that run on embedded hardware, handle real-world noise, and produce outputs that can be trusted in high-stakes decisions.",
+    about_p3:        "I am a researcher at the LIECAR Laboratory and lecturer at the Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), Peru, recognized as a <strong>RENACYT Level V researcher</strong> by CONCYTEC. I serve as a peer reviewer for international scientific publications including <strong>Scientific Reports (Nature Portfolio)</strong> and <strong>ACM Transactions on Intelligent Systems and Technology</strong>.",
+    badge1:          "EEG Signal Processing",
+    badge2:          "Multimodal AI",
+    badge3:          "Driver Drowsiness Detection",
+    badge4:          "Embedded Deep Learning",
+    badge5:          "Safety-Critical Systems",
+    badge6:          "Cognitive Neuroscience",
+    interests_label: "Focus Areas",
+    interests_title: "Research Interests",
+    int1_title:      "Cognitive State Monitoring",
+    int1_desc:       "Real-time detection of drowsiness, fatigue, and mental workload in operators of safety-critical systems such as vehicles, aviation, and industrial control.",
+    int2_title:      "EEG Signal Processing",
+    int2_desc:       "Biomarker extraction, artifact removal, and feature engineering from EEG signals for reliable cognitive state classification under real-world conditions.",
+    int3_title:      "Multimodal AI Fusion",
+    int3_desc:       "Combining EEG, eye-tracking (RGB–NIR cameras), and facial landmark dynamics for robust, redundant cognitive state inference beyond single-modality limits.",
+    int4_title:      "Embedded Deep Learning",
+    int4_desc:       "Deploying CNN and hybrid models on edge platforms (NVIDIA Jetson Nano) for low-latency, on-device inference in real-world applications.",
+    int5_title:      "Interpretable AI for Human Factors",
+    int5_desc:       "Moving beyond black-box models toward systems that are auditable, explainable, and reliable — a critical requirement for high-stakes AI deployment.",
+    research_label:  "Active project",
+    research_title:  "Current Research",
+    research_status: "Active · Targeting Q1 submission 2026",
+    research_h3:     "Multimodal Neuro-Ocular System for<br>Driver Drowsiness Detection",
+    research_p1:     "The leading cause of fatal road accidents is not mechanical failure — it's cognitive impairment behind the wheel. This project develops a real-time monitoring system that detects driver drowsiness and mental fatigue by fusing EEG biomarkers, eye-tracking dynamics via RGB and NIR cameras, and facial landmark modeling.",
+    research_p2:     "Signals are processed through a multimodal deep learning architecture and deployed on an NVIDIA Jetson Nano for real-time, on-vehicle inference. A key focus is interpretability — using attention mechanisms and saliency maps to make model decisions transparent and trustworthy for safety-critical deployment.",
+    pubs_label:      "Academic output",
+    pubs_title:      "Selected Publications",
+    pubs_full_list:  "Full list on",
+    cit:             "citations",
+    teaching_label:  "Education",
+    teaching_title:  "Teaching",
+    teaching_sub:    "Universidad Nacional de San Antonio Abad del Cusco (UNSAAC) · School of Electronic Engineering · April 2024 – Present",
+    course1:         "Artificial Intelligence",
+    course2:         "Digital Image Processing",
+    course3:         "Robotics",
+    course4:         "Electronics Laboratory",
+    course_level:    "Undergraduate · Electronic Engineering",
+    review_label:    "Scientific service",
+    review_title:    "Peer Review Activity",
+    review_th1:      "Journal",
+    review_th2:      "Publisher",
+    review_th3:      "Reviews",
+    review_orcid_note:"Verified via ORCID iD:",
+    contact_label:   "Get in touch",
+    contact_title:   "Contact",
+    contact_text:    "I am open to research collaborations, dataset sharing, joint publications, academic exchanges, and PhD opportunities in neuroengineering, human factors AI, or safety-critical systems.",
+    open_title:      "Open to",
+    open1:           "Research collaborations",
+    open2:           "Dataset sharing",
+    open3:           "Joint publications",
+    open4:           "Academic exchanges",
+    open5:           "PhD opportunities in Neuroengineering",
+    open6:           "Industry partnerships (automotive, aviation, health)",
+    footer:          "© 2025 Ruben Dario Florez-Zela · UNSAAC · Cusco, Peru · Built with purpose.",
+  },
+  es: {
+    nav_about:       "Sobre mí",
+    nav_research:    "Investigación",
+    nav_pubs:        "Publicaciones",
+    nav_teaching:    "Docencia",
+    nav_contact:     "Contacto",
+    cv_download:     "Descargar CV",
+    hero_tag:        "Neuroingeniería Computacional · Investigador RENACYT Nivel V",
+    hero_subtitle:   "IA/ML para Monitoreo del Estado Cognitivo en Sistemas de Alta Seguridad · Lab. LIECAR, UNSAAC · Cusco, Perú",
+    metric_citations:"Citas",
+    metric_pubs:     "Publicaciones",
+    metric_reviews:  "Revisiones",
+    btn_view_pubs:   "Ver Publicaciones",
+    about_label:     "Sobre mí",
+    about_title:     "Construyendo IA que comprende<br>la mente humana en tiempo real",
+    about_p1:        "Desarrollo sistemas de IA multimodal que monitorean el estado cognitivo humano en tiempo real, con enfoque en entornos de alta seguridad donde el deterioro cognitivo pone vidas en riesgo.",
+    about_p2:        "Mi trabajo integra procesamiento de señales EEG, visión computacional y aprendizaje profundo para diseñar arquitecturas interpretables y desplegables que van más allá de los prototipos de laboratorio: sistemas que operan en hardware embebido, manejan ruido del mundo real y generan salidas confiables para decisiones críticas.",
+    about_p3:        "Soy investigador en el Laboratorio LIECAR y docente de la Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), Perú, reconocido como <strong>Investigador RENACYT Nivel V</strong> por CONCYTEC. Ejerzo como revisor de publicaciones científicas internacionales incluyendo <strong>Scientific Reports (Nature Portfolio)</strong> y <strong>ACM Transactions on Intelligent Systems and Technology</strong>.",
+    badge1:          "Procesamiento de Señales EEG",
+    badge2:          "IA Multimodal",
+    badge3:          "Detección de Somnolencia",
+    badge4:          "Deep Learning Embebido",
+    badge5:          "Sistemas de Alta Seguridad",
+    badge6:          "Neurociencia Cognitiva",
+    interests_label: "Áreas de Enfoque",
+    interests_title: "Intereses de Investigación",
+    int1_title:      "Monitoreo del Estado Cognitivo",
+    int1_desc:       "Detección en tiempo real de somnolencia, fatiga y carga mental en operadores de sistemas críticos como vehículos, aviación y control industrial.",
+    int2_title:      "Procesamiento de Señales EEG",
+    int2_desc:       "Extracción de biomarcadores, eliminación de artefactos e ingeniería de características a partir de señales EEG para clasificación confiable del estado cognitivo en condiciones reales.",
+    int3_title:      "Fusión Multimodal de IA",
+    int3_desc:       "Combinación de EEG, seguimiento ocular (cámaras RGB–NIR) y dinámicas de puntos de referencia faciales para inferencia robusta y redundante del estado cognitivo.",
+    int4_title:      "Deep Learning Embebido",
+    int4_desc:       "Despliegue de modelos CNN e híbridos en plataformas de borde (NVIDIA Jetson Nano) para inferencia en dispositivo con baja latencia en aplicaciones reales.",
+    int5_title:      "IA Interpretable para Factores Humanos",
+    int5_desc:       "Avanzar más allá de los modelos de caja negra hacia sistemas auditables, explicables y confiables — requisito crítico para el despliegue de IA en entornos de alto riesgo.",
+    research_label:  "Proyecto Activo",
+    research_title:  "Investigación Actual",
+    research_status: "Activo · Envío objetivo Q1 2026",
+    research_h3:     "Sistema Neuro-Ocular Multimodal para<br>Detección de Somnolencia en Conductores",
+    research_p1:     "La principal causa de accidentes fatales de tránsito no es el fallo mecánico — es el deterioro cognitivo al volante. Este proyecto desarrolla un sistema de monitoreo en tiempo real que detecta somnolencia y fatiga mental fusionando biomarcadores EEG, dinámicas de seguimiento ocular mediante cámaras RGB y NIR, y modelado de puntos de referencia faciales.",
+    research_p2:     "Las señales se procesan mediante una arquitectura de aprendizaje profundo multimodal y se despliegan en un NVIDIA Jetson Nano para inferencia en tiempo real a bordo del vehículo. Un enfoque clave es la interpretabilidad — usando mecanismos de atención y mapas de prominencia para hacer transparentes y confiables las decisiones del modelo en despliegues críticos.",
+    pubs_label:      "Producción Académica",
+    pubs_title:      "Publicaciones Seleccionadas",
+    pubs_full_list:  "Lista completa en",
+    cit:             "citas",
+    teaching_label:  "Docencia",
+    teaching_title:  "Enseñanza",
+    teaching_sub:    "Universidad Nacional de San Antonio Abad del Cusco (UNSAAC) · Escuela de Ingeniería Electrónica · Abril 2024 – Presente",
+    course1:         "Inteligencia Artificial",
+    course2:         "Procesamiento Digital de Imágenes",
+    course3:         "Robótica",
+    course4:         "Laboratorio de Electrónica",
+    course_level:    "Pregrado · Ingeniería Electrónica",
+    review_label:    "Servicio Científico",
+    review_title:    "Actividad como Revisor",
+    review_th1:      "Revista",
+    review_th2:      "Editorial",
+    review_th3:      "Revisiones",
+    review_orcid_note:"Verificado vía ORCID iD:",
+    contact_label:   "Ponerse en contacto",
+    contact_title:   "Contacto",
+    contact_text:    "Estoy abierto a colaboraciones de investigación, intercambio de datos, publicaciones conjuntas, intercambios académicos y oportunidades de doctorado en neuroingeniería, IA para factores humanos o sistemas de alta seguridad.",
+    open_title:      "Disponible para",
+    open1:           "Colaboraciones de investigación",
+    open2:           "Intercambio de datasets",
+    open3:           "Publicaciones conjuntas",
+    open4:           "Intercambios académicos",
+    open5:           "Oportunidades de doctorado en Neuroingeniería",
+    open6:           "Alianzas con la industria (automotriz, aviación, salud)",
+    footer:          "© 2025 Ruben Dario Florez-Zela · UNSAAC · Cusco, Perú · Construido con propósito.",
+  }
+};
+
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  const t = translations[lang];
+
+  // Update all data-i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  // Toggle active button style
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+
+  // Update CV download links
+  const cvFile = lang === 'es' ? 'CV_Florez_ES.pdf' : 'CV_Florez_EN.pdf';
+  document.getElementById('cv-nav-btn').href  = cvFile;
+  document.getElementById('cv-hero-btn').href = cvFile;
+
+  // Update html lang attribute
+  document.documentElement.lang = lang;
+}
+
+// Init — no action needed, EN is default
+</script>
 
 </body>
 </html>
