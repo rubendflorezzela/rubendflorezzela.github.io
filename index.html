@@ -543,6 +543,74 @@
     .pub-card { grid-template-columns: 1fr; }
     .btn-cv-nav span { display: none; }
   }
+  /* ── RESEARCH VISION ─────────────────────────────────────── */
+  .vision-block {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+  }
+  .vision-quote { border-left: 3px solid var(--accent); padding-left: 1.5rem; }
+  .vision-quote p { font-size: 1.05rem; color: #334155; line-height: 1.8; font-style: italic; }
+  .vision-pillars { display: flex; flex-direction: column; gap: 0.85rem; min-width: 200px; }
+  .pillar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1rem;
+    background: var(--light);
+    border: 1px solid #dbeafe;
+    border-radius: 6px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .pillar:hover { transform: translateX(4px); box-shadow: 0 2px 12px rgba(37,99,235,0.1); }
+  .pillar-icon { font-size: 1.1rem; }
+  .pillar-label { font-size: 0.8rem; font-weight: 600; color: var(--navy); }
+
+  /* ── PUB FILTERS ─────────────────────────────────────────── */
+  .pub-filters { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .pub-filter {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.03em;
+  }
+  .pub-filter:hover { border-color: var(--accent); color: var(--accent); }
+  .pub-filter.active { background: var(--accent); color: white; border-color: var(--accent); }
+  .pub-card.hidden { display: none; }
+
+  /* ── ACHIEVEMENTS ────────────────────────────────────────── */
+  .ach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+  .ach-card {
+    padding: 1.6rem;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .ach-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.12); }
+  .ach-blue  { background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%); color: white; }
+  .ach-teal  { background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%); color: white; }
+  .ach-navy  { background: linear-gradient(135deg, #0a1628 0%, #122040 100%); color: white; }
+  .ach-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    line-height: 1;
+    margin-bottom: 0.6rem;
+    color: rgba(255,255,255,0.95);
+  }
+  .ach-desc { font-size: 0.82rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+
+  @media (max-width: 700px) {
+    .vision-block { grid-template-columns: 1fr; }
+    .vision-pillars { flex-direction: row; flex-wrap: wrap; min-width: unset; }
+  }
+
 </style>
 </head>
 <body>
@@ -553,9 +621,10 @@
 
   <ul class="nav-center">
     <li><a href="#about"        data-i18n="nav_about">About</a></li>
+    <li><a href="#vision"       data-i18n="nav_vision">Vision</a></li>
     <li><a href="#research"     data-i18n="nav_research">Research</a></li>
     <li><a href="#publications" data-i18n="nav_pubs">Publications</a></li>
-    <li><a href="#teaching"     data-i18n="nav_teaching">Teaching</a></li>
+    <li><a href="#achievements" data-i18n="nav_ach">Achievements</a></li>
     <li><a href="#contact"      data-i18n="nav_contact">Contact</a></li>
   </ul>
 
@@ -625,9 +694,9 @@
 <section id="about">
   <div class="section-inner">
     <div class="section-label" data-i18n="about_label">About me</div>
-    <div class="section-title" data-i18n="about_title">Building AI that understands<br>the human mind in real time</div>
+    <div class="section-title" data-i18n="about_title">Building multimodal AI systems for real-time cognitive state monitoring<br>in safety-critical environments</div>
     <div class="about-text">
-      <p data-i18n="about_p1">I build multimodal AI systems that monitor human cognitive state in real time — with a focus on safety-critical environments where cognitive impairment means lives at risk.</p>
+      <p data-i18n="about_p1">I develop multimodal AI architectures that monitor human cognitive state in real time — with a focus on safety-critical environments where cognitive impairment directly translates to lives at risk.</p>
       <p data-i18n="about_p2">My work integrates EEG signal processing, computer vision, and deep learning to design interpretable, deployable architectures that go beyond lab prototypes: systems that run on embedded hardware, handle real-world noise, and produce outputs that can be trusted in high-stakes decisions.</p>
       <p data-i18n="about_p3">I am a researcher at the LIECAR Laboratory and lecturer at the Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), Peru, recognized as a <strong>RENACYT Level V researcher</strong> by CONCYTEC. I serve as a peer reviewer for international scientific publications including <strong>Scientific Reports (Nature Portfolio)</strong> and <strong>ACM Transactions on Intelligent Systems and Technology</strong>.</p>
     </div>
@@ -639,6 +708,37 @@
       <span class="badge">Computer Vision</span>
       <span class="badge" data-i18n="badge5">Safety-Critical Systems</span>
       <span class="badge" data-i18n="badge6">Cognitive Neuroscience</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── RESEARCH VISION ───────────────────────────────────────── -->
+<section id="vision">
+  <div class="section-inner">
+    <div class="section-label" data-i18n="vision_label">Doctoral Direction</div>
+    <div class="section-title" data-i18n="vision_title">Research Vision</div>
+    <div class="vision-block">
+      <div class="vision-quote">
+        <p data-i18n="vision_text">My long-term goal is to develop interpretable multimodal systems that understand human cognitive vulnerability in real-world environments — bridging neuroengineering, deployable AI, and human-machine safety. I aim to establish a research line where physiological sensing, edge computing, and explainability converge to build systems that are not only accurate, but trustworthy enough to be deployed in vehicles, surgical suites, and control rooms.</p>
+      </div>
+      <div class="vision-pillars">
+        <div class="pillar">
+          <div class="pillar-icon">🧠</div>
+          <div class="pillar-label" data-i18n="pillar1">Neuro-ocular sensing</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">⚡</div>
+          <div class="pillar-label" data-i18n="pillar2">Edge AI deployment</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🔍</div>
+          <div class="pillar-label" data-i18n="pillar3">Explainable models</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🛡️</div>
+          <div class="pillar-label" data-i18n="pillar4">Safety-critical systems</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -704,43 +804,51 @@
   <div class="section-inner">
     <div class="section-label" data-i18n="pubs_label">Academic output</div>
     <div class="section-title" data-i18n="pubs_title">Selected Publications</div>
-    <div class="pub-list">
 
-      <div class="pub-card">
+    <!-- Filter tabs -->
+    <div class="pub-filters">
+      <button class="pub-filter active" data-filter="all"   onclick="filterPubs('all')"      data-i18n="filter_all">All</button>
+      <button class="pub-filter"        data-filter="cogni" onclick="filterPubs('cogni')"    data-i18n="filter_cogni">Cognitive Monitoring</button>
+      <button class="pub-filter"        data-filter="cv"    onclick="filterPubs('cv')"       data-i18n="filter_cv">Computer Vision &amp; AI</button>
+    </div>
+
+    <div class="pub-list" id="pub-list">
+
+      <div class="pub-card" data-category="cogni">
         <div>
-          <div class="pub-title"><a href="https://www.mdpi.com/2076-3417/13/13/7849" target="_blank">A CNN-based approach for driver drowsiness detection by real-time eye state identification</a></div>
+          <div class="pub-title"><a href="https://doi.org/10.3390/app13137849" target="_blank">A CNN-based approach for driver drowsiness detection by real-time eye state identification</a></div>
           <div class="pub-meta">R. Florez, F. Palomino-Quispe, RJ Coaquira-Castillo et al. · <em>Applied Sciences</em> 13 (13), 7849 · 2023</div>
         </div>
         <div class="citation-badge">82 <span data-i18n="cit">citations</span></div>
       </div>
 
-      <div class="pub-card">
+      <div class="pub-card" data-category="cogni">
         <div>
-          <div class="pub-title"><a href="https://www.mdpi.com/1424-8220/24/19/6261" target="_blank">A real-time embedded system for driver drowsiness detection based on visual analysis of the eyes and mouth using CNN and mouth aspect ratio</a></div>
+          <div class="pub-title"><a href="https://doi.org/10.3390/s24196261" target="_blank">A real-time embedded system for driver drowsiness detection based on visual analysis of the eyes and mouth using CNN and mouth aspect ratio</a></div>
           <div class="pub-meta">R. Florez, F. Palomino-Quispe, AB Alvarez et al. · <em>Sensors</em> 24 (19), 6261 · 2024</div>
         </div>
         <div class="citation-badge">27 <span data-i18n="cit">citations</span></div>
       </div>
 
-      <div class="pub-card">
+      <div class="pub-card" data-category="cv">
         <div>
-          <div class="pub-title"><a href="https://www.mdpi.com/2076-3417/15/9/5040" target="_blank">Coffee-leaf diseases and pests detection based on YOLO models</a></div>
+          <div class="pub-title"><a href="https://doi.org/10.3390/app15095040" target="_blank">Coffee-leaf diseases and pests detection based on YOLO models</a></div>
           <div class="pub-meta">J. Fragoso, C. Silva, T. Paixao, AB Alvarez, R. Florez et al. · <em>Applied Sciences</em> 15 (9), 5040 · 2025</div>
         </div>
         <div class="citation-badge">14 <span data-i18n="cit">citations</span></div>
       </div>
 
-      <div class="pub-card">
+      <div class="pub-card" data-category="cv">
         <div>
-          <div class="pub-title"><a href="https://online-journals.org/index.php/i-joe/article/view/54439" target="_blank">Illumination-Robust Conjunctival Image Preprocessing for Accurate Segmentation and Anemia Detection Using Deep Learning</a></div>
+          <div class="pub-title"><a href="#" target="_blank">Illumination-Robust Conjunctival Image Preprocessing for Accurate Segmentation and Anemia Detection Using Deep Learning</a></div>
           <div class="pub-meta">JH Fuentes Beingólea, F. Palomino-Quispe, JC Herrera-Levano, R. Florez et al. · <em>iJOE</em> 21 (7) · 2025</div>
         </div>
         <div class="citation-badge">1 <span data-i18n="cit">citation</span></div>
       </div>
 
-      <div class="pub-card">
+      <div class="pub-card" data-category="cv">
         <div>
-          <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/9532881" target="_blank">Low-cost mini humanoid robot mechanical design for mini humanoid robot contest Intercon 2021</a></div>
+          <div class="pub-title"><a href="#" target="_blank">Low-cost mini humanoid robot mechanical design for mini humanoid robot contest Intercon 2021</a></div>
           <div class="pub-meta">R. Vilavita, F. Justo, R. Florez, N. Figueroa · <em>IEEE XXVIII Intercon</em> · 2021</div>
         </div>
         <div class="citation-badge">5 <span data-i18n="cit">citations</span></div>
@@ -778,6 +886,47 @@
         <h4 data-i18n="course4">Electronics Laboratory</h4>
         <p data-i18n="course_level">Undergraduate · Electronic Engineering</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SELECTED ACHIEVEMENTS ─────────────────────────────────── -->
+<section id="achievements">
+  <div class="section-inner">
+    <div class="section-label" data-i18n="ach_label">Recognition</div>
+    <div class="section-title" data-i18n="ach_title">Selected Achievements</div>
+    <div class="ach-grid">
+
+      <div class="ach-card ach-blue">
+        <div class="ach-num">143+</div>
+        <div class="ach-desc" data-i18n="ach1">Total citations — with one paper surpassing 82 citations within 2 years of publication</div>
+      </div>
+
+      <div class="ach-card ach-teal">
+        <div class="ach-num">#1</div>
+        <div class="ach-desc" data-i18n="ach2">Most cited paper on real-time CNN-based eye-state drowsiness detection — 82 citations (Applied Sciences, 2023)</div>
+      </div>
+
+      <div class="ach-card ach-navy">
+        <div class="ach-num">V</div>
+        <div class="ach-desc" data-i18n="ach3">RENACYT Level V researcher — CONCYTEC national recognition of research merit</div>
+      </div>
+
+      <div class="ach-card ach-blue">
+        <div class="ach-num">7+</div>
+        <div class="ach-desc" data-i18n="ach4">Journals as active peer reviewer — including ACM TIST and Scientific Reports (Nature Portfolio)</div>
+      </div>
+
+      <div class="ach-card ach-teal">
+        <div class="ach-num">🏆×3</div>
+        <div class="ach-desc" data-i18n="ach5">1st place in regional/national competitions including First Andean Hackathon (6 countries) and VIII Regional STI Fair</div>
+      </div>
+
+      <div class="ach-card ach-navy">
+        <div class="ach-num">Q1</div>
+        <div class="ach-desc" data-i18n="ach6">Target submission 2026 — multimodal neuro-ocular system paper to high-impact journal</div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -823,8 +972,8 @@
       <div>
         <p class="contact-text" data-i18n="contact_text">I am open to research collaborations, dataset sharing, joint publications, academic exchanges, and PhD opportunities in neuroengineering, human factors AI, or safety-critical systems.</p>
         <div class="contact-items">
-          <a href="mailto:rubendfz2206@gmail.com" class="contact-item">
-            <span class="contact-icon">✉</span>rubendfz2206@gmail.com
+          <a href="/cdn-cgi/l/email-protection#8bf9fee9eee5efedf1b9b9bbbdcbece6eae2e7a5e8e4e6" class="contact-item">
+            <span class="contact-icon">✉</span><span class="__cf_email__" data-cfemail="fb898e999e959f9d81c9c9cbcdbb9c969a9297d5989496">[email&#160;protected]</span>
           </a>
           <a href="https://www.linkedin.com/in/rubendflorezz/" class="contact-item">
             <span class="contact-icon">in</span>linkedin.com/in/rubendflorezz
@@ -861,8 +1010,202 @@
 </footer>
 
 <!-- ── LANGUAGE SYSTEM ──────────────────────────────────────── -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function filterPubs(category) {
+  document.querySelectorAll('.pub-card').forEach(card => {
+    card.classList.toggle('hidden', category !== 'all' && card.dataset.category !== category);
+  });
+  document.querySelectorAll('.pub-filter').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.filter === category);
+  });
+}
+
 const translations = {
+  en: {
+    nav_about:       "About",
+    nav_vision:      "Vision",
+    nav_research:    "Research",
+    nav_pubs:        "Publications",
+    nav_ach:         "Achievements",
+    nav_teaching:    "Teaching",
+    nav_contact:     "Contact",
+    cv_download:     "Download CV",
+    hero_tag:        "Computational Neuroengineering · RENACYT Level V",
+    hero_subtitle:   "AI/ML for Cognitive State Monitoring in Safety-Critical Systems · LIECAR Lab, UNSAAC · Cusco, Peru",
+    metric_citations:"Citations",
+    metric_pubs:     "Publications",
+    metric_reviews:  "Peer Reviews",
+    btn_view_pubs:   "View Publications",
+    about_label:     "About me",
+    about_title:     "Building multimodal AI systems for real-time cognitive state monitoring<br>in safety-critical environments",
+    about_p1:        "I develop multimodal AI architectures that monitor human cognitive state in real time — with a focus on safety-critical environments where cognitive impairment directly translates to lives at risk.",
+    about_p2:        "My work integrates EEG signal processing, computer vision, and deep learning to design interpretable, deployable architectures that go beyond lab prototypes: systems that run on embedded hardware, handle real-world noise, and produce outputs that can be trusted in high-stakes decisions.",
+    about_p3:        "I am a researcher at the LIECAR Laboratory and lecturer at the Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), Peru, recognized as a <strong>RENACYT Level V researcher</strong> by CONCYTEC. I serve as a peer reviewer for international scientific publications including <strong>Scientific Reports (Nature Portfolio)</strong> and <strong>ACM Transactions on Intelligent Systems and Technology</strong>.",
+    badge1:          "EEG Signal Processing",
+    badge2:          "Multimodal AI",
+    badge3:          "Driver Drowsiness Detection",
+    badge4:          "Embedded Deep Learning",
+    badge5:          "Safety-Critical Systems",
+    badge6:          "Cognitive Neuroscience",
+    vision_label:    "Doctoral Direction",
+    vision_title:    "Research Vision",
+    vision_text:     "My long-term goal is to develop interpretable multimodal systems that understand human cognitive vulnerability in real-world environments — bridging neuroengineering, deployable AI, and human-machine safety. I aim to establish a research line where physiological sensing, edge computing, and explainability converge to build systems that are not only accurate, but trustworthy enough to be deployed in vehicles, surgical suites, and control rooms.",
+    pillar1:         "Neuro-ocular sensing",
+    pillar2:         "Edge AI deployment",
+    pillar3:         "Explainable models",
+    pillar4:         "Safety-critical systems",
+    interests_label: "Focus Areas",
+    interests_title: "Research Interests",
+    int1_title:      "Cognitive State Monitoring",
+    int1_desc:       "Real-time detection of drowsiness, fatigue, and mental workload in operators of safety-critical systems such as vehicles, aviation, and industrial control.",
+    int2_title:      "EEG Signal Processing",
+    int2_desc:       "Biomarker extraction, artifact removal, and feature engineering from EEG signals for reliable cognitive state classification under real-world conditions.",
+    int3_title:      "Multimodal AI Fusion",
+    int3_desc:       "Combining EEG, eye-tracking (RGB–NIR cameras), and facial landmark dynamics for robust, redundant cognitive state inference beyond single-modality limits.",
+    int4_title:      "Embedded Deep Learning",
+    int4_desc:       "Deploying CNN and hybrid models on edge platforms (NVIDIA Jetson Nano) for low-latency, on-device inference in real-world applications.",
+    int5_title:      "Interpretable AI for Human Factors",
+    int5_desc:       "Moving beyond black-box models toward systems that are auditable, explainable, and reliable — a critical requirement for high-stakes AI deployment.",
+    research_label:  "Active project",
+    research_title:  "Current Research",
+    research_status: "Active · Targeting Q1 submission 2026",
+    research_h3:     "Multimodal Neuro-Ocular System for<br>Driver Drowsiness Detection",
+    research_p1:     "The leading cause of fatal road accidents is not mechanical failure — it's cognitive impairment behind the wheel. This project develops a real-time monitoring system that detects driver drowsiness and mental fatigue by fusing EEG biomarkers, eye-tracking dynamics via RGB and NIR cameras, and facial landmark modeling.",
+    research_p2:     "Signals are processed through a multimodal deep learning architecture and deployed on an NVIDIA Jetson Nano for real-time, on-vehicle inference. A key focus is interpretability — using attention mechanisms and saliency maps to make model decisions transparent and trustworthy for safety-critical deployment.",
+    pubs_label:      "Academic output",
+    pubs_title:      "Selected Publications",
+    pubs_full_list:  "Full list on",
+    filter_all:      "All",
+    filter_cogni:    "Cognitive Monitoring",
+    filter_cv:       "Computer Vision &amp; AI",
+    cit:             "citations",
+    teaching_label:  "Education",
+    teaching_title:  "Teaching",
+    teaching_sub:    "Universidad Nacional de San Antonio Abad del Cusco (UNSAAC) · School of Electronic Engineering · April 2024 – Present",
+    course1:         "Artificial Intelligence",
+    course2:         "Digital Image Processing",
+    course3:         "Robotics",
+    course4:         "Electronics Laboratory",
+    course_level:    "Undergraduate · Electronic Engineering",
+    ach_label:       "Recognition",
+    ach_title:       "Selected Achievements",
+    ach1:            "Total citations — with one paper surpassing 82 citations within 2 years of publication",
+    ach2:            "Most cited paper on real-time CNN-based eye-state drowsiness detection — 82 citations (Applied Sciences, 2023)",
+    ach3:            "RENACYT Level V researcher — CONCYTEC national recognition of research merit",
+    ach4:            "Journals as active peer reviewer — including ACM TIST and Scientific Reports (Nature Portfolio)",
+    ach5:            "1st place in regional/national competitions including First Andean Hackathon (6 countries) and VIII Regional STI Fair",
+    ach6:            "Target submission 2026 — multimodal neuro-ocular system paper to high-impact journal",
+    review_label:    "Scientific service",
+    review_title:    "Peer Review Activity",
+    review_th1:      "Journal",
+    review_th2:      "Publisher",
+    review_th3:      "Reviews",
+    review_orcid_note:"Verified via ORCID iD:",
+    contact_label:   "Get in touch",
+    contact_title:   "Contact",
+    contact_text:    "I am open to research collaborations, dataset sharing, joint publications, academic exchanges, and PhD opportunities in neuroengineering, human factors AI, or safety-critical systems.",
+    open_title:      "Open to",
+    open1:           "Research collaborations",
+    open2:           "Dataset sharing",
+    open3:           "Joint publications",
+    open4:           "Academic exchanges",
+    open5:           "PhD opportunities in Neuroengineering",
+    open6:           "Industry partnerships (automotive, aviation, health)",
+    footer:          "© 2025 Ruben Dario Florez-Zela · UNSAAC · Cusco, Peru · Built with purpose.",
+  },
+  es: {
+    nav_about:       "Sobre mí",
+    nav_vision:      "Visión",
+    nav_research:    "Investigación",
+    nav_pubs:        "Publicaciones",
+    nav_ach:         "Logros",
+    nav_teaching:    "Docencia",
+    nav_contact:     "Contacto",
+    cv_download:     "Descargar CV",
+    hero_tag:        "Neuroingeniería Computacional · Investigador RENACYT Nivel V",
+    hero_subtitle:   "IA/ML para Monitoreo del Estado Cognitivo en Sistemas de Alta Seguridad · Lab. LIECAR, UNSAAC · Cusco, Perú",
+    metric_citations:"Citas",
+    metric_pubs:     "Publicaciones",
+    metric_reviews:  "Revisiones",
+    btn_view_pubs:   "Ver Publicaciones",
+    about_label:     "Sobre mí",
+    about_title:     "Construyendo sistemas de IA multimodal para monitoreo cognitivo<br>en tiempo real en entornos de alta seguridad",
+    about_p1:        "Desarrollo arquitecturas de IA multimodal que monitorean el estado cognitivo humano en tiempo real, con enfoque en entornos de alta seguridad donde el deterioro cognitivo se traduce directamente en vidas en riesgo.",
+    about_p2:        "Mi trabajo integra procesamiento de señales EEG, visión computacional y aprendizaje profundo para diseñar arquitecturas interpretables y desplegables que van más allá de los prototipos de laboratorio: sistemas que operan en hardware embebido, manejan ruido del mundo real y generan salidas confiables para decisiones críticas.",
+    about_p3:        "Soy investigador en el Laboratorio LIECAR y docente de la Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), Perú, reconocido como <strong>Investigador RENACYT Nivel V</strong> por CONCYTEC. Ejerzo como revisor de publicaciones científicas internacionales incluyendo <strong>Scientific Reports (Nature Portfolio)</strong> y <strong>ACM Transactions on Intelligent Systems and Technology</strong>.",
+    badge1:          "Procesamiento de Señales EEG",
+    badge2:          "IA Multimodal",
+    badge3:          "Detección de Somnolencia",
+    badge4:          "Deep Learning Embebido",
+    badge5:          "Sistemas de Alta Seguridad",
+    badge6:          "Neurociencia Cognitiva",
+    vision_label:    "Dirección Doctoral",
+    vision_title:    "Visión de Investigación",
+    vision_text:     "Mi objetivo a largo plazo es desarrollar sistemas multimodales interpretables que comprendan la vulnerabilidad cognitiva humana en entornos reales — conectando la neuroingeniería, la IA desplegable y la seguridad humano-máquina. Busco establecer una línea de investigación donde la detección fisiológica, la computación en el borde y la explicabilidad converjan para construir sistemas que no solo sean precisos, sino lo suficientemente confiables para desplegarse en vehículos, quirófanos y salas de control.",
+    pillar1:         "Detección neuro-ocular",
+    pillar2:         "IA en el borde (Edge)",
+    pillar3:         "Modelos explicables",
+    pillar4:         "Sistemas de alta seguridad",
+    interests_label: "Áreas de Enfoque",
+    interests_title: "Intereses de Investigación",
+    int1_title:      "Monitoreo del Estado Cognitivo",
+    int1_desc:       "Detección en tiempo real de somnolencia, fatiga y carga mental en operadores de sistemas críticos como vehículos, aviación y control industrial.",
+    int2_title:      "Procesamiento de Señales EEG",
+    int2_desc:       "Extracción de biomarcadores, eliminación de artefactos e ingeniería de características a partir de señales EEG para clasificación confiable del estado cognitivo en condiciones reales.",
+    int3_title:      "Fusión Multimodal de IA",
+    int3_desc:       "Combinación de EEG, seguimiento ocular (cámaras RGB–NIR) y dinámicas de puntos de referencia faciales para inferencia robusta y redundante del estado cognitivo.",
+    int4_title:      "Deep Learning Embebido",
+    int4_desc:       "Despliegue de modelos CNN e híbridos en plataformas de borde (NVIDIA Jetson Nano) para inferencia en dispositivo con baja latencia en aplicaciones reales.",
+    int5_title:      "IA Interpretable para Factores Humanos",
+    int5_desc:       "Avanzar más allá de los modelos de caja negra hacia sistemas auditables, explicables y confiables — requisito crítico para el despliegue de IA en entornos de alto riesgo.",
+    research_label:  "Proyecto Activo",
+    research_title:  "Investigación Actual",
+    research_status: "Activo · Envío objetivo Q1 2026",
+    research_h3:     "Sistema Neuro-Ocular Multimodal para<br>Detección de Somnolencia en Conductores",
+    research_p1:     "La principal causa de accidentes fatales de tránsito no es el fallo mecánico — es el deterioro cognitivo al volante. Este proyecto desarrolla un sistema de monitoreo en tiempo real que detecta somnolencia y fatiga mental fusionando biomarcadores EEG, dinámicas de seguimiento ocular mediante cámaras RGB y NIR, y modelado de puntos de referencia faciales.",
+    research_p2:     "Las señales se procesan mediante una arquitectura de aprendizaje profundo multimodal y se despliegan en un NVIDIA Jetson Nano para inferencia en tiempo real a bordo del vehículo. Un enfoque clave es la interpretabilidad — usando mecanismos de atención y mapas de prominencia para hacer transparentes y confiables las decisiones del modelo en despliegues críticos.",
+    pubs_label:      "Producción Académica",
+    pubs_title:      "Publicaciones Seleccionadas",
+    pubs_full_list:  "Lista completa en",
+    filter_all:      "Todas",
+    filter_cogni:    "Monitoreo Cognitivo",
+    filter_cv:       "Visión Computacional e IA",
+    cit:             "citas",
+    teaching_label:  "Docencia",
+    teaching_title:  "Enseñanza",
+    teaching_sub:    "Universidad Nacional de San Antonio Abad del Cusco (UNSAAC) · Escuela de Ingeniería Electrónica · Abril 2024 – Presente",
+    course1:         "Inteligencia Artificial",
+    course2:         "Procesamiento Digital de Imágenes",
+    course3:         "Robótica",
+    course4:         "Laboratorio de Electrónica",
+    course_level:    "Pregrado · Ingeniería Electrónica",
+    ach_label:       "Reconocimientos",
+    ach_title:       "Logros Destacados",
+    ach1:            "Citas totales — con un artículo que superó 82 citas en 2 años de publicación",
+    ach2:            "Artículo más citado en detección de somnolencia CNN en tiempo real — 82 citas (Applied Sciences, 2023)",
+    ach3:            "Investigador RENACYT Nivel V — reconocimiento nacional CONCYTEC al mérito investigador",
+    ach4:            "Revistas como revisor activo — incluyendo ACM TIST y Scientific Reports (Nature Portfolio)",
+    ach5:            "1er lugar en competencias regionales/nacionales incluyendo la Primera Hackathon Andina (6 países) y la VIII Feria Regional CTI",
+    ach6:            "Envío objetivo 2026 — artículo del sistema neuro-ocular multimodal a revista de alto impacto",
+    review_label:    "Servicio Científico",
+    review_title:    "Actividad como Revisor",
+    review_th1:      "Revista",
+    review_th2:      "Editorial",
+    review_th3:      "Revisiones",
+    review_orcid_note:"Verificado vía ORCID iD:",
+    contact_label:   "Ponerse en contacto",
+    contact_title:   "Contacto",
+    contact_text:    "Estoy abierto a colaboraciones de investigación, intercambio de datos, publicaciones conjuntas, intercambios académicos y oportunidades de doctorado en neuroingeniería, IA para factores humanos o sistemas de alta seguridad.",
+    open_title:      "Disponible para",
+    open1:           "Colaboraciones de investigación",
+    open2:           "Intercambio de datasets",
+    open3:           "Publicaciones conjuntas",
+    open4:           "Intercambios académicos",
+    open5:           "Oportunidades de doctorado en Neuroingeniería",
+    open6:           "Alianzas con la industria (automotriz, aviación, salud)",
+    footer:          "© 2025 Ruben Dario Florez-Zela · UNSAAC · Cusco, Perú · Construido con propósito.",
+  }
+};
   en: {
     nav_about:       "About",
     nav_research:    "Research",
@@ -877,8 +1220,8 @@ const translations = {
     metric_reviews:  "Peer Reviews",
     btn_view_pubs:   "View Publications",
     about_label:     "About me",
-    about_title:     "Building AI that understands<br>the human mind in real time",
-    about_p1:        "I build multimodal AI systems that monitor human cognitive state in real time — with a focus on safety-critical environments where cognitive impairment means lives at risk.",
+    about_title:     "Building multimodal AI systems for real-time cognitive state monitoring<br>in safety-critical environments",
+    about_p1:        "I develop multimodal AI architectures that monitor human cognitive state in real time — with a focus on safety-critical environments where cognitive impairment directly translates to lives at risk.",
     about_p2:        "My work integrates EEG signal processing, computer vision, and deep learning to design interpretable, deployable architectures that go beyond lab prototypes: systems that run on embedded hardware, handle real-world noise, and produce outputs that can be trusted in high-stakes decisions.",
     about_p3:        "I am a researcher at the LIECAR Laboratory and lecturer at the Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), Peru, recognized as a <strong>RENACYT Level V researcher</strong> by CONCYTEC. I serve as a peer reviewer for international scientific publications including <strong>Scientific Reports (Nature Portfolio)</strong> and <strong>ACM Transactions on Intelligent Systems and Technology</strong>.",
     badge1:          "EEG Signal Processing",
@@ -949,8 +1292,8 @@ const translations = {
     metric_reviews:  "Revisiones",
     btn_view_pubs:   "Ver Publicaciones",
     about_label:     "Sobre mí",
-    about_title:     "Construyendo IA que comprende<br>la mente humana en tiempo real",
-    about_p1:        "Desarrollo sistemas de IA multimodal que monitorean el estado cognitivo humano en tiempo real, con enfoque en entornos de alta seguridad donde el deterioro cognitivo pone vidas en riesgo.",
+    about_title:     "Construyendo sistemas de IA multimodal para monitoreo cognitivo<br>en tiempo real en entornos de alta seguridad",
+    about_p1:        "Desarrollo arquitecturas de IA multimodal que monitorean el estado cognitivo humano en tiempo real, con enfoque en entornos de alta seguridad donde el deterioro cognitivo se traduce directamente en vidas en riesgo.",
     about_p2:        "Mi trabajo integra procesamiento de señales EEG, visión computacional y aprendizaje profundo para diseñar arquitecturas interpretables y desplegables que van más allá de los prototipos de laboratorio: sistemas que operan en hardware embebido, manejan ruido del mundo real y generan salidas confiables para decisiones críticas.",
     about_p3:        "Soy investigador en el Laboratorio LIECAR y docente de la Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), Perú, reconocido como <strong>Investigador RENACYT Nivel V</strong> por CONCYTEC. Ejerzo como revisor de publicaciones científicas internacionales incluyendo <strong>Scientific Reports (Nature Portfolio)</strong> y <strong>ACM Transactions on Intelligent Systems and Technology</strong>.",
     badge1:          "Procesamiento de Señales EEG",
@@ -1034,8 +1377,6 @@ function setLang(lang) {
   // Update html lang attribute
   document.documentElement.lang = lang;
 }
-
-// Init — no action needed, EN is default
 </script>
 
 </body>
