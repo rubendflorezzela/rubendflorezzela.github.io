@@ -684,8 +684,8 @@
       </a>
 
       <a href="#contact"     class="btn-outline" data-i18n="nav_contact">Contact</a>
-      <a href="www.linkedin.com/in/rubenflorez" class="btn-outline">LinkedIn</a>
-      <a href="https://orcid.org/0000-0002-9833-0213"      class="btn-outline">ORCID</a>
+      <a href="https://www.linkedin.com/in/rubenflorez/" class="btn-outline" target="_blank">LinkedIn</a>
+      <a href="https://orcid.org/0000-0002-9833-0213" class="btn-outline" target="_blank">ORCID</a>
     </div>
   </div>
 </div>
@@ -809,7 +809,7 @@
     <div class="pub-filters">
       <button class="pub-filter active" data-filter="all"   onclick="filterPubs('all')"      data-i18n="filter_all">All</button>
       <button class="pub-filter"        data-filter="cogni" onclick="filterPubs('cogni')"    data-i18n="filter_cogni">Cognitive Monitoring</button>
-      <button class="pub-filter"        data-filter="cv"    onclick="filterPubs('cv')"       data-i18n="filter_cv">Computer Vision &amp; AI</button>
+      <button class="pub-filter"        data-filter="cv"    onclick="filterPubs('cv')"       data-i18n="filter_cv">Computer Vision & AI</button>
     </div>
 
     <div class="pub-list" id="pub-list">
@@ -857,8 +857,8 @@
     </div>
     <p style="margin-top:1.5rem; font-size:0.82rem; color:var(--muted);">
       <span data-i18n="pubs_full_list">Full list on</span>
-      <a href="https://scholar.google.com/citations?user=Xf8JgfsAAAAJ&hl" style="color:var(--accent);">Google Scholar</a> ·
-      <a href="https://www.researchgate.net/profile/Ruben-Florez-Zela" style="color:var(--accent);">ResearchGate</a>
+      <a href="https://scholar.google.com/citations?user=Xf8JgfsAAAAJ&hl" style="color:var(--accent);" target="_blank">Google Scholar</a> ·
+      <a href="https://www.researchgate.net/profile/Ruben-Florez-Zela" style="color:var(--accent);" target="_blank">ResearchGate</a>
     </p>
   </div>
 </section>
@@ -958,7 +958,7 @@
     </table>
     <p style="margin-top:1rem; font-size:0.78rem; color:var(--muted);">
       <span data-i18n="review_orcid_note">Verified via ORCID iD:</span>
-      <a href="https://orcid.org/0000-0002-9833-0213" style="color:var(--accent); font-family:monospace;">0000-0002-9833-0213</a>
+      <a href="https://orcid.org/0000-0002-9833-0213" style="color:var(--accent); font-family:monospace;" target="_blank">0000-0002-9833-0213</a>
     </p>
   </div>
 </section>
@@ -972,19 +972,19 @@
       <div>
         <p class="contact-text" data-i18n="contact_text">I am open to research collaborations, dataset sharing, joint publications, academic exchanges, and PhD opportunities in neuroengineering, human factors AI, or safety-critical systems.</p>
         <div class="contact-items">
-          <a href="rubendfz2206@gmail.com" class="contact-item">
-            <span class="contact-icon">✉</span><span class="__cf_email__" data-cfemail="fb898e999e959f9d81c9c9cbcdbb9c969a9297d5989496">[email&#160;protected]</span>
+          <a href="mailto:rubendfz2206@gmail.com" class="contact-item">
+            <span class="contact-icon">✉</span>rubendfz2206@gmail.com
           </a>
-          <a href="www.linkedin.com/in/rubenflorez" class="contact-item">
-            <span class="contact-icon">in</span>linkedin.com/in/rubendflorezz
+          <a href="https://www.linkedin.com/in/rubenflorez/" class="contact-item" target="_blank">
+            <span class="contact-icon">in</span>linkedin.com/in/rubenflorez
           </a>
-          <a href="https://orcid.org/0000-0002-9833-0213" class="contact-item">
+          <a href="https://orcid.org/0000-0002-9833-0213" class="contact-item" target="_blank">
             <span class="contact-icon">ID</span>ORCID 0000-0002-9833-0213
           </a>
-          <a href="https://scholar.google.com/citations?user=Xf8JgfsAAAAJ&hl" class="contact-item">
+          <a href="https://scholar.google.com/citations?user=Xf8JgfsAAAAJ&hl" class="contact-item" target="_blank">
             <span class="contact-icon">GS</span>Google Scholar
           </a>
-          <a href="https://www.researchgate.net/profile/Ruben-Florez-Zela" class="contact-item">
+          <a href="https://www.researchgate.net/profile/Ruben-Florez-Zela" class="contact-item" target="_blank">
             <span class="contact-icon">RG</span>ResearchGate
           </a>
         </div>
@@ -1010,13 +1010,26 @@
 </footer>
 
 <!-- ── LANGUAGE SYSTEM ──────────────────────────────────────── -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function filterPubs(category) {
   document.querySelectorAll('.pub-card').forEach(card => {
-    card.classList.toggle('hidden', category !== 'all' && card.dataset.category !== category);
+    if (category === 'all') {
+      card.classList.remove('hidden');
+    } else {
+      if (card.dataset.category === category) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    }
   });
+  
   document.querySelectorAll('.pub-filter').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.filter === category);
+    if (btn.dataset.filter === category) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
   });
 }
 
@@ -1077,7 +1090,7 @@ const translations = {
     pubs_full_list:  "Full list on",
     filter_all:      "All",
     filter_cogni:    "Cognitive Monitoring",
-    filter_cv:       "Computer Vision &amp; AI",
+    filter_cv:       "Computer Vision & AI",
     cit:             "citations",
     teaching_label:  "Education",
     teaching_title:  "Teaching",
@@ -1206,151 +1219,6 @@ const translations = {
     footer:          "© 2025 Ruben Dario Florez-Zela · UNSAAC · Cusco, Perú · Construido con propósito.",
   }
 };
-  en: {
-    nav_about:       "About",
-    nav_research:    "Research",
-    nav_pubs:        "Publications",
-    nav_teaching:    "Teaching",
-    nav_contact:     "Contact",
-    cv_download:     "Download CV",
-    hero_tag:        "Computational Neuroengineering · RENACYT Level V",
-    hero_subtitle:   "AI/ML for Cognitive State Monitoring in Safety-Critical Systems · LIECAR Lab, UNSAAC · Cusco, Peru",
-    metric_citations:"Citations",
-    metric_pubs:     "Publications",
-    metric_reviews:  "Peer Reviews",
-    btn_view_pubs:   "View Publications",
-    about_label:     "About me",
-    about_title:     "Building multimodal AI systems for real-time cognitive state monitoring<br>in safety-critical environments",
-    about_p1:        "I develop multimodal AI architectures that monitor human cognitive state in real time — with a focus on safety-critical environments where cognitive impairment directly translates to lives at risk.",
-    about_p2:        "My work integrates EEG signal processing, computer vision, and deep learning to design interpretable, deployable architectures that go beyond lab prototypes: systems that run on embedded hardware, handle real-world noise, and produce outputs that can be trusted in high-stakes decisions.",
-    about_p3:        "I am a researcher at the LIECAR Laboratory and lecturer at the Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), Peru, recognized as a <strong>RENACYT Level V researcher</strong> by CONCYTEC. I serve as a peer reviewer for international scientific publications including <strong>Scientific Reports (Nature Portfolio)</strong> and <strong>ACM Transactions on Intelligent Systems and Technology</strong>.",
-    badge1:          "EEG Signal Processing",
-    badge2:          "Multimodal AI",
-    badge3:          "Driver Drowsiness Detection",
-    badge4:          "Embedded Deep Learning",
-    badge5:          "Safety-Critical Systems",
-    badge6:          "Cognitive Neuroscience",
-    interests_label: "Focus Areas",
-    interests_title: "Research Interests",
-    int1_title:      "Cognitive State Monitoring",
-    int1_desc:       "Real-time detection of drowsiness, fatigue, and mental workload in operators of safety-critical systems such as vehicles, aviation, and industrial control.",
-    int2_title:      "EEG Signal Processing",
-    int2_desc:       "Biomarker extraction, artifact removal, and feature engineering from EEG signals for reliable cognitive state classification under real-world conditions.",
-    int3_title:      "Multimodal AI Fusion",
-    int3_desc:       "Combining EEG, eye-tracking (RGB–NIR cameras), and facial landmark dynamics for robust, redundant cognitive state inference beyond single-modality limits.",
-    int4_title:      "Embedded Deep Learning",
-    int4_desc:       "Deploying CNN and hybrid models on edge platforms (NVIDIA Jetson Nano) for low-latency, on-device inference in real-world applications.",
-    int5_title:      "Interpretable AI for Human Factors",
-    int5_desc:       "Moving beyond black-box models toward systems that are auditable, explainable, and reliable — a critical requirement for high-stakes AI deployment.",
-    research_label:  "Active project",
-    research_title:  "Current Research",
-    research_status: "Active · Targeting Q1 submission 2026",
-    research_h3:     "Multimodal Neuro-Ocular System for<br>Driver Drowsiness Detection",
-    research_p1:     "The leading cause of fatal road accidents is not mechanical failure — it's cognitive impairment behind the wheel. This project develops a real-time monitoring system that detects driver drowsiness and mental fatigue by fusing EEG biomarkers, eye-tracking dynamics via RGB and NIR cameras, and facial landmark modeling.",
-    research_p2:     "Signals are processed through a multimodal deep learning architecture and deployed on an NVIDIA Jetson Nano for real-time, on-vehicle inference. A key focus is interpretability — using attention mechanisms and saliency maps to make model decisions transparent and trustworthy for safety-critical deployment.",
-    pubs_label:      "Academic output",
-    pubs_title:      "Selected Publications",
-    pubs_full_list:  "Full list on",
-    cit:             "citations",
-    teaching_label:  "Education",
-    teaching_title:  "Teaching",
-    teaching_sub:    "Universidad Nacional de San Antonio Abad del Cusco (UNSAAC) · School of Electronic Engineering · April 2024 – Present",
-    course1:         "Artificial Intelligence",
-    course2:         "Digital Image Processing",
-    course3:         "Robotics",
-    course4:         "Electronics Laboratory",
-    course_level:    "Undergraduate · Electronic Engineering",
-    review_label:    "Scientific service",
-    review_title:    "Peer Review Activity",
-    review_th1:      "Journal",
-    review_th2:      "Publisher",
-    review_th3:      "Reviews",
-    review_orcid_note:"Verified via ORCID iD:",
-    contact_label:   "Get in touch",
-    contact_title:   "Contact",
-    contact_text:    "I am open to research collaborations, dataset sharing, joint publications, academic exchanges, and PhD opportunities in neuroengineering, human factors AI, or safety-critical systems.",
-    open_title:      "Open to",
-    open1:           "Research collaborations",
-    open2:           "Dataset sharing",
-    open3:           "Joint publications",
-    open4:           "Academic exchanges",
-    open5:           "PhD opportunities in Neuroengineering",
-    open6:           "Industry partnerships (automotive, aviation, health)",
-    footer:          "© 2025 Ruben Dario Florez-Zela · UNSAAC · Cusco, Peru · Built with purpose.",
-  },
-  es: {
-    nav_about:       "Sobre mí",
-    nav_research:    "Investigación",
-    nav_pubs:        "Publicaciones",
-    nav_teaching:    "Docencia",
-    nav_contact:     "Contacto",
-    cv_download:     "Descargar CV",
-    hero_tag:        "Neuroingeniería Computacional · Investigador RENACYT Nivel V",
-    hero_subtitle:   "IA/ML para Monitoreo del Estado Cognitivo en Sistemas de Alta Seguridad · Lab. LIECAR, UNSAAC · Cusco, Perú",
-    metric_citations:"Citas",
-    metric_pubs:     "Publicaciones",
-    metric_reviews:  "Revisiones",
-    btn_view_pubs:   "Ver Publicaciones",
-    about_label:     "Sobre mí",
-    about_title:     "Construyendo sistemas de IA multimodal para monitoreo cognitivo<br>en tiempo real en entornos de alta seguridad",
-    about_p1:        "Desarrollo arquitecturas de IA multimodal que monitorean el estado cognitivo humano en tiempo real, con enfoque en entornos de alta seguridad donde el deterioro cognitivo se traduce directamente en vidas en riesgo.",
-    about_p2:        "Mi trabajo integra procesamiento de señales EEG, visión computacional y aprendizaje profundo para diseñar arquitecturas interpretables y desplegables que van más allá de los prototipos de laboratorio: sistemas que operan en hardware embebido, manejan ruido del mundo real y generan salidas confiables para decisiones críticas.",
-    about_p3:        "Soy investigador en el Laboratorio LIECAR y docente de la Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), Perú, reconocido como <strong>Investigador RENACYT Nivel V</strong> por CONCYTEC. Ejerzo como revisor de publicaciones científicas internacionales incluyendo <strong>Scientific Reports (Nature Portfolio)</strong> y <strong>ACM Transactions on Intelligent Systems and Technology</strong>.",
-    badge1:          "Procesamiento de Señales EEG",
-    badge2:          "IA Multimodal",
-    badge3:          "Detección de Somnolencia",
-    badge4:          "Deep Learning Embebido",
-    badge5:          "Sistemas de Alta Seguridad",
-    badge6:          "Neurociencia Cognitiva",
-    interests_label: "Áreas de Enfoque",
-    interests_title: "Intereses de Investigación",
-    int1_title:      "Monitoreo del Estado Cognitivo",
-    int1_desc:       "Detección en tiempo real de somnolencia, fatiga y carga mental en operadores de sistemas críticos como vehículos, aviación y control industrial.",
-    int2_title:      "Procesamiento de Señales EEG",
-    int2_desc:       "Extracción de biomarcadores, eliminación de artefactos e ingeniería de características a partir de señales EEG para clasificación confiable del estado cognitivo en condiciones reales.",
-    int3_title:      "Fusión Multimodal de IA",
-    int3_desc:       "Combinación de EEG, seguimiento ocular (cámaras RGB–NIR) y dinámicas de puntos de referencia faciales para inferencia robusta y redundante del estado cognitivo.",
-    int4_title:      "Deep Learning Embebido",
-    int4_desc:       "Despliegue de modelos CNN e híbridos en plataformas de borde (NVIDIA Jetson Nano) para inferencia en dispositivo con baja latencia en aplicaciones reales.",
-    int5_title:      "IA Interpretable para Factores Humanos",
-    int5_desc:       "Avanzar más allá de los modelos de caja negra hacia sistemas auditables, explicables y confiables — requisito crítico para el despliegue de IA en entornos de alto riesgo.",
-    research_label:  "Proyecto Activo",
-    research_title:  "Investigación Actual",
-    research_status: "Activo · Envío objetivo Q1 2026",
-    research_h3:     "Sistema Neuro-Ocular Multimodal para<br>Detección de Somnolencia en Conductores",
-    research_p1:     "La principal causa de accidentes fatales de tránsito no es el fallo mecánico — es el deterioro cognitivo al volante. Este proyecto desarrolla un sistema de monitoreo en tiempo real que detecta somnolencia y fatiga mental fusionando biomarcadores EEG, dinámicas de seguimiento ocular mediante cámaras RGB y NIR, y modelado de puntos de referencia faciales.",
-    research_p2:     "Las señales se procesan mediante una arquitectura de aprendizaje profundo multimodal y se despliegan en un NVIDIA Jetson Nano para inferencia en tiempo real a bordo del vehículo. Un enfoque clave es la interpretabilidad — usando mecanismos de atención y mapas de prominencia para hacer transparentes y confiables las decisiones del modelo en despliegues críticos.",
-    pubs_label:      "Producción Académica",
-    pubs_title:      "Publicaciones Seleccionadas",
-    pubs_full_list:  "Lista completa en",
-    cit:             "citas",
-    teaching_label:  "Docencia",
-    teaching_title:  "Enseñanza",
-    teaching_sub:    "Universidad Nacional de San Antonio Abad del Cusco (UNSAAC) · Escuela de Ingeniería Electrónica · Abril 2024 – Presente",
-    course1:         "Inteligencia Artificial",
-    course2:         "Procesamiento Digital de Imágenes",
-    course3:         "Robótica",
-    course4:         "Laboratorio de Electrónica",
-    course_level:    "Pregrado · Ingeniería Electrónica",
-    review_label:    "Servicio Científico",
-    review_title:    "Actividad como Revisor",
-    review_th1:      "Revista",
-    review_th2:      "Editorial",
-    review_th3:      "Revisiones",
-    review_orcid_note:"Verificado vía ORCID iD:",
-    contact_label:   "Ponerse en contacto",
-    contact_title:   "Contacto",
-    contact_text:    "Estoy abierto a colaboraciones de investigación, intercambio de datos, publicaciones conjuntas, intercambios académicos y oportunidades de doctorado en neuroingeniería, IA para factores humanos o sistemas de alta seguridad.",
-    open_title:      "Disponible para",
-    open1:           "Colaboraciones de investigación",
-    open2:           "Intercambio de datasets",
-    open3:           "Publicaciones conjuntas",
-    open4:           "Intercambios académicos",
-    open5:           "Oportunidades de doctorado en Neuroingeniería",
-    open6:           "Alianzas con la industria (automotriz, aviación, salud)",
-    footer:          "© 2025 Ruben Dario Florez-Zela · UNSAAC · Cusco, Perú · Construido con propósito.",
-  }
-};
 
 let currentLang = 'en';
 
@@ -1377,6 +1245,11 @@ function setLang(lang) {
   // Update html lang attribute
   document.documentElement.lang = lang;
 }
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+  setLang('en');
+});
 </script>
 
 </body>
