@@ -27,7 +27,7 @@
     "badge6": "Cognitive Neuroscience",
     "vision_label": "Vision",
     "vision_title": "Research Vision",
-    "vision_text": "My long-term goal is to develop interpretable multimodal systems that understand human cognitive vulnerability in real-world environments — bridging neuroengineering, deployable AI, and human-machine safety. I aim to establish a research line where physiological sensing, edge computing, and explainability converge to build systems that are not only accurate, but trustworthy enough to be deployed in vehicles, surgical suites, and control rooms.",
+    "vision_text": "My long-term goal is to develop interpretable multimodal systems that understand human cognitive vulnerability in real-world environments, bridging neuroengineering, deployable AI, and human-machine safety. I aim to establish a research line where physiological sensing, edge computing, and explainability converge to build systems that are not only accurate, but trustworthy enough to be deployed in vehicles, surgical suites, and control rooms.",
     "pillar1": "Neuro-ocular sensing",
     "pillar2": "Edge AI deployment",
     "pillar3": "Explainable models",
