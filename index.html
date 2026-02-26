@@ -53,17 +53,18 @@
   <div class="hero-grid"></div>
   <div class="hero-inner">
     
-    <!-- Foto circular profesional -->
+    <!-- Foto circular profesional - Versión PhD -->
     <div class="profile-container">
       <div class="profile-ring">
-        <img src="assets/images/profile.jpg" alt="Ruben Dario Florez-Zela" class="profile-img">
+        <div class="profile-inner-ring">
+          <img src="assets/images/profile.jpg" alt="Ruben Dario Florez-Zela" class="profile-img">
+        </div>
       </div>
-      <div class="renacyt-badge">RENACYT V</div>
     </div>
     
     <!-- Contenido del hero -->
     <div class="hero-content">
-      <span class="hero-tag" data-i18n="hero_tag">Computational Neuroengineering · RENACYT Level V</span>
+      <span class="hero-tag" data-i18n="hero_tag">Computational Neuroengineering</span>
       <h1>Ruben Dario<br><span>Florez-Zela</span></h1>
       <p class="hero-subtitle" data-i18n="hero_subtitle">AI/ML for Cognitive State Monitoring in Safety-Critical Systems · LIECAR Lab, UNSAAC · Cusco, Peru</p>
       
@@ -105,7 +106,7 @@
 <!-- ── ABOUT ────────────────────────────────────────────────── -->
 <section id="about">
   <div class="section-inner">
-    <div class="section-label" data-i18n="about_label">About me</div>
+    <div class="section-label" data-i18n="about_label">About</div>
     <div class="section-title" data-i18n="about_title">Building multimodal AI systems for real-time cognitive state monitoring in safety-critical environments</div>
     <div class="about-text">
       <p data-i18n="about_p1">I develop multimodal AI architectures that monitor human cognitive state in real time — with a focus on safety-critical environments where cognitive impairment directly translates to lives at risk.</p>
@@ -127,7 +128,7 @@
 <!-- ── RESEARCH VISION ───────────────────────────────────────── -->
 <section id="vision">
   <div class="section-inner">
-    <div class="section-label" data-i18n="vision_label">Doctoral Direction</div>
+    <div class="section-label" data-i18n="vision_label">Vision</div>
     <div class="section-title" data-i18n="vision_title">Research Vision</div>
     <div class="vision-block">
       <div class="vision-quote">
@@ -188,14 +189,14 @@
 <!-- ── CURRENT RESEARCH ─────────────────────────────────────── -->
 <section id="research">
   <div class="section-inner">
-    <div class="section-label" data-i18n="research_label">Active project</div>
+    <div class="section-label" data-i18n="research_label">Active Project</div>
     <div class="section-title" data-i18n="research_title">Current Research</div>
     <div class="research-box">
       <div class="status-pill">
         <span class="status-dot"></span>
-        <span data-i18n="research_status">Active · Targeting Q1 submission 2026</span>
+        <span data-i18n="research_status">Active · Targeting Q1 2026</span>
       </div>
-      <h3 data-i18n="research_h3">Multimodal Neuro-Ocular System for<br>Driver Drowsiness Detection</h3>
+      <h3 data-i18n="research_h3">Multimodal Neuro-Ocular System for Driver Drowsiness Detection</h3>
       <p data-i18n="research_p1">The leading cause of fatal road accidents is not mechanical failure — it's cognitive impairment behind the wheel. This project develops a real-time monitoring system that detects driver drowsiness and mental fatigue by fusing EEG biomarkers, eye-tracking dynamics via RGB and NIR cameras, and facial landmark modeling.</p>
       <p data-i18n="research_p2">Signals are processed through a multimodal deep learning architecture and deployed on an NVIDIA Jetson Nano for real-time, on-vehicle inference. A key focus is interpretability — using attention mechanisms and saliency maps to make model decisions transparent and trustworthy for safety-critical deployment.</p>
       <div class="signal-tags">
@@ -205,13 +206,12 @@
         <span class="signal-tag">CNN Fusion</span>
         <span class="signal-tag">Jetson Nano</span>
         <span class="signal-tag">Attention Mechanisms</span>
-        <span class="signal-tag">Dataset Benchmark</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── RESEARCH DEMOS CON 4 GIFS ───────────────────────────── -->
+<!-- ── RESEARCH DEMOS CON 4 GIFS (SIN BADGES) ───────────────── -->
 <section id="demos" class="demos-section">
   <div class="section-inner">
     <div class="section-label" data-i18n="demos_label">Live Demos</div>
@@ -221,21 +221,20 @@
       
       <!-- PAPER 1: CNN (2 GIFs) -->
       <div class="paper-divider">
-        <h3>CNN-based Driver Drowsiness Detection <span>· 82 citas</span></h3>
+        <h3>CNN-based Driver Drowsiness Detection · <span>82 citations</span></h3>
       </div>
       
-      <!-- GIF 1: NITYMED Dataset -->
+      <!-- GIF 1 -->
       <div class="demo-card">
         <div class="demo-gif-container">
-          <img src="assets/gifs/1.gif" alt="NITYMED dataset test" loading="lazy">
-          <div class="demo-badge dataset">📊 NITYMED Dataset</div>
+          <img src="assets/gifs/1.gif" alt="CNN model evaluation on NITYMED dataset" loading="lazy">
         </div>
         <div class="demo-content">
           <div class="demo-header">
-            <h4 data-i18n="demo1_gif1_title">Prueba en Dataset NITYMED</h4>
-            <span class="citation-pill">96.3% acc</span>
+            <h4 data-i18n="demo1_gif1_title">NITYMED Dataset Evaluation</h4>
+            <span class="citation-pill">96.3% accuracy</span>
           </div>
-          <p data-i18n="demo1_gif1_desc">Evaluación del modelo CNN en dataset público. Detección de ojos cerrados con alta precisión en condiciones controladas.</p>
+          <p data-i18n="demo1_gif1_desc">CNN model evaluation on public NITYMED dataset. Eye closure detection with 96.3% accuracy in controlled conditions.</p>
           <div class="demo-tags">
             <span class="demo-tag">TensorFlow</span>
             <span class="demo-tag">OpenCV</span>
@@ -244,18 +243,17 @@
         </div>
       </div>
       
-      <!-- GIF 2: Prueba Real -->
+      <!-- GIF 2 -->
       <div class="demo-card">
         <div class="demo-gif-container">
-          <img src="assets/gifs/2.gif" alt="Real-world test" loading="lazy">
-          <div class="demo-badge real">🌍 Entorno Real</div>
+          <img src="assets/gifs/2.gif" alt="Real-world validation test" loading="lazy">
         </div>
         <div class="demo-content">
           <div class="demo-header">
-            <h4 data-i18n="demo1_gif2_title">Prueba en Entorno Real</h4>
+            <h4 data-i18n="demo1_gif2_title">Real-world Validation</h4>
             <span class="citation-pill">30 FPS</span>
           </div>
-          <p data-i18n="demo1_gif2_desc">Validación en condiciones reales de iluminación. Detección robusta con variaciones de luz y movimiento.</p>
+          <p data-i18n="demo1_gif2_desc">Validation under real lighting conditions. Robust detection at 30 FPS with varying illumination and head movements.</p>
           <div class="demo-tags">
             <span class="demo-tag">Real-time</span>
             <span class="demo-tag">Robust</span>
@@ -266,21 +264,20 @@
       
       <!-- PAPER 2: Jetson Nano (2 GIFs) -->
       <div class="paper-divider">
-        <h3>Embedded System on NVIDIA Jetson Nano <span>· 27 citas</span></h3>
+        <h3>Embedded System on NVIDIA Jetson Nano · <span>27 citations</span></h3>
       </div>
       
-      <!-- GIF 3: Somnolencia Visual -->
+      <!-- GIF 3 -->
       <div class="demo-card">
         <div class="demo-gif-container">
-          <img src="assets/gifs/3.gif" alt="Visual drowsiness detection" loading="lazy">
-          <div class="demo-badge drowsy">😴 Somnolencia</div>
+          <img src="assets/gifs/3.gif" alt="Visual drowsiness detection on Jetson Nano" loading="lazy">
         </div>
         <div class="demo-content">
           <div class="demo-header">
-            <h4 data-i18n="demo2_gif1_title">Detección Visual de Somnolencia</h4>
+            <h4 data-i18n="demo2_gif1_title">Visual Drowsiness Detection</h4>
             <span class="citation-pill">< 15ms</span>
           </div>
-          <p data-i18n="demo2_gif1_desc">Análisis de ojos en tiempo real en NVIDIA Jetson Nano. Detección de micro-sueños con alertas visuales.</p>
+          <p data-i18n="demo2_gif1_desc">Real-time eye analysis on NVIDIA Jetson Nano. Micro-sleep detection with visual alerts at <15ms latency.</p>
           <div class="demo-tags">
             <span class="demo-tag">Jetson Nano</span>
             <span class="demo-tag">TensorRT</span>
@@ -289,18 +286,17 @@
         </div>
       </div>
       
-      <!-- GIF 4: Bostezo -->
+      <!-- GIF 4 -->
       <div class="demo-card">
         <div class="demo-gif-container">
-          <img src="assets/gifs/4.gif" alt="Yawn detection" loading="lazy">
-          <div class="demo-badge yawn">😮 Bostezo</div>
+          <img src="assets/gifs/4.gif" alt="Yawn detection using MAR" loading="lazy">
         </div>
         <div class="demo-content">
           <div class="demo-header">
-            <h4 data-i18n="demo2_gif2_title">Detección de Bostezos (MAR)</h4>
+            <h4 data-i18n="demo2_gif2_title">Yawn Detection (MAR)</h4>
             <span class="citation-pill">MAR</span>
           </div>
-          <p data-i18n="demo2_gif2_desc">Análisis de apertura bucal con Mouth Aspect Ratio (MAR) para detección de fatiga en tiempo real.</p>
+          <p data-i18n="demo2_gif2_desc">Mouth Aspect Ratio (MAR) analysis for real-time fatigue detection. Integrated with facial landmark tracking.</p>
           <div class="demo-tags">
             <span class="demo-tag">MAR</span>
             <span class="demo-tag">Facial landmarks</span>
@@ -316,17 +312,16 @@
 <!-- ── PUBLICATIONS ─────────────────────────────────────────── -->
 <section id="publications">
   <div class="section-inner">
-    <div class="section-label" data-i18n="pubs_label">Academic output</div>
+    <div class="section-label" data-i18n="pubs_label">Publications</div>
     <div class="section-title" data-i18n="pubs_title">Selected Publications</div>
 
     <div class="pub-filters">
       <button class="pub-filter active" data-filter="all" onclick="filterPubs('all')" data-i18n="filter_all">All</button>
       <button class="pub-filter" data-filter="cogni" onclick="filterPubs('cogni')" data-i18n="filter_cogni">Cognitive Monitoring</button>
-      <button class="pub-filter" data-filter="cv" onclick="filterPubs('cv')" data-i18n="filter_cv">Computer Vision & AI</button>
+      <button class="pub-filter" data-filter="cv" onclick="filterPubs('cv')" data-i18n="filter_cv">Computer Vision</button>
     </div>
 
     <div class="pub-list" id="pub-list">
-      <!-- Tus publicaciones actuales -->
       <div class="pub-card" data-category="cogni">
         <div>
           <div class="pub-title"><a href="https://doi.org/10.3390/app13137849" target="_blank">A CNN-based approach for driver drowsiness detection by real-time eye state identification</a></div>
@@ -356,7 +351,7 @@
           <div class="pub-title"><a href="https://doi.org/10.3991/ijoe.v21i07.54439" target="_blank">Illumination-Robust Conjunctival Image Preprocessing for Accurate Segmentation and Anemia Detection Using Deep Learning</a></div>
           <div class="pub-meta">JH Fuentes Beingólea, F. Palomino-Quispe, JC Herrera-Levano, R. Florez et al. · <em>iJOE</em> 21 (7) · 2025</div>
         </div>
-        <div class="citation-badge">1 <span data-i18n="cit">citations</span></div>
+        <div class="citation-badge">1 <span data-i18n="cit">citation</span></div>
       </div>
 
       <div class="pub-card" data-category="cv">
@@ -379,8 +374,8 @@
 <!-- ── TEACHING ─────────────────────────────────────────────── -->
 <section id="teaching">
   <div class="section-inner">
-    <div class="section-label" data-i18n="teaching_label">Education</div>
-    <div class="section-title" data-i18n="teaching_title">Teaching</div>
+    <div class="section-label" data-i18n="teaching_label">Teaching</div>
+    <div class="section-title" data-i18n="teaching_title">Teaching Experience</div>
     <p class="teaching-sub" data-i18n="teaching_sub">Universidad Nacional de San Antonio Abad del Cusco (UNSAAC) · School of Electronic Engineering · April 2024 – Present</p>
     <div class="teaching-grid">
       <div class="course-card">
@@ -406,32 +401,32 @@
 <!-- ── SELECTED ACHIEVEMENTS ─────────────────────────────────── -->
 <section id="achievements">
   <div class="section-inner">
-    <div class="section-label" data-i18n="ach_label">Recognition</div>
+    <div class="section-label" data-i18n="ach_label">Achievements</div>
     <div class="section-title" data-i18n="ach_title">Selected Achievements</div>
     <div class="ach-grid">
       <div class="ach-card ach-blue">
         <div class="ach-num">143+</div>
-        <div class="ach-desc" data-i18n="ach1">Total citations — with one paper surpassing 82 citations within 2 years of publication</div>
+        <div class="ach-desc" data-i18n="ach1">Total citations — one paper surpassing 82 citations within 2 years</div>
       </div>
       <div class="ach-card ach-teal">
         <div class="ach-num">#1</div>
-        <div class="ach-desc" data-i18n="ach2">Most cited paper on real-time CNN-based eye-state drowsiness detection — 82 citations (Applied Sciences, 2023)</div>
+        <div class="ach-desc" data-i18n="ach2">Most cited paper on real-time CNN-based eye-state drowsiness detection — 82 citations</div>
       </div>
       <div class="ach-card ach-navy">
         <div class="ach-num">V</div>
-        <div class="ach-desc" data-i18n="ach3">RENACYT Level V researcher — CONCYTEC national recognition of research merit</div>
+        <div class="ach-desc" data-i18n="ach3">RENACYT Level V researcher — CONCYTEC national recognition</div>
       </div>
       <div class="ach-card ach-blue">
         <div class="ach-num">7+</div>
-        <div class="ach-desc" data-i18n="ach4">Journals as active peer reviewer — including ACM TIST and Scientific Reports (Nature Portfolio)</div>
+        <div class="ach-desc" data-i18n="ach4">Active peer reviewer for international journals including ACM TIST and Scientific Reports</div>
       </div>
       <div class="ach-card ach-teal">
         <div class="ach-num">🏆×3</div>
-        <div class="ach-desc" data-i18n="ach5">1st place in regional/national competitions including First Andean Hackathon (6 countries) and VIII Regional STI Fair</div>
+        <div class="ach-desc" data-i18n="ach5">First place in regional/national competitions including First Andean Hackathon (6 countries)</div>
       </div>
       <div class="ach-card ach-navy">
         <div class="ach-num">Q1</div>
-        <div class="ach-desc" data-i18n="ach6">Target submission 2026 — multimodal neuro-ocular system paper to high-impact journal</div>
+        <div class="ach-desc" data-i18n="ach6">Target submission 2026 — multimodal neuro-ocular system to high-impact journal</div>
       </div>
     </div>
   </div>
@@ -440,7 +435,7 @@
 <!-- ── PEER REVIEW ───────────────────────────────────────────── -->
 <section>
   <div class="section-inner">
-    <div class="section-label" data-i18n="review_label">Scientific service</div>
+    <div class="section-label" data-i18n="review_label">Peer Review</div>
     <div class="section-title" data-i18n="review_title">Peer Review Activity</div>
     <table class="review-table">
       <thead>
@@ -472,8 +467,8 @@
 <!-- ── CONTACT ───────────────────────────────────────────────── -->
 <section id="contact" class="contact-section">
   <div class="section-inner">
-    <div class="section-label" data-i18n="contact_label">Get in touch</div>
-    <div class="section-title" data-i18n="contact_title">Contact</div>
+    <div class="section-label" data-i18n="contact_label">Contact</div>
+    <div class="section-title" data-i18n="contact_title">Get in Touch</div>
     <div class="contact-grid">
       <div>
         <p class="contact-text" data-i18n="contact_text">I am open to research collaborations, dataset sharing, joint publications, academic exchanges, and PhD opportunities in neuroengineering, human factors AI, or safety-critical systems.</p>
@@ -502,8 +497,8 @@
           <li data-i18n="open2">Dataset sharing</li>
           <li data-i18n="open3">Joint publications</li>
           <li data-i18n="open4">Academic exchanges</li>
-          <li data-i18n="open5">PhD opportunities in Neuroengineering</li>
-          <li data-i18n="open6">Industry partnerships (automotive, aviation, health)</li>
+          <li data-i18n="open5">PhD opportunities</li>
+          <li data-i18n="open6">Industry partnerships</li>
         </ul>
       </div>
     </div>
@@ -512,7 +507,7 @@
 
 <!-- ── FOOTER ────────────────────────────────────────────────── -->
 <footer>
-  <span data-i18n="footer">© 2025 Ruben Dario Florez-Zela · UNSAAC · Cusco, Peru · Built with purpose.</span>
+  <span data-i18n="footer">© 2025 Ruben Dario Florez-Zela · UNSAAC · Cusco, Peru</span>
 </footer>
 
 <!-- ── SCRIPTS ──────────────────────────────────────────────── -->
