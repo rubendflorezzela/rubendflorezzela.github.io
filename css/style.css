@@ -127,7 +127,7 @@ nav {
 .hero {
   background: var(--navy);
   color: white;
-  padding: 7rem 2rem 6rem;
+  padding: 5rem 2rem 6rem; /* padding: 7rem 2rem 6rem; */
   position: relative;
   overflow: hidden;
 }
