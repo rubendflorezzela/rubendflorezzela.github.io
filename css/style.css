@@ -166,7 +166,7 @@ nav {
   position: relative;
   z-index: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* align-items: center; */
   gap: 3rem;
   flex-wrap: wrap;
 }
@@ -176,6 +176,7 @@ nav {
   flex-shrink: 0;
   position: relative;
   order: 2; /* Mueve la foto a la derecha */
+  margin-top: -1.8rem;  /* Ajusta este valor según necesites */
 }
 
 .profile-ring {
