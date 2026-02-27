@@ -127,7 +127,7 @@ nav {
 .hero {
   background: var(--navy);
   color: white;
-  padding: 5rem 2rem 6rem; /* padding: 7rem 2rem 6rem; */
+  padding: 7rem 2rem 6rem; /* padding: 7rem 2rem 6rem; */
   position: relative;
   overflow: hidden;
 }
@@ -176,7 +176,7 @@ nav {
   flex-shrink: 0;
   position: relative;
   order: 2; /* Mueve la foto a la derecha */
-  margin-top: -0.8rem;  /* Ajusta este valor según necesites */
+  /* margin-top: -0.8rem;  /* Ajusta este valor según necesites */
 }
 
 .profile-ring {
