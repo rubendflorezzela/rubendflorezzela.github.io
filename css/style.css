@@ -176,7 +176,7 @@ nav {
   flex-shrink: 0;
   position: relative;
   order: 2; /* Mueve la foto a la derecha */
-  margin-top: -1rem;  /* Ajusta este valor según necesites */
+  margin-top: -2rem;  /* Ajusta este valor según necesites */
 }
 
 .profile-ring {
