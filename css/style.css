@@ -268,10 +268,10 @@ nav {
 .btn-primary {
   background: var(--accent);
   color: white;
-  padding: 0.65rem 1.4rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 4px;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 500;
   transition: background 0.2s, transform 0.15s;
 }
@@ -281,10 +281,10 @@ nav {
 .btn-outline {
   border: 1px solid rgba(255,255,255,0.22);
   color: rgba(255,255,255,0.75);
-  padding: 0.65rem 1.4rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 4px;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 400;
   transition: border-color 0.2s, color 0.2s, transform 0.15s;
 }
@@ -297,10 +297,10 @@ nav {
   gap: 0.45rem;
   background: var(--teal);
   color: white; 
-  padding: 0.65rem 1.4rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 4px;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 500;
   transition: background 0.2s, transform 0.15s;
 }
