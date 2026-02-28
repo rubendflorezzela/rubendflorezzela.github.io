@@ -7,9 +7,13 @@ from scholarly import scholarly
 def fetch_scholar_stats():
     """Obtiene estadísticas de Google Scholar y las guarda en JSON"""
     
-    scholar_id = os.environ.get('Xf8JgfsAAAAJ&hl')
+    print("🚀 Iniciando crawler de Google Scholar...")
+    
+    scholar_id = os.environ.get('SCHOLAR_ID')
     if not scholar_id:
         print("❌ Error: SCHOLAR_ID no configurado")
+        print("   Asegúrate de haber configurado el secret en GitHub:")
+        print("   Settings → Secrets and variables → Actions → New repository secret")
         return 1
     
     output_file = 'data/scholar_stats.json'
@@ -17,20 +21,25 @@ def fetch_scholar_stats():
     try:
         print(f"🔍 Buscando perfil con ID: {scholar_id}")
         
-        # Configurar timeouts para evitar bloqueos
+        # Configurar timeouts
         scholarly.set_timeout(15)
         scholarly.set_retries(3)
         
         # Buscar autor por ID
-        author = scholarly.search_author_id(scholar_id)
-        if not author:
+        search_query = scholarly.search_author_id(scholar_id)
+        if not search_query:
             print(f"❌ No se encontró autor con ID: {scholar_id}")
+            print("   Verifica que el ID sea correcto en GitHub Secrets")
             return 1
-            
-        author = scholarly.fill(author)
+        
+        author = scholarly.fill(search_query)
         
         print(f"✅ Autor encontrado: {author.get('name', 'Unknown')}")
+        print(f"🏫 Afiliación: {author.get('affiliation', 'Unknown')}")
         print(f"📊 Citas totales: {author.get('citedby', 0)}")
+        print(f"📈 h-index: {author.get('hindex', 0)}")
+        print(f"📊 i10-index: {author.get('i10index', 0)}")
+        print(f"📚 Publicaciones: {len(author.get('publications', []))}")
         
         # Extraer métricas principales
         stats = {
@@ -47,63 +56,58 @@ def fetch_scholar_stats():
             "papers": {}
         }
         
-        # Procesar cada publicación para obtener citas individuales
-        print(f"📚 Procesando {len(author['publications'])} publicaciones...")
+        # Procesar publicaciones (solo las primeras 10 para evitar timeouts)
+        print(f"📚 Procesando publicaciones...")
+        publications = author.get('publications', [])
         
-        for i, pub in enumerate(author['publications'][:20]):  # Limitamos a 20 para evitar timeouts
+        for i, pub in enumerate(publications[:10]):
             try:
-                # Obtener ID de la publicación
-                pub_id = pub.get('author_pub_id') or pub.get('pub_id')
-                if not pub_id:
-                    print(f"⚠️ Publicación {i+1} sin ID, saltando...")
-                    continue
+                # Obtener ID único
+                pub_id = pub.get('author_pub_id', pub.get('pub_id', f"pub_{i}"))
                 
-                # Rellenar detalles de la publicación
-                pub_filled = scholarly.fill(pub)
-                
-                # Extraer datos relevantes
-                bib = pub_filled.get('bib', {})
+                # Extraer datos básicos sin hacer fill para evitar timeouts
+                bib = pub.get('bib', {})
                 stats['papers'][pub_id] = {
-                    "title": bib.get('title', ''),
-                    "citations": pub_filled.get('num_citations', 0),
+                    "title": bib.get('title', 'Unknown'),
+                    "citations": pub.get('num_citations', 0),
                     "year": bib.get('year', ''),
                     "venue": bib.get('venue', ''),
                     "authors": bib.get('author', '')
                 }
                 
-                print(f"  ✅ {i+1}. {bib.get('title', '')[:60]}... → {pub_filled.get('num_citations', 0)} citas")
-                
-                # Pequeña pausa para evitar rate limiting
-                time.sleep(0.5)
+                print(f"  ✅ {i+1}. {bib.get('title', '')[:50]}... → {pub.get('num_citations', 0)} citas")
                 
             except Exception as e:
-                print(f"❌ Error procesando publicación {i+1}: {e}")
+                print(f"⚠️ Error procesando publicación {i+1}: {e}")
                 continue
         
-        # Guardar archivo
+        # Crear directorio data si no existe
         os.makedirs('data', exist_ok=True)
+        print(f"📁 Directorio data/ creado/verificado")
         
-        # Verificar si hubo cambios
+        # Guardar archivo
         new_content = json.dumps(stats, indent=2, ensure_ascii=False)
-        
-        if os.path.exists(output_file):
-            with open(output_file, 'r', encoding='utf-8') as f:
-                old_content = f.read()
-            old_hash = hashlib.md5(old_content.encode()).hexdigest()
-            new_hash = hashlib.md5(new_content.encode()).hexdigest()
-            
-            if old_hash == new_hash:
-                print("📌 No hay cambios en las métricas")
-                return 0
         
         with open(output_file, 'w', encoding='utf-8') as f:
             f.write(new_content)
         
         print(f"✅ Archivo guardado: {output_file}")
+        print(f"📊 Contenido: {len(new_content)} caracteres")
+        
+        # Verificar que el archivo existe
+        if os.path.exists(output_file):
+            file_size = os.path.getsize(output_file)
+            print(f"📁 Verificación: archivo existe, tamaño: {file_size} bytes")
+        else:
+            print(f"❌ Error: El archivo no se creó correctamente")
+            return 1
+        
         return 0
         
     except Exception as e:
-        print(f"❌ Error general: {e}")
+        print(f"❌ Error general: {type(e).__name__}: {e}")
+        import traceback
+        traceback.print_exc()
         return 1
 
 if __name__ == "__main__":
