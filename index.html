@@ -554,5 +554,44 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+async function loadScholarStats() {
+    try {
+        const response = await fetch('data/scholar_stats.json');
+        const data = await response.json();
+        
+        // Actualizar métricas principales
+        document.querySelector('.metric-num').textContent = 
+            data.metadata.total_citations + '+';
+        
+        // Si tienes elementos específicos para h-index
+        const hIndexElement = document.querySelector('.metric:nth-child(2) .metric-num');
+        if (hIndexElement) {
+            hIndexElement.textContent = data.metadata.h_index;
+        }
+        
+        // Actualizar número de publicaciones
+        const pubsElement = document.querySelector('.metric:nth-child(3) .metric-num');
+        if (pubsElement) {
+            pubsElement.textContent = data.metadata.publication_count;
+        }
+        
+        // Actualizar i10-index
+        const i10Element = document.querySelector('.metric:nth-child(4) .metric-num');
+        if (i10Element) {
+            i10Element.textContent = data.metadata.i10_index;
+        }
+        
+        console.log('✅ Scholar stats loaded:', data.metadata);
+        
+    } catch (error) {
+        console.log('📌 Using default static values');
+    }
+}
+
+// Cargar stats cuando la página esté lista
+document.addEventListener('DOMContentLoaded', loadScholarStats);
+</script>
+
 </body>
 </html>
