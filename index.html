@@ -561,13 +561,30 @@ async function loadScholarStats() {
         
         console.log('✅ Datos cargados:', data.metadata);
         
-        // 1. ACTUALIZAR MÉTRICAS PRINCIPALES
+        // 1. ACTUALIZAR MÉTRICAS PRINCIPALES (4 métricas)
         const metrics = document.querySelectorAll('.metric-num');
+        const metricLabels = document.querySelectorAll('.metric-label');
+        
         if (metrics.length >= 4) {
-            metrics[0].textContent = data.metadata.total_citations + '+';  // Citas totales
-            metrics[1].textContent = data.metadata.h_index;                 // h-index
-            metrics[2].textContent = data.metadata.publication_count;       // Publicaciones
-            metrics[3].textContent = data.metadata.i10_index;               // i10-index
+            // Métrica 1: Citas totales
+            metrics[0].textContent = data.metadata.total_citations + '+';
+            
+            // Métrica 2: h-index
+            metrics[1].textContent = data.metadata.h_index;
+            
+            // Métrica 3: Publicaciones
+            metrics[2].textContent = data.metadata.publication_count;
+            
+            // Métrica 4: i10-index (ahora actualiza esto)
+            metrics[3].textContent = data.metadata.i10_index;
+            
+            // Cambiar la etiqueta de la cuarta métrica a "i10-index"
+            if (metricLabels.length >= 4) {
+                metricLabels[3].textContent = 'i10-index';
+                metricLabels[3].removeAttribute('data-i18n'); // Eliminar traducción automática
+            }
+            
+            console.log(`✅ Métricas actualizadas: Citas: ${data.metadata.total_citations}, h-index: ${data.metadata.h_index}, Publicaciones: ${data.metadata.publication_count}, i10-index: ${data.metadata.i10_index}`);
         }
         
         // 2. ACTUALIZAR CITAS EN PUBLICACIONES
@@ -650,7 +667,11 @@ async function loadScholarStats() {
             }
         });
         
+        // 4. MANTENER PEER REVIEWS ESTÁTICO (valor fijo: 13)
+        // No se actualiza automáticamente, se queda con el valor del HTML
+        
         console.log('✅ Todas las métricas actualizadas correctamente');
+        console.log('📝 Peer Reviews se mantiene estático: 13');
         
     } catch (error) {
         console.log('📌 Usando valores estáticos por defecto:', error);
