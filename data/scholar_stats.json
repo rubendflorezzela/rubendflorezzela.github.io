@@ -1,0 +1,84 @@
+{
+  "metadata": {
+    "scholar_id": "Xf8JgfsAAAAJ&hl",
+    "name": "Ruben Dario Florez-Zela",
+    "affiliation": "Computational Neuroengineering Researcher · AI/ML for Cognitive State Monitoring · UNSAAC · RENACYT",
+    "last_updated": "2026-02-28 14:33:39",
+    "total_citations": 144,
+    "h_index": 5,
+    "i10_index": 3,
+    "publication_count": 11
+  },
+  "papers": {
+    "Xf8JgfsAAAAJ:d1gkVwhDpl0C": {
+      "title": "A cnn-based approach for driver drowsiness detection by real-time eye state identification",
+      "citations": 83,
+      "year": "",
+      "venue": "",
+      "authors": ""
+    },
+    "Xf8JgfsAAAAJ:Tyk-4Ss8FVUC": {
+      "title": "A real-time embedded system for driver drowsiness detection based on visual analysis of the eyes and mouth using convolutional neural network and mouth aspect ratio",
+      "citations": 27,
+      "year": "",
+      "venue": "",
+      "authors": ""
+    },
+    "Xf8JgfsAAAAJ:Y0pCki6q_DkC": {
+      "title": "Coffee-leaf diseases and pests detection based on yolo models",
+      "citations": 14,
+      "year": "",
+      "venue": "",
+      "authors": ""
+    },
+    "Xf8JgfsAAAAJ:2osOgNQ5qMEC": {
+      "title": "Doppler Factor in the Omega-k Algorithm for Pulsed and Continuous Wave Synthetic Aperture Radar Raw Data Processing",
+      "citations": 6,
+      "year": "",
+      "venue": "",
+      "authors": ""
+    },
+    "Xf8JgfsAAAAJ:IjCSPb-OGe4C": {
+      "title": "Low-cost mini humanoid robot mechanical design for mini humanoid robot contest intercon 2021",
+      "citations": 5,
+      "year": "",
+      "venue": "",
+      "authors": ""
+    },
+    "Xf8JgfsAAAAJ:qjMakFHDy7sC": {
+      "title": "Motion control of a robotic lumbar spine model",
+      "citations": 4,
+      "year": "",
+      "venue": "",
+      "authors": ""
+    },
+    "Xf8JgfsAAAAJ:UeHWp8X0CEIC": {
+      "title": "Fuzzy Controller Implemented for Movement of a Tendon-Driven 3D Robotic Lumbar Spine Mechanism",
+      "citations": 2,
+      "year": "",
+      "venue": "",
+      "authors": ""
+    },
+    "Xf8JgfsAAAAJ:W7OEmFMy1HYC": {
+      "title": "Illumination-Robust Conjunctival Image Preprocessing for Accurate Segmentation and Anemia Detection Using Deep Learning.",
+      "citations": 1,
+      "year": "",
+      "venue": "",
+      "authors": ""
+    },
+    "Xf8JgfsAAAAJ:zYLM7Y9cAGgC": {
+      "title": "Development of Simplified Lumbar Spine Mechanism Implemented with Tendon-Driven Motion",
+      "citations": 1,
+      "year": "",
+      "venue": "",
+      "authors": ""
+    },
+    "Xf8JgfsAAAAJ:u-x6o8ySG0sC": {
+      "title": "Cnn for the detection of COVID-19 from chest x-ray images",
+      "citations": 1,
+      "year": "",
+      "venue": "",
+      "authors": ""
+    }
+  }
+}
