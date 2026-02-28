@@ -7,7 +7,7 @@ from scholarly import scholarly
 def fetch_scholar_stats():
     """Obtiene estadísticas de Google Scholar y las guarda en JSON"""
     
-    scholar_id = os.environ.get('SCHOLAR_ID')
+    scholar_id = os.environ.get('Xf8JgfsAAAAJ&hl')
     if not scholar_id:
         print("❌ Error: SCHOLAR_ID no configurado")
         return 1
