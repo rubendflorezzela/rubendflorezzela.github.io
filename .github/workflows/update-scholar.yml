@@ -1,0 +1,41 @@
+name: Update Google Scholar Stats
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 8 * * *'  # Corre diariamente a las 08:00 UTC
+  workflow_dispatch:  # Permite ejecución manual
+
+jobs:
+  update-scholar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Install dependencies
+        run: |
+          pip install scholarly beautifulsoup4 requests
+      
+      - name: Run Google Scholar Crawler
+        env:
+          SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
+        run: |
+          python google_scholar_crawler/crawler.py
+      
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/scholar_stats.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update Google Scholar stats [skip ci]"
+          git push
