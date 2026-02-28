@@ -505,6 +505,7 @@
 <!-- ── SCRIPTS ──────────────────────────────────────────────── -->
 <script src="data/translations.js"></script>
 <script>
+// Función para filtrar publicaciones
 function filterPubs(category) {
   document.querySelectorAll('.pub-card').forEach(card => {
     if (category === 'all') {
@@ -527,15 +528,17 @@ function filterPubs(category) {
   });
 }
 
+// Variable global para el idioma actual
 let currentLang = 'en';
 
+// Función para cambiar idioma
 function setLang(lang) {
   currentLang = lang;
   const t = translations[lang];
 
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
-    if (t[key] !== undefined) el.innerHTML = t[key];
+    if (t && t[key] !== undefined) el.innerHTML = t[key];
   });
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -549,51 +552,6 @@ function setLang(lang) {
   document.documentElement.lang = lang;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  setLang('en');
-});
-</script>
-
-<script>
-async function loadScholarStats() {
-    try {
-        const response = await fetch('data/scholar_stats.json');
-        const data = await response.json();
-        
-        // Actualizar métricas principales
-        document.querySelector('.metric-num').textContent = 
-            data.metadata.total_citations + '+';
-        
-        // Si tienes elementos específicos para h-index
-        const hIndexElement = document.querySelector('.metric:nth-child(2) .metric-num');
-        if (hIndexElement) {
-            hIndexElement.textContent = data.metadata.h_index;
-        }
-        
-        // Actualizar número de publicaciones
-        const pubsElement = document.querySelector('.metric:nth-child(3) .metric-num');
-        if (pubsElement) {
-            pubsElement.textContent = data.metadata.publication_count;
-        }
-        
-        // Actualizar i10-index
-        const i10Element = document.querySelector('.metric:nth-child(4) .metric-num');
-        if (i10Element) {
-            i10Element.textContent = data.metadata.i10_index;
-        }
-        
-        console.log('✅ Scholar stats loaded:', data.metadata);
-        
-    } catch (error) {
-        console.log('📌 Using default static values');
-    }
-}
-
-// Cargar stats cuando la página esté lista
-document.addEventListener('DOMContentLoaded', loadScholarStats);
-</script>
-
-<script>
 // Función para cargar estadísticas de Google Scholar
 async function loadScholarStats() {
     try {
@@ -616,8 +574,9 @@ async function loadScholarStats() {
         const pubCards = document.querySelectorAll('.pub-card');
         const papers = data.papers;
         
-        // Crear un mapa de títulos para buscar coincidencias
-        pubCards.forEach(card => {
+        console.log('📚 Buscando coincidencias en publicaciones...');
+        
+        pubCards.forEach((card, index) => {
             const titleElement = card.querySelector('.pub-title a');
             if (!titleElement) return;
             
@@ -627,22 +586,36 @@ async function loadScholarStats() {
             
             // Buscar coincidencia en los papers
             let foundCitation = null;
+            let foundPaper = null;
+            
             for (const [id, paper] of Object.entries(papers)) {
-                if (paper.title && title.includes(paper.title.substring(0, 30))) {
-                    foundCitation = paper.citations;
-                    console.log(`✅ Coincidencia encontrada: "${paper.title.substring(0, 30)}..." → ${paper.citations} citas`);
-                    break;
+                if (paper.title) {
+                    // Comparar títulos (ignorando mayúsculas/minúsculas)
+                    const paperTitle = paper.title.toLowerCase();
+                    const currentTitle = title.toLowerCase();
+                    
+                    if (currentTitle.includes(paperTitle.substring(0, 40)) || 
+                        paperTitle.includes(currentTitle.substring(0, 40))) {
+                        foundCitation = paper.citations;
+                        foundPaper = paper;
+                        break;
+                    }
                 }
             }
             
             // Actualizar el badge si encontramos una cita
             if (foundCitation !== null) {
-                const citationNumber = badge.querySelector('span') || badge;
-                if (citationNumber.tagName === 'SPAN') {
-                    citationNumber.textContent = foundCitation + ' ' + citationNumber.textContent.split(' ')[1];
-                } else {
+                console.log(`✅ Publicación ${index + 1}: "${title.substring(0, 40)}..." → ${foundCitation} citas`);
+                
+                // Actualizar manteniendo la estructura HTML
+                const citationSpan = badge.querySelector('span[data-i18n="cit"]');
+                if (citationSpan) {
                     badge.innerHTML = foundCitation + ' <span data-i18n="cit">citations</span>';
+                } else {
+                    badge.textContent = foundCitation + ' citations';
                 }
+            } else {
+                console.log(`⚠️ No se encontró coincidencia para: "${title.substring(0, 40)}..."`);
             }
         });
         
@@ -650,86 +623,38 @@ async function loadScholarStats() {
         const demoDividers = document.querySelectorAll('.paper-divider h3');
         demoDividers.forEach(divider => {
             const text = divider.textContent;
+            const span = divider.querySelector('span');
+            if (!span) return;
+            
             if (text.includes('CNN-based')) {
                 // Buscar el paper de CNN (82 citas)
                 for (const paper of Object.values(papers)) {
-                    if (paper.title && paper.title.includes('CNN') && paper.title.includes('drowsiness')) {
-                        const span = divider.querySelector('span');
-                        if (span) {
-                            span.textContent = paper.citations + ' citations';
-                        }
+                    if (paper.title && 
+                        (paper.title.includes('CNN') || paper.title.includes('drowsiness')) && 
+                        paper.citations > 50) {  // El más citado
+                        span.textContent = paper.citations + ' citations';
+                        console.log(`✅ Demo CNN actualizado: ${paper.citations} citas`);
                         break;
                     }
                 }
             } else if (text.includes('Jetson Nano')) {
                 // Buscar el paper de Jetson Nano (27 citas)
                 for (const paper of Object.values(papers)) {
-                    if (paper.title && paper.title.includes('embedded') && paper.title.includes('Jetson')) {
-                        const span = divider.querySelector('span');
-                        if (span) {
-                            span.textContent = paper.citations + ' citations';
-                        }
+                    if (paper.title && 
+                        (paper.title.includes('embedded') || paper.title.includes('Jetson'))) {
+                        span.textContent = paper.citations + ' citations';
+                        console.log(`✅ Demo Jetson actualizado: ${paper.citations} citas`);
                         break;
                     }
                 }
             }
         });
         
-        console.log('✅ Todas las métricas actualizadas');
+        console.log('✅ Todas las métricas actualizadas correctamente');
         
     } catch (error) {
         console.log('📌 Usando valores estáticos por defecto:', error);
     }
-}
-
-// Función para filtrar publicaciones (ya existente)
-function filterPubs(category) {
-    document.querySelectorAll('.pub-card').forEach(card => {
-        if (category === 'all') {
-            card.classList.remove('hidden');
-        } else {
-            if (card.dataset.category === category) {
-                card.classList.remove('hidden');
-            } else {
-                card.classList.add('hidden');
-            }
-        }
-    });
-    
-    document.querySelectorAll('.pub-filter').forEach(btn => {
-        if (btn.dataset.filter === category) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-}
-
-// Sistema de traducciones (mantén el que ya tienes)
-const translations = {
-    // ... (tu objeto translations actual)
-};
-
-let currentLang = 'en';
-
-function setLang(lang) {
-    currentLang = lang;
-    const t = translations[lang];
-    
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.dataset.i18n;
-        if (t[key] !== undefined) el.innerHTML = t[key];
-    });
-    
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-    });
-    
-    const cvFile = lang === 'es' ? 'CV_Florez_ES.pdf' : 'CV_Florez_EN.pdf';
-    document.getElementById('cv-nav-btn').href = cvFile;
-    document.getElementById('cv-hero-btn').href = cvFile;
-    
-    document.documentElement.lang = lang;
 }
 
 // Inicializar cuando la página cargue
