@@ -77,7 +77,7 @@
   </div>
 </div>
 
-<!-- ── ABOUT (Contenido sin cambios, pero se conserva) ────────────────────────────────────────────────── -->
+<!-- ── ABOUT ────────────────────────────────────────────────── -->
 <section id="about">
   <div class="section-inner">
     <div class="section-label" data-i18n="about_label">About</div>
@@ -101,8 +101,385 @@
   </div>
 </section>
 
-<!-- ... (El resto de las secciones (Vision, Interests, Research, Demos, Publications, Teaching, Achievements, Peer Review, Contact, Footer) se mantienen **exactamente igual** que en tu archivo original. No se necesita ningún cambio en su contenido. ) ... -->
+<!-- ── RESEARCH VISION ───────────────────────────────────────── -->
+<section id="vision">
+  <div class="section-inner">
+    <div class="section-label" data-i18n="vision_label">Vision</div>
+    <div class="section-title" data-i18n="vision_title">Research Vision</div>
+    <div class="vision-block">
+      <div class="vision-quote">
+        <p data-i18n="vision_text">My long-term goal is to develop interpretable multimodal systems that understand human cognitive vulnerability in real-world environments, bridging neuroengineering, deployable AI, and human-machine safety. I aim to establish a research line where physiological sensing, edge computing, and explainability converge to build systems that are not only accurate, but trustworthy enough to be deployed in vehicles, surgical suites, and control rooms.</p>
+      </div>
+      <div class="vision-pillars">
+        <div class="pillar">
+          <div class="pillar-icon">🧠</div>
+          <div class="pillar-label" data-i18n="pillar1">Neuro-ocular sensing</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">⚡</div>
+          <div class="pillar-label" data-i18n="pillar2">Edge AI deployment</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🔍</div>
+          <div class="pillar-label" data-i18n="pillar3">Explainable models</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🛡️</div>
+          <div class="pillar-label" data-i18n="pillar4">Safety-critical systems</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ── RESEARCH INTERESTS ───────────────────────────────────── -->
+<section>
+  <div class="section-inner">
+    <div class="section-label" data-i18n="interests_label">Focus Areas</div>
+    <div class="section-title" data-i18n="interests_title">Research Interests</div>
+    <div class="interests-grid">
+      <div class="interest-card">
+        <h4 data-i18n="int1_title">Cognitive State Monitoring</h4>
+        <p data-i18n="int1_desc">Real-time detection of drowsiness, fatigue, and mental workload in operators of safety-critical systems such as vehicles, aviation, and industrial control.</p>
+      </div>
+      <div class="interest-card">
+        <h4 data-i18n="int2_title">EEG Signal Processing</h4>
+        <p data-i18n="int2_desc">Biomarker extraction, artifact removal, and feature engineering from EEG signals for reliable cognitive state classification under real-world conditions.</p>
+      </div>
+      <div class="interest-card">
+        <h4 data-i18n="int3_title">Multimodal AI Fusion</h4>
+        <p data-i18n="int3_desc">Combining EEG, eye-tracking (RGB–NIR cameras), and facial landmark dynamics for robust, redundant cognitive state inference beyond single-modality limits.</p>
+      </div>
+      <div class="interest-card">
+        <h4 data-i18n="int4_title">Embedded Deep Learning</h4>
+        <p data-i18n="int4_desc">Deploying CNN and hybrid models on edge platforms (NVIDIA Jetson Nano) for low-latency, on-device inference in real-world applications.</p>
+      </div>
+      <div class="interest-card">
+        <h4 data-i18n="int5_title">Interpretable AI for Human Factors</h4>
+        <p data-i18n="int5_desc">Moving beyond black-box models toward systems that are auditable, explainable, and reliable; a critical requirement for high-stakes AI deployment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CURRENT RESEARCH ─────────────────────────────────────── -->
+<section id="research">
+  <div class="section-inner">
+    <div class="section-label" data-i18n="research_label">Active Project</div>
+    <div class="section-title" data-i18n="research_title">Current Research</div>
+    <div class="research-box">
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        <span data-i18n="research_status">Active · Targeting Q1 2026</span>
+      </div>
+      <h3 data-i18n="research_h3">Multimodal Neuro-Ocular System for Driver Drowsiness Detection</h3>
+      <p data-i18n="research_p1">The leading cause of fatal road accidents is not mechanical failure, it's cognitive impairment behind the wheel. This project develops a real-time monitoring system that detects driver drowsiness and mental fatigue by fusing EEG biomarkers, eye-tracking dynamics via RGB and NIR cameras, and facial landmark modeling.</p>
+      <p data-i18n="research_p2">Signals are processed through a multimodal deep learning architecture and deployed on an NVIDIA Jetson Nano for real-time, on-vehicle inference. A key focus is interpretability, using attention mechanisms and saliency maps to make model decisions transparent and trustworthy for safety-critical deployment.</p>
+      <div class="signal-tags">
+        <span class="signal-tag">EEG Biomarkers</span>
+        <span class="signal-tag">RGB–NIR Eye-Tracking</span>
+        <span class="signal-tag">Facial Landmarks</span>
+        <span class="signal-tag">CNN Fusion</span>
+        <span class="signal-tag">Jetson Nano</span>
+        <span class="signal-tag">Attention Mechanisms</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RESEARCH DEMOS ───────────────────────────────────────── -->
+<section id="demos" class="demos-section">
+  <div class="section-inner">
+    <div class="section-label" data-i18n="demos_label">Live Demos</div>
+    <div class="section-title" data-i18n="demos_title">Research in Action</div>
+    
+    <div class="demos-grid">
+      
+      <div class="paper-divider">
+        <h3>CNN-based Driver Drowsiness Detection · <span>82 citations</span></h3>
+      </div>
+      
+      <div class="demo-card">
+        <div class="demo-gif-container">
+          <img src="assets/gifs/1.gif" alt="NITYMED dataset evaluation" loading="lazy">
+        </div>
+        <div class="demo-content">
+          <div class="demo-header">
+            <h4 data-i18n="demo1_gif1_title">NITYMED Dataset Evaluation</h4>
+            <span class="citation-pill">96.3%</span>
+          </div>
+          <p data-i18n="demo1_gif1_desc">CNN model evaluation on public NITYMED dataset. Eye closure detection with 96.3% accuracy in controlled conditions.</p>
+          <div class="demo-tags">
+            <span class="demo-tag">TensorFlow</span>
+            <span class="demo-tag">OpenCV</span>
+            <span class="demo-tag">96.3%</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="demo-card">
+        <div class="demo-gif-container">
+          <img src="assets/gifs/2.gif" alt="Real-world validation" loading="lazy">
+        </div>
+        <div class="demo-content">
+          <div class="demo-header">
+            <h4 data-i18n="demo1_gif2_title">Real-world Validation</h4>
+            <span class="citation-pill">30 FPS</span>
+          </div>
+          <p data-i18n="demo1_gif2_desc">Validation under real lighting conditions. Robust detection at 20 to 30 FPS with varying illumination and head movements.</p>
+          <div class="demo-tags">
+            <span class="demo-tag">Real-time</span>
+            <span class="demo-tag">Robust</span>
+            <span class="demo-tag">30 FPS</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="paper-divider">
+        <h3>Embedded System on NVIDIA Jetson Nano · <span>27 citations</span></h3>
+      </div>
+      
+      <div class="demo-card">
+        <div class="demo-gif-container">
+          <img src="assets/gifs/3.gif" alt="Visual drowsiness detection on Jetson Nano" loading="lazy">
+        </div>
+        <div class="demo-content">
+          <div class="demo-header">
+            <h4 data-i18n="demo2_gif1_title">Visual Drowsiness Detection</h4>
+            <span class="citation-pill"><15ms</span>
+          </div>
+          <p data-i18n="demo2_gif1_desc">Real-time eye analysis on NVIDIA Jetson Nano. Micro-sleep detection with visual alerts at <15ms latency.</p>
+          <div class="demo-tags">
+            <span class="demo-tag">Jetson Nano</span>
+            <span class="demo-tag">TensorRT</span>
+            <span class="demo-tag"><15ms</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="demo-card">
+        <div class="demo-gif-container">
+          <img src="assets/gifs/4.gif" alt="Yawn detection using MAR" loading="lazy">
+        </div>
+        <div class="demo-content">
+          <div class="demo-header">
+            <h4 data-i18n="demo2_gif2_title">Yawn Detection (MAR)</h4>
+            <span class="citation-pill">MAR</span>
+          </div>
+          <p data-i18n="demo2_gif2_desc">Mouth Aspect Ratio (MAR) analysis for real-time fatigue detection. Integrated with facial landmark tracking.</p>
+          <div class="demo-tags">
+            <span class="demo-tag">MAR</span>
+            <span class="demo-tag">Facial Landmarks</span>
+            <span class="demo-tag">Multi-modal</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ── PUBLICATIONS ─────────────────────────────────────────── -->
+<section id="publications">
+  <div class="section-inner">
+    <div class="section-label" data-i18n="pubs_label">Publications</div>
+    <div class="section-title" data-i18n="pubs_title">Selected Publications</div>
+
+    <div class="pub-filters">
+      <button class="pub-filter active" data-filter="all" onclick="filterPubs('all')" data-i18n="filter_all">All</button>
+      <button class="pub-filter" data-filter="cogni" onclick="filterPubs('cogni')" data-i18n="filter_cogni">Cognitive Monitoring</button>
+      <button class="pub-filter" data-filter="cv" onclick="filterPubs('cv')" data-i18n="filter_cv">Computer Vision</button>
+    </div>
+
+    <div class="pub-list" id="pub-list">
+      <div class="pub-card" data-category="cogni">
+        <div>
+          <div class="pub-title"><a href="https://doi.org/10.3390/app13137849" target="_blank">A CNN-based approach for driver drowsiness detection by real-time eye state identification</a></div>
+          <div class="pub-meta">R. Florez, F. Palomino-Quispe, RJ Coaquira-Castillo et al. · <em>Applied Sciences</em> 13 (13), 7849 · 2023</div>
+        </div>
+        <div class="citation-badge">82 <span data-i18n="cit">citations</span></div>
+      </div>
+
+      <div class="pub-card" data-category="cogni">
+        <div>
+          <div class="pub-title"><a href="https://doi.org/10.3390/s24196261" target="_blank">A real-time embedded system for driver drowsiness detection based on visual analysis of the eyes and mouth using CNN and mouth aspect ratio</a></div>
+          <div class="pub-meta">R. Florez, F. Palomino-Quispe, AB Alvarez et al. · <em>Sensors</em> 24 (19), 6261 · 2024</div>
+        </div>
+        <div class="citation-badge">27 <span data-i18n="cit">citations</span></div>
+      </div>
+
+      <div class="pub-card" data-category="cv">
+        <div>
+          <div class="pub-title"><a href="https://doi.org/10.3390/app15095040" target="_blank">Coffee-leaf diseases and pests detection based on YOLO models</a></div>
+          <div class="pub-meta">J. Fragoso, C. Silva, T. Paixao, AB Alvarez, R. Florez et al. · <em>Applied Sciences</em> 15 (9), 5040 · 2025</div>
+        </div>
+        <div class="citation-badge">14 <span data-i18n="cit">citations</span></div>
+      </div>
+
+      <div class="pub-card" data-category="cv">
+        <div>
+          <div class="pub-title"><a href="https://doi.org/10.3991/ijoe.v21i07.54439" target="_blank">Illumination-Robust Conjunctival Image Preprocessing for Accurate Segmentation and Anemia Detection Using Deep Learning</a></div>
+          <div class="pub-meta">JH Fuentes Beingólea, F. Palomino-Quispe, JC Herrera-Levano, R. Florez et al. · <em>iJOE</em> 21 (7) · 2025</div>
+        </div>
+        <div class="citation-badge">1 <span data-i18n="cit">citations</span></div>
+      </div>
+
+      <div class="pub-card" data-category="cv">
+        <div>
+          <div class="pub-title"><a href="https://doi.org/10.1109/INTERCON52678.2021.9532881" target="_blank">Low-cost mini humanoid robot mechanical design for mini humanoid robot contest Intercon 2021</a></div>
+          <div class="pub-meta">R. Vilavita, F. Justo, R. Florez, N. Figueroa · <em>IEEE XXVIII Intercon</em> · 2021</div>
+        </div>
+        <div class="citation-badge">5 <span data-i18n="cit">citations</span></div>
+      </div>
+    </div>
+    
+    <p class="pub-footer">
+      <span data-i18n="pubs_full_list">Full list on</span>
+      <a href="https://scholar.google.com/citations?user=Xf8JgfsAAAAJ&hl" target="_blank">Google Scholar</a> ·
+      <a href="https://www.researchgate.net/profile/Ruben-Florez-Zela" target="_blank">ResearchGate</a>
+    </p>
+  </div>
+</section>
+
+<!-- ── TEACHING ─────────────────────────────────────────────── -->
+<section id="teaching">
+  <div class="section-inner">
+    <div class="section-label" data-i18n="teaching_label">Teaching</div>
+    <div class="section-title" data-i18n="teaching_title">Teaching Experience</div>
+    <p class="teaching-sub" data-i18n="teaching_sub">Universidad Nacional de San Antonio Abad del Cusco (UNSAAC) · School of Electronic Engineering · April 2024 – Present</p>
+    <div class="teaching-grid">
+      <div class="course-card">
+        <h4 data-i18n="course1">Artificial Intelligence</h4>
+        <p data-i18n="course_level">Undergraduate · Electronic Engineering</p>
+      </div>
+      <div class="course-card">
+        <h4 data-i18n="course2">Digital Image Processing</h4>
+        <p data-i18n="course_level">Undergraduate · Electronic Engineering</p>
+      </div>
+      <div class="course-card">
+        <h4 data-i18n="course3">Robotics</h4>
+        <p data-i18n="course_level">Undergraduate · Electronic Engineering</p>
+      </div>
+      <div class="course-card">
+        <h4 data-i18n="course4">Electronics Laboratory</h4>
+        <p data-i18n="course_level">Undergraduate · Electronic Engineering</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SELECTED ACHIEVEMENTS ─────────────────────────────────── -->
+<section id="achievements">
+  <div class="section-inner">
+    <div class="section-label" data-i18n="ach_label">Achievements</div>
+    <div class="section-title" data-i18n="ach_title">Selected Achievements</div>
+    <div class="ach-grid">
+      <div class="ach-card ach-blue">
+        <div class="ach-num">143+</div>
+        <div class="ach-desc" data-i18n="ach1">Total citations, one paper surpassing 82 citations within 2 years.</div>
+      </div>
+      <div class="ach-card ach-teal">
+        <div class="ach-num">#1</div>
+        <div class="ach-desc" data-i18n="ach2">Most cited paper on real-time CNN-based eye-state drowsiness detection, 82 citations.</div>
+      </div>
+      <div class="ach-card ach-navy">
+        <div class="ach-num">V</div>
+        <div class="ach-desc" data-i18n="ach3">RENACYT Level V researcher, CONCYTEC national recognition.</div>
+      </div>
+      <div class="ach-card ach-blue">
+        <div class="ach-num">7+</div>
+        <div class="ach-desc" data-i18n="ach4">Active peer reviewer for international journals including ACM TIST and Scientific Reports.</div>
+      </div>
+      <div class="ach-card ach-teal">
+        <div class="ach-num">🏆×3</div>
+        <div class="ach-desc" data-i18n="ach5">First place in regional/national competitions including First Andean Hackathon (6 countries).</div>
+      </div>
+      <div class="ach-card ach-navy">
+        <div class="ach-num">Q1</div>
+        <div class="ach-desc" data-i18n="ach6">Target submission 2026, multimodal neuro-ocular system to high-impact journal.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PEER REVIEW ───────────────────────────────────────────── -->
+<section>
+  <div class="section-inner">
+    <div class="section-label" data-i18n="review_label">Peer Review</div>
+    <div class="section-title" data-i18n="review_title">Peer Review Activity</div>
+    <table class="review-table">
+      <thead>
+        <tr>
+          <th data-i18n="review_th1">Journal</th>
+          <th data-i18n="review_th2">Publisher</th>
+          <th data-i18n="review_th3">Reviews</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="journal-highlight">Scientific Reports</td><td>Nature Portfolio</td><td><span class="review-count">2</span></td></tr>
+        <tr><td class="journal-highlight">ACM Transactions on Intelligent Systems and Technology</td><td>ACM</td><td><span class="review-count">1</span></td></tr>
+        <tr><td>Journal of Ambient Intelligence and Humanized Computing</td><td>Springer</td><td><span class="review-count">1</span></td></tr>
+        <tr><td>Discover Applied Sciences</td><td>Springer</td><td><span class="review-count">3</span></td></tr>
+        <tr><td>Discover Artificial Intelligence</td><td>Springer</td><td><span class="review-count">1</span></td></tr>
+        <tr><td>Discover Electronics</td><td>Springer</td><td><span class="review-count">1</span></td></tr>
+        <tr><td>Discover Internet of Things</td><td>Springer</td><td><span class="review-count">1</span></td></tr>
+        <tr><td>IAES International Journal of Artificial Intelligence</td><td>IAES</td><td><span class="review-count">2</span></td></tr>
+        <tr><td>Indian Journal of Science and Technology</td><td>IJST</td><td><span class="review-count">1</span></td></tr>
+      </tbody>
+    </table>
+    <p class="review-orcid">
+      <span data-i18n="review_orcid_note">Verified via ORCID iD:</span>
+      <a href="https://orcid.org/0000-0002-9833-0213" target="_blank">0000-0002-9833-0213</a>
+    </p>
+  </div>
+</section>
+
+<!-- ── CONTACT ───────────────────────────────────────────────── -->
+<section id="contact" class="contact-section">
+  <div class="section-inner">
+    <div class="section-label" data-i18n="contact_label">Contact</div>
+    <div class="section-title" data-i18n="contact_title">Get in Touch</div>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-text" data-i18n="contact_text">I am open to research collaborations, dataset sharing, joint publications, academic exchanges, and PhD opportunities in neuroengineering, human factors AI, or safety-critical systems.</p>
+        <div class="contact-items">
+          <a href="mailto:rubendfz2206@gmail.com" class="contact-item">
+            <span class="contact-icon">✉</span>rubendfz2206@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/rubenflorez/" class="contact-item" target="_blank">
+            <span class="contact-icon">in</span>linkedin.com/in/rubenflorez
+          </a>
+          <a href="https://orcid.org/0000-0002-9833-0213" class="contact-item" target="_blank">
+            <span class="contact-icon">ID</span>ORCID 0000-0002-9833-0213
+          </a>
+          <a href="https://scholar.google.com/citations?user=Xf8JgfsAAAAJ&hl" class="contact-item" target="_blank">
+            <span class="contact-icon">GS</span>Google Scholar
+          </a>
+          <a href="https://www.researchgate.net/profile/Ruben-Florez-Zela" class="contact-item" target="_blank">
+            <span class="contact-icon">RG</span>ResearchGate
+          </a>
+        </div>
+      </div>
+      <div class="open-to">
+        <h4 data-i18n="open_title">Open to</h4>
+        <ul>
+          <li data-i18n="open1">Research collaborations</li>
+          <li data-i18n="open2">Dataset sharing</li>
+          <li data-i18n="open3">Joint publications</li>
+          <li data-i18n="open4">Academic exchanges</li>
+          <li data-i18n="open5">PhD opportunities</li>
+          <li data-i18n="open6">Industry partnerships</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────────────── -->
+<footer>
+  <span data-i18n="footer">© 2026 Ruben Dario Florez-Zela · UNSAAC · Cusco, Peru</span>
+</footer>
+  
 <!-- ── SCRIPTS ──────────────────────────────────────────────── -->
 <script src="data/translations.js"></script>
 <script>
