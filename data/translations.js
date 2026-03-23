@@ -1,5 +1,6 @@
 const translations = {
   "en": {
+    // Navigation
     "nav_about": "About",
     "nav_vision": "Vision",
     "nav_research": "Research",
@@ -8,17 +9,20 @@ const translations = {
     "nav_ach": "Achievements",
     "nav_contact": "Contact",
     "cv_download": "Download CV",
+    // Hero
     "hero_tag": "Human Factors Engineering & Multimodal AI",
     "hero_subtitle": "Multimodal Physiological Sensing & Human Factors AI for Intelligent Transportation Systems · LIECAR Lab, UNSAAC · Cusco, Peru",
     "metric_citations": "Citations",
     "metric_pubs": "Publications",
     "metric_reviews": "Peer Reviews",
     "btn_view_pubs": "View Publications",
+    // About
     "about_label": "About",
     "about_title": "Bridging physiological sensing and human factors engineering to build deployable cognitive state monitoring systems for intelligent transportation",
     "about_p1": "I develop multimodal AI architectures that monitor human cognitive state in real time, with a focus on intelligent transportation environments where driver impairment directly translates to lives at risk. My work is grounded in human factors engineering: understanding how physiological signals reveal cognitive vulnerability, and designing systems that can be trusted in high-stakes decisions.",
     "about_p2": "My research integrates computer vision and deep learning to design interpretable, deployable architectures that go beyond lab prototypes: systems that run on embedded hardware, operate under real-world noise conditions, and produce outputs that inform both system design and human factors guidelines for safer transportation.",
     "about_p3": "I am a researcher at the LIECAR Laboratory and lecturer at the Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), Peru, recognized as a <strong>RENACYT Level V researcher</strong> by CONCYTEC. I serve as a peer reviewer for international scientific publications including <strong>Scientific Reports (Nature Portfolio)</strong> and <strong>ACM Transactions on Intelligent Systems and Technology</strong>.",
+    // Badges
     "badge1": "Driver State Monitoring",
     "badge2": "Multimodal AI",
     "badge3": "Driver Drowsiness Detection",
@@ -27,6 +31,7 @@ const translations = {
     "badge6": "Intelligent Transportation Systems",
     "badge7": "Eye-Tracking & Gaze Analysis",
     "badge8": "Physiological Sensing",
+    // Vision
     "vision_label": "Vision",
     "vision_title": "Research Vision",
     "vision_text": "My long-term goal is to develop interpretable multimodal systems that understand human cognitive vulnerability in real-world environments, bridging physiological sensing, deployable AI, and human factors engineering. I aim to establish a research line where edge computing, explainability, and human-machine system design converge to build cognitive state monitors that are not only accurate, but trustworthy enough to inform safety standards and design guidelines for vehicles, surgical suites, and control rooms.",
@@ -34,6 +39,7 @@ const translations = {
     "pillar2": "Edge AI deployment",
     "pillar3": "Explainable models",
     "pillar4": "Safety-critical systems",
+    // Research Interests
     "interests_label": "Focus Areas",
     "interests_title": "Research Interests",
     "int1_title": "Cognitive State Monitoring",
@@ -46,12 +52,14 @@ const translations = {
     "int4_desc": "Deploying CNN and hybrid models on edge platforms (NVIDIA Jetson Nano) for low-latency, on-device inference in real-world applications.",
     "int5_title": "Interpretable AI for Human Factors",
     "int5_desc": "Moving beyond black-box models toward systems that are auditable, explainable, and reliable; a critical requirement for high-stakes AI deployment.",
+    // Current Research
     "research_label": "Active Project",
     "research_title": "Current Research",
     "research_status": "Active · Targeting Q1 2026",
     "research_h3": "Vision-Based Multimodal Driver State Monitoring for Real-Time Drowsiness and Cognitive Load Detection",
     "research_p1": "Driver drowsiness and cognitive impairment behind the wheel remain the leading cause of fatal road accidents — not mechanical failure. This project develops a real-time driver state monitoring system that detects drowsiness, mental fatigue, and cognitive load by fusing eye-tracking dynamics via RGB and NIR cameras, gaze analysis, and facial landmark modeling.",
     "research_p2": "Signals are processed through a multimodal deep learning architecture and deployed on an NVIDIA Jetson Nano for real-time, on-vehicle inference. A key focus is interpretability — using attention mechanisms and saliency maps to make model decisions transparent and trustworthy for human factors evaluation and safety-critical deployment.",
+    // Demos
     "demos_label": "Live Demos",
     "demos_title": "Research in Action",
     "demo1_gif1_title": "NITYMED Dataset Evaluation",
@@ -62,6 +70,7 @@ const translations = {
     "demo2_gif1_desc": "Real-time eye analysis on NVIDIA Jetson Nano. Micro-sleep detection with visual alerts at <15ms latency.",
     "demo2_gif2_title": "Yawn Detection (MAR)",
     "demo2_gif2_desc": "Mouth Aspect Ratio (MAR) analysis for real-time fatigue detection. Integrated with facial landmark tracking.",
+    // Publications
     "pubs_label": "Publications",
     "pubs_title": "Selected Publications",
     "pubs_full_list": "Full list on",
@@ -69,6 +78,7 @@ const translations = {
     "filter_cogni": "Cognitive Monitoring",
     "filter_cv": "Computer Vision",
     "cit": "citations",
+    // Teaching
     "teaching_label": "Teaching",
     "teaching_title": "Teaching Experience",
     "teaching_sub": "Universidad Nacional de San Antonio Abad del Cusco (UNSAAC) · School of Electronic Engineering · April 2024 – Present",
@@ -77,6 +87,7 @@ const translations = {
     "course3": "Robotics",
     "course4": "Electronics Laboratory",
     "course_level": "Undergraduate · Electronic Engineering",
+    // Achievements
     "ach_label": "Achievements",
     "ach_title": "Selected Achievements",
     "ach1": "Total citations, one paper surpassing 82 citations within 2 years.",
@@ -84,26 +95,30 @@ const translations = {
     "ach3": "RENACYT Level V researcher, CONCYTEC national recognition.",
     "ach4": "Active peer reviewer for international journals including ACM TIST and Scientific Reports.",
     "ach5": "First place in regional/national competitions including First Andean Hackathon (6 countries).",
-    "ach6": "Target submission 2026, multimodal neuro-ocular system to high-impact journal.",
+    "ach6": "Target submission 2026, vision-based multimodal driver state monitoring system to high-impact journal.",
+    // Peer Review
     "review_label": "Peer Review",
     "review_title": "Peer Review Activity",
     "review_th1": "Journal",
     "review_th2": "Publisher",
     "review_th3": "Reviews",
     "review_orcid_note": "Verified via ORCID iD:",
+    // Contact
     "contact_label": "Contact",
     "contact_title": "Get in Touch",
-    "contact_text": "I am open to research collaborations, dataset sharing, joint publications, academic exchanges, and PhD opportunities in neuroengineering, human factors AI, or safety-critical systems.",
+    "contact_text": "I am open to research collaborations, dataset sharing, joint publications, academic exchanges, and PhD opportunities in human factors engineering, driver state monitoring, multimodal physiological sensing, or intelligent transportation systems.",
     "open_title": "Open to",
     "open1": "Research collaborations",
     "open2": "Dataset sharing",
     "open3": "Joint publications",
     "open4": "Academic exchanges",
-    "open5": "PhD opportunities",
+    "open5": "PhD opportunities in human factors & ITS",
     "open6": "Industry partnerships",
-    "footer": "© 2025 Ruben Dario Florez-Zela · UNSAAC · Cusco, Peru"
+    // Footer
+    "footer": "© 2026 Ruben Dario Florez-Zela · UNSAAC · Cusco, Peru"
   },
   "es": {
+    // Navigation
     "nav_about": "Sobre mí",
     "nav_vision": "Visión",
     "nav_research": "Investigación",
@@ -112,17 +127,20 @@ const translations = {
     "nav_ach": "Logros",
     "nav_contact": "Contacto",
     "cv_download": "Descargar CV",
+    // Hero
     "hero_tag": "Ingeniería de Factores Humanos e IA Multimodal",
     "hero_subtitle": "Detección Fisiológica Multimodal e IA para Factores Humanos en Sistemas de Transporte Inteligente · Lab. LIECAR, UNSAAC · Cusco, Perú",
     "metric_citations": "Citas",
     "metric_pubs": "Publicaciones",
     "metric_reviews": "Revisiones",
     "btn_view_pubs": "Ver Publicaciones",
+    // About
     "about_label": "Sobre mí",
     "about_title": "Conectando la detección fisiológica y la ingeniería de factores humanos para construir sistemas desplegables de monitoreo del estado cognitivo en transporte inteligente",
     "about_p1": "Desarrollo arquitecturas de IA multimodal que monitorean el estado cognitivo humano en tiempo real, con enfoque en entornos de transporte inteligente donde el deterioro del conductor se traduce directamente en vidas en riesgo. Mi trabajo está fundamentado en la ingeniería de factores humanos: comprender cómo las señales fisiológicas revelan la vulnerabilidad cognitiva y diseñar sistemas en los que se pueda confiar para decisiones críticas.",
     "about_p2": "Mi investigación integra visión computacional y aprendizaje profundo para diseñar arquitecturas interpretables y desplegables que van más allá de los prototipos de laboratorio: sistemas que operan en hardware embebido, bajo condiciones de ruido real, y generan salidas que informan tanto el diseño de sistemas como las guías de factores humanos para un transporte más seguro.",
     "about_p3": "Soy investigador en el Laboratorio LIECAR y docente de la Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), Perú, reconocido como <strong>Investigador RENACYT Nivel V</strong> por CONCYTEC. Ejerzo como revisor de publicaciones científicas internacionales incluyendo <strong>Scientific Reports (Nature Portfolio)</strong> y <strong>ACM Transactions on Intelligent Systems and Technology</strong>.",
+    // Badges
     "badge1": "Monitoreo del Estado del Conductor",
     "badge2": "IA Multimodal",
     "badge3": "Detección de Somnolencia",
@@ -131,6 +149,7 @@ const translations = {
     "badge6": "Sistemas de Transporte Inteligente",
     "badge7": "Seguimiento Ocular y Análisis de Mirada",
     "badge8": "Detección Fisiológica",
+    // Vision
     "vision_label": "Visión",
     "vision_title": "Visión de Investigación",
     "vision_text": "Mi objetivo a largo plazo es desarrollar sistemas multimodales interpretables que comprendan la vulnerabilidad cognitiva humana en entornos reales, conectando la detección fisiológica, la IA desplegable y la ingeniería de factores humanos. Busco establecer una línea de investigación donde la computación en el borde, la explicabilidad y el diseño de sistemas humano-máquina converjan para construir monitores del estado cognitivo que no solo sean precisos, sino lo suficientemente confiables para informar estándares de seguridad y guías de diseño para vehículos, quirófanos y salas de control.",
@@ -138,6 +157,7 @@ const translations = {
     "pillar2": "IA en el borde (Edge)",
     "pillar3": "Modelos explicables",
     "pillar4": "Sistemas de alta seguridad",
+    // Research Interests
     "interests_label": "Áreas de Enfoque",
     "interests_title": "Intereses de Investigación",
     "int1_title": "Monitoreo del Estado Cognitivo",
@@ -150,12 +170,14 @@ const translations = {
     "int4_desc": "Despliegue de modelos CNN e híbridos en plataformas de borde (NVIDIA Jetson Nano) para inferencia en dispositivo con baja latencia en aplicaciones reales.",
     "int5_title": "IA Interpretable para Factores Humanos",
     "int5_desc": "Avanzar más allá de los modelos de caja negra hacia sistemas auditables, explicables y confiables; requisito crítico para el despliegue de IA en entornos de alto riesgo.",
+    // Current Research
     "research_label": "Proyecto Activo",
     "research_title": "Investigación Actual",
     "research_status": "Activo · Envío objetivo Q1 2026",
     "research_h3": "Sistema Multimodal Basado en Visión para Monitoreo del Estado del Conductor en Tiempo Real: Detección de Somnolencia y Carga Cognitiva",
     "research_p1": "La somnolencia y el deterioro cognitivo al volante siguen siendo la principal causa de accidentes fatales de tránsito — no el fallo mecánico. Este proyecto desarrolla un sistema de monitoreo del estado del conductor en tiempo real que detecta somnolencia, fatiga mental y carga cognitiva fusionando dinámicas de seguimiento ocular mediante cámaras RGB y NIR, análisis de mirada y modelado de puntos de referencia faciales.",
     "research_p2": "Las señales se procesan mediante una arquitectura de aprendizaje profundo multimodal y se despliegan en un NVIDIA Jetson Nano para inferencia en tiempo real a bordo del vehículo. Un enfoque clave es la interpretabilidad — usando mecanismos de atención y mapas de prominencia para hacer transparentes y confiables las decisiones del modelo para evaluación de factores humanos y despliegue en entornos críticos.",
+    // Demos
     "demos_label": "Demostraciones",
     "demos_title": "Investigación en Acción",
     "demo1_gif1_title": "Evaluación en Dataset NITYMED",
@@ -166,6 +188,7 @@ const translations = {
     "demo2_gif1_desc": "Análisis de ojos en tiempo real en NVIDIA Jetson Nano. Detección de micro-sueños con alertas visuales a <15ms de latencia.",
     "demo2_gif2_title": "Detección de Bostezos (MAR)",
     "demo2_gif2_desc": "Análisis de Mouth Aspect Ratio (MAR) para detección de fatiga en tiempo real. Integrado con seguimiento de puntos faciales.",
+    // Publications
     "pubs_label": "Publicaciones",
     "pubs_title": "Publicaciones Seleccionadas",
     "pubs_full_list": "Lista completa en",
@@ -173,6 +196,7 @@ const translations = {
     "filter_cogni": "Monitoreo Cognitivo",
     "filter_cv": "Visión Computacional",
     "cit": "citas",
+    // Teaching
     "teaching_label": "Docencia",
     "teaching_title": "Experiencia Docente",
     "teaching_sub": "Universidad Nacional de San Antonio Abad del Cusco (UNSAAC) · Escuela de Ingeniería Electrónica · Abril 2024 – Presente",
@@ -181,6 +205,7 @@ const translations = {
     "course3": "Robótica",
     "course4": "Laboratorio de Electrónica",
     "course_level": "Pregrado · Ingeniería Electrónica",
+    // Achievements
     "ach_label": "Logros",
     "ach_title": "Logros Destacados",
     "ach1": "Citas totales, un artículo superó 82 citas en 2 años.",
@@ -189,12 +214,14 @@ const translations = {
     "ach4": "Revisor activo para revistas internacionales incluyendo ACM TIST y Scientific Reports.",
     "ach5": "Primer lugar en competencias regionales/nacionales incluyendo Primera Hackathon Andina (6 países).",
     "ach6": "Envío objetivo 2026, sistema multimodal basado en visión para monitoreo del estado del conductor a revista de alto impacto.",
+    // Peer Review
     "review_label": "Revisión por Pares",
     "review_title": "Actividad como Revisor",
     "review_th1": "Revista",
     "review_th2": "Editorial",
     "review_th3": "Revisiones",
     "review_orcid_note": "Verificado vía ORCID iD:",
+    // Contact
     "contact_label": "Contacto",
     "contact_title": "Ponerse en Contacto",
     "contact_text": "Estoy abierto a colaboraciones de investigación, intercambio de datos, publicaciones conjuntas, intercambios académicos y oportunidades de doctorado en ingeniería de factores humanos, monitoreo del estado del conductor, detección fisiológica multimodal o sistemas de transporte inteligente.",
@@ -205,6 +232,7 @@ const translations = {
     "open4": "Intercambios académicos",
     "open5": "Doctorado en factores humanos y STI",
     "open6": "Alianzas con la industria",
-    "footer": "© 2025 Ruben Dario Florez-Zela · UNSAAC · Cusco, Perú"
+    // Footer
+    "footer": "© 2026 Ruben Dario Florez-Zela · UNSAAC · Cusco, Perú"
   }
 };
