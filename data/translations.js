@@ -9,56 +9,63 @@ const translations = {
     "nav_ach": "Achievements",
     "nav_contact": "Contact",
     "cv_download": "Download CV",
+
     // Hero
-    "hero_tag": "Human Factors Engineering & Multimodal AI",
-    "hero_subtitle": "Multimodal Physiological Sensing & Human Factors AI for Intelligent Transportation Systems · LIECAR Lab, UNSAAC · Cusco, Peru",
+    "hero_tag": "Human-Centered AI for Intelligent Transportation",
+    "hero_subtitle": "Multimodal Driver-State Modeling for Automated Driving and Transportation Safety · LIECAR Lab, UNSAAC · Cusco, Peru",
     "metric_citations": "Citations",
     "metric_pubs": "Publications",
     "metric_reviews": "Peer Reviews",
     "btn_view_pubs": "View Publications",
+
     // About
     "about_label": "About",
-    "about_title": "Bridging physiological sensing and human factors engineering to build deployable cognitive state monitoring systems for intelligent transportation",
-    "about_p1": "I develop multimodal AI architectures that monitor human cognitive state in real time, with a focus on intelligent transportation environments where driver impairment directly translates to lives at risk. My work is grounded in human factors engineering: understanding how physiological signals reveal cognitive vulnerability, and designing systems that can be trusted in high-stakes decisions.",
-    "about_p2": "My research integrates computer vision and deep learning to design interpretable, deployable architectures that go beyond lab prototypes: systems that run on embedded hardware, operate under real-world noise conditions, and produce outputs that inform both system design and human factors guidelines for safer transportation.",
+    "about_title": "Building interpretable multimodal AI systems for driver-state monitoring in intelligent transportation",
+    "about_p1": "I develop multimodal AI systems for real-time driver-state monitoring in intelligent transportation environments. My work combines computer vision, eye-tracking, behavioral analysis, and deep learning to model drowsiness, distraction, and cognitive workload under real-world conditions.",
+    "about_p2": "My research is grounded in human factors engineering and focuses on building interpretable, deployable systems that can support safer automated driving, driver assistance, and transportation safety evaluation through robust on-vehicle inference.",
     "about_p3": "I am a researcher at the LIECAR Laboratory and lecturer at the Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), Peru, recognized as a <strong>RENACYT Level V researcher</strong> by CONCYTEC. I serve as a peer reviewer for international scientific publications including <strong>Scientific Reports (Nature Portfolio)</strong> and <strong>ACM Transactions on Intelligent Systems and Technology</strong>.",
+
     // Badges
-    "badge1": "Driver State Monitoring",
+    "badge1": "Driver State Estimation",
     "badge2": "Multimodal AI",
-    "badge3": "Driver Drowsiness Detection",
+    "badge3": "Automated Driving",
     "badge4": "Embedded Deep Learning",
     "badge5": "Human Factors Engineering",
     "badge6": "Intelligent Transportation Systems",
-    "badge7": "Eye-Tracking & Gaze Analysis",
-    "badge8": "Physiological Sensing",
+    "badge7": "Driver Monitoring & Gaze Modeling",
+    "badge8": "Transportation Safety",
+
     // Vision
     "vision_label": "Vision",
     "vision_title": "Research Vision",
-    "vision_text": "My long-term goal is to develop interpretable multimodal systems that understand human cognitive vulnerability in real-world environments, bridging physiological sensing, deployable AI, and human factors engineering. I aim to establish a research line where edge computing, explainability, and human-machine system design converge to build cognitive state monitors that are not only accurate, but trustworthy enough to inform safety standards and design guidelines for vehicles, surgical suites, and control rooms.",
-    "pillar1": "Vision-based driver sensing",
+    "vision_text": "My long-term goal is to develop interpretable multimodal systems that understand driver vulnerability in real-world transportation environments, bridging driver-state sensing, deployable AI, and human factors engineering. I aim to establish a research line where edge computing, explainability, and human-centered system design converge to build monitoring systems that are not only accurate, but trustworthy enough to inform automated driving, transportation safety, and system design guidelines.",
+    "pillar1": "Driver-state sensing",
     "pillar2": "Edge AI deployment",
     "pillar3": "Explainable models",
-    "pillar4": "Safety-critical systems",
+    "pillar4": "Transportation safety",
+
     // Research Interests
     "interests_label": "Focus Areas",
     "interests_title": "Research Interests",
-    "int1_title": "Cognitive State Monitoring",
-    "int1_desc": "Real-time detection of drowsiness, fatigue, and mental workload in operators of safety-critical systems such as vehicles, aviation, and industrial control.",
-    "int2_title": "Driver State & Human Factors",
-    "int2_desc": "Investigating how visual and behavioral signals reveal cognitive states — including drowsiness, distraction, and mental workload — in drivers and transportation operators. Bridging sensing technology and human factors engineering practice to inform system design and safety standards.",
-    "int3_title": "Multimodal AI Fusion",
-    "int3_desc": "Combining eye-tracking (RGB–NIR cameras), facial action units, and gaze dynamics for robust, redundant cognitive state inference beyond single-modality limits.",
-    "int4_title": "Embedded Deep Learning",
-    "int4_desc": "Deploying CNN and hybrid models on edge platforms (NVIDIA Jetson Nano) for low-latency, on-device inference in real-world applications.",
-    "int5_title": "Interpretable AI for Human Factors",
-    "int5_desc": "Moving beyond black-box models toward systems that are auditable, explainable, and reliable; a critical requirement for high-stakes AI deployment.",
+    "int1_title": "Driver State Modeling for Automated Driving",
+    "int1_desc": "Real-time modeling of drowsiness, distraction, cognitive workload, and driver readiness in intelligent and automated driving contexts.",
+    "int2_title": "Human Factors AI for Transportation Safety",
+    "int2_desc": "Investigating how multimodal sensing and AI can support human-centered system design, safety evaluation, and adaptive assistance in transportation environments.",
+    "int3_title": "Multimodal Perception and Fusion",
+    "int3_desc": "Combining gaze behavior, facial dynamics, head pose, and visual cues for robust driver-state estimation beyond single-modality systems.",
+    "int4_title": "Embedded AI for Real-Time Monitoring",
+    "int4_desc": "Deploying deep learning models on edge platforms such as NVIDIA Jetson Nano for low-latency, on-vehicle inference under real-world operating conditions.",
+    "int5_title": "Interpretable AI for Safety-Critical Systems",
+    "int5_desc": "Designing AI systems that are transparent, auditable, and trustworthy enough to support deployment in transportation and other high-stakes domains.",
+
     // Current Research
     "research_label": "Active Project",
     "research_title": "Current Research",
     "research_status": "Active · Targeting Q1 2026",
-    "research_h3": "Vision-Based Multimodal Driver State Monitoring for Real-Time Drowsiness and Cognitive Load Detection",
-    "research_p1": "Driver drowsiness and cognitive impairment behind the wheel remain the leading cause of fatal road accidents — not mechanical failure. This project develops a real-time driver state monitoring system that detects drowsiness, mental fatigue, and cognitive load by fusing eye-tracking dynamics via RGB and NIR cameras, gaze analysis, and facial landmark modeling.",
-    "research_p2": "Signals are processed through a multimodal deep learning architecture and deployed on an NVIDIA Jetson Nano for real-time, on-vehicle inference. A key focus is interpretability — using attention mechanisms and saliency maps to make model decisions transparent and trustworthy for human factors evaluation and safety-critical deployment.",
+    "research_h3": "Multimodal Driver-State Monitoring for Automated Driving and Transportation Safety",
+    "research_p1": "This project develops a real-time driver-state monitoring system for intelligent transportation and automated driving scenarios. It integrates eye-tracking dynamics from RGB and NIR cameras, gaze analysis, and facial landmark modeling to detect drowsiness, distraction, and cognitive load under real-world conditions.",
+    "research_p2": "The system is designed for deployable, on-vehicle inference using NVIDIA Jetson Nano, with emphasis on robustness, interpretability, and low-latency monitoring for transportation safety and human factors evaluation.",
+
     // Demos
     "demos_label": "Live Demos",
     "demos_title": "Research in Action",
@@ -70,14 +77,16 @@ const translations = {
     "demo2_gif1_desc": "Real-time eye analysis on NVIDIA Jetson Nano. Micro-sleep detection with visual alerts at <15ms latency.",
     "demo2_gif2_title": "Yawn Detection (MAR)",
     "demo2_gif2_desc": "Mouth Aspect Ratio (MAR) analysis for real-time fatigue detection. Integrated with facial landmark tracking.",
+
     // Publications
     "pubs_label": "Publications",
     "pubs_title": "Selected Publications",
     "pubs_full_list": "Full list on",
     "filter_all": "All",
-    "filter_cogni": "Cognitive Monitoring",
+    "filter_cogni": "Driver Monitoring",
     "filter_cv": "Computer Vision",
     "cit": "citations",
+
     // Teaching
     "teaching_label": "Teaching",
     "teaching_title": "Teaching Experience",
@@ -87,6 +96,7 @@ const translations = {
     "course3": "Robotics",
     "course4": "Electronics Laboratory",
     "course_level": "Undergraduate · Electronic Engineering",
+
     // Achievements
     "ach_label": "Achievements",
     "ach_title": "Selected Achievements",
@@ -95,7 +105,8 @@ const translations = {
     "ach3": "RENACYT Level V researcher, CONCYTEC national recognition.",
     "ach4": "Active peer reviewer for international journals including ACM TIST and Scientific Reports.",
     "ach5": "First place in regional/national competitions including First Andean Hackathon (6 countries).",
-    "ach6": "Target submission 2026, vision-based multimodal driver state monitoring system to high-impact journal.",
+    "ach6": "Target submission 2026: multimodal driver-state monitoring for automated driving and transportation safety.",
+
     // Peer Review
     "review_label": "Peer Review",
     "review_title": "Peer Review Activity",
@@ -103,20 +114,23 @@ const translations = {
     "review_th2": "Publisher",
     "review_th3": "Reviews",
     "review_orcid_note": "Verified via ORCID iD:",
+
     // Contact
     "contact_label": "Contact",
     "contact_title": "Get in Touch",
-    "contact_text": "I am open to research collaborations, dataset sharing, joint publications, academic exchanges, and PhD opportunities in human factors engineering, driver state monitoring, multimodal physiological sensing, or intelligent transportation systems.",
+    "contact_text": "I am open to research collaborations, dataset sharing, joint publications, academic exchanges, and PhD opportunities in human-centered AI, driver-state monitoring, transportation safety, and intelligent transportation systems.",
     "open_title": "Open to",
     "open1": "Research collaborations",
     "open2": "Dataset sharing",
     "open3": "Joint publications",
     "open4": "Academic exchanges",
-    "open5": "PhD opportunities in human factors & ITS",
+    "open5": "PhD opportunities in human-centered AI & ITS",
     "open6": "Industry partnerships",
+
     // Footer
     "footer": "© 2026 Ruben Dario Florez-Zela · UNSAAC · Cusco, Peru"
   },
+
   "es": {
     // Navigation
     "nav_about": "Sobre mí",
@@ -127,56 +141,63 @@ const translations = {
     "nav_ach": "Logros",
     "nav_contact": "Contacto",
     "cv_download": "Descargar CV",
+
     // Hero
-    "hero_tag": "Ingeniería de Factores Humanos e IA Multimodal",
-    "hero_subtitle": "Detección Fisiológica Multimodal e IA para Factores Humanos en Sistemas de Transporte Inteligente · Lab. LIECAR, UNSAAC · Cusco, Perú",
+    "hero_tag": "IA centrada en el humano para transporte inteligente",
+    "hero_subtitle": "Modelado multimodal del estado del conductor para conducción automatizada y seguridad en el transporte · Lab. LIECAR, UNSAAC · Cusco, Perú",
     "metric_citations": "Citas",
     "metric_pubs": "Publicaciones",
     "metric_reviews": "Revisiones",
     "btn_view_pubs": "Ver Publicaciones",
+
     // About
     "about_label": "Sobre mí",
-    "about_title": "Conectando la detección fisiológica y la ingeniería de factores humanos para construir sistemas desplegables de monitoreo del estado cognitivo en transporte inteligente",
-    "about_p1": "Desarrollo arquitecturas de IA multimodal que monitorean el estado cognitivo humano en tiempo real, con enfoque en entornos de transporte inteligente donde el deterioro del conductor se traduce directamente en vidas en riesgo. Mi trabajo está fundamentado en la ingeniería de factores humanos: comprender cómo las señales fisiológicas revelan la vulnerabilidad cognitiva y diseñar sistemas en los que se pueda confiar para decisiones críticas.",
-    "about_p2": "Mi investigación integra visión computacional y aprendizaje profundo para diseñar arquitecturas interpretables y desplegables que van más allá de los prototipos de laboratorio: sistemas que operan en hardware embebido, bajo condiciones de ruido real, y generan salidas que informan tanto el diseño de sistemas como las guías de factores humanos para un transporte más seguro.",
+    "about_title": "Construyendo sistemas interpretables de IA multimodal para el monitoreo del estado del conductor en transporte inteligente",
+    "about_p1": "Desarrollo sistemas de IA multimodal para el monitoreo en tiempo real del estado del conductor en entornos de transporte inteligente. Mi trabajo combina visión computacional, seguimiento ocular, análisis conductual y aprendizaje profundo para modelar somnolencia, distracción y carga cognitiva en condiciones del mundo real.",
+    "about_p2": "Mi investigación está fundamentada en la ingeniería de factores humanos y se enfoca en construir sistemas interpretables y desplegables que apoyen una conducción automatizada más segura, asistencia al conductor y evaluación de seguridad en el transporte mediante inferencia robusta a bordo del vehículo.",
     "about_p3": "Soy investigador en el Laboratorio LIECAR y docente de la Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), Perú, reconocido como <strong>Investigador RENACYT Nivel V</strong> por CONCYTEC. Ejerzo como revisor de publicaciones científicas internacionales incluyendo <strong>Scientific Reports (Nature Portfolio)</strong> y <strong>ACM Transactions on Intelligent Systems and Technology</strong>.",
+
     // Badges
-    "badge1": "Monitoreo del Estado del Conductor",
+    "badge1": "Estimación del Estado del Conductor",
     "badge2": "IA Multimodal",
-    "badge3": "Detección de Somnolencia",
+    "badge3": "Conducción Automatizada",
     "badge4": "Deep Learning Embebido",
     "badge5": "Ingeniería de Factores Humanos",
     "badge6": "Sistemas de Transporte Inteligente",
-    "badge7": "Seguimiento Ocular y Análisis de Mirada",
-    "badge8": "Detección Fisiológica",
+    "badge7": "Monitoreo del Conductor y Modelado de Mirada",
+    "badge8": "Seguridad en el Transporte",
+
     // Vision
     "vision_label": "Visión",
     "vision_title": "Visión de Investigación",
-    "vision_text": "Mi objetivo a largo plazo es desarrollar sistemas multimodales interpretables que comprendan la vulnerabilidad cognitiva humana en entornos reales, conectando la detección fisiológica, la IA desplegable y la ingeniería de factores humanos. Busco establecer una línea de investigación donde la computación en el borde, la explicabilidad y el diseño de sistemas humano-máquina converjan para construir monitores del estado cognitivo que no solo sean precisos, sino lo suficientemente confiables para informar estándares de seguridad y guías de diseño para vehículos, quirófanos y salas de control.",
-    "pillar1": "Detección visual del conductor",
+    "vision_text": "Mi objetivo a largo plazo es desarrollar sistemas multimodales interpretables que comprendan la vulnerabilidad del conductor en entornos reales de transporte, conectando la detección del estado del conductor, la IA desplegable y la ingeniería de factores humanos. Busco establecer una línea de investigación donde la computación en el borde, la explicabilidad y el diseño de sistemas centrados en el humano converjan para construir sistemas de monitoreo que no solo sean precisos, sino lo suficientemente confiables para informar la conducción automatizada, la seguridad en el transporte y las guías de diseño de sistemas.",
+    "pillar1": "Detección del estado del conductor",
     "pillar2": "IA en el borde (Edge)",
     "pillar3": "Modelos explicables",
-    "pillar4": "Sistemas de alta seguridad",
+    "pillar4": "Seguridad en el transporte",
+
     // Research Interests
     "interests_label": "Áreas de Enfoque",
     "interests_title": "Intereses de Investigación",
-    "int1_title": "Monitoreo del Estado Cognitivo",
-    "int1_desc": "Detección en tiempo real de somnolencia, fatiga y carga mental en operadores de sistemas críticos como vehículos, aviación y control industrial.",
-    "int2_title": "Estado del Conductor y Factores Humanos",
-    "int2_desc": "Investigación sobre cómo las señales visuales y conductuales revelan estados cognitivos — somnolencia, distracción y carga mental — en conductores y operadores de transporte. Conectando tecnología de detección con la práctica de ingeniería de factores humanos para informar el diseño de sistemas y estándares de seguridad.",
-    "int3_title": "Fusión Multimodal de IA",
-    "int3_desc": "Combinación de seguimiento ocular (cámaras RGB–NIR), unidades de acción facial y dinámicas de mirada para inferencia robusta y redundante del estado cognitivo más allá de los límites de una sola modalidad.",
-    "int4_title": "Deep Learning Embebido",
-    "int4_desc": "Despliegue de modelos CNN e híbridos en plataformas de borde (NVIDIA Jetson Nano) para inferencia en dispositivo con baja latencia en aplicaciones reales.",
-    "int5_title": "IA Interpretable para Factores Humanos",
-    "int5_desc": "Avanzar más allá de los modelos de caja negra hacia sistemas auditables, explicables y confiables; requisito crítico para el despliegue de IA en entornos de alto riesgo.",
+    "int1_title": "Modelado del Estado del Conductor para Conducción Automatizada",
+    "int1_desc": "Modelado en tiempo real de somnolencia, distracción, carga cognitiva y preparación del conductor en contextos de conducción inteligente y automatizada.",
+    "int2_title": "IA de Factores Humanos para Seguridad en el Transporte",
+    "int2_desc": "Investigación sobre cómo la detección multimodal y la IA pueden apoyar el diseño de sistemas centrados en el humano, la evaluación de seguridad y la asistencia adaptativa en entornos de transporte.",
+    "int3_title": "Percepción Multimodal y Fusión",
+    "int3_desc": "Combinación de comportamiento de la mirada, dinámicas faciales, pose de cabeza y señales visuales para una estimación robusta del estado del conductor más allá de sistemas de una sola modalidad.",
+    "int4_title": "IA Embebida para Monitoreo en Tiempo Real",
+    "int4_desc": "Despliegue de modelos de aprendizaje profundo en plataformas de borde como NVIDIA Jetson Nano para inferencia a bordo con baja latencia en condiciones operativas reales.",
+    "int5_title": "IA Interpretable para Sistemas Críticos",
+    "int5_desc": "Diseño de sistemas de IA transparentes, auditables y confiables para soportar su despliegue en transporte y otros dominios de alto riesgo.",
+
     // Current Research
     "research_label": "Proyecto Activo",
     "research_title": "Investigación Actual",
     "research_status": "Activo · Envío objetivo Q1 2026",
-    "research_h3": "Sistema Multimodal Basado en Visión para Monitoreo del Estado del Conductor en Tiempo Real: Detección de Somnolencia y Carga Cognitiva",
-    "research_p1": "La somnolencia y el deterioro cognitivo al volante siguen siendo la principal causa de accidentes fatales de tránsito — no el fallo mecánico. Este proyecto desarrolla un sistema de monitoreo del estado del conductor en tiempo real que detecta somnolencia, fatiga mental y carga cognitiva fusionando dinámicas de seguimiento ocular mediante cámaras RGB y NIR, análisis de mirada y modelado de puntos de referencia faciales.",
-    "research_p2": "Las señales se procesan mediante una arquitectura de aprendizaje profundo multimodal y se despliegan en un NVIDIA Jetson Nano para inferencia en tiempo real a bordo del vehículo. Un enfoque clave es la interpretabilidad — usando mecanismos de atención y mapas de prominencia para hacer transparentes y confiables las decisiones del modelo para evaluación de factores humanos y despliegue en entornos críticos.",
+    "research_h3": "Monitoreo Multimodal del Estado del Conductor para Conducción Automatizada y Seguridad en el Transporte",
+    "research_p1": "Este proyecto desarrolla un sistema de monitoreo en tiempo real del estado del conductor para escenarios de transporte inteligente y conducción automatizada. Integra dinámicas de seguimiento ocular con cámaras RGB y NIR, análisis de mirada y modelado de puntos faciales para detectar somnolencia, distracción y carga cognitiva en condiciones del mundo real.",
+    "research_p2": "El sistema está diseñado para inferencia desplegable a bordo del vehículo usando NVIDIA Jetson Nano, con énfasis en robustez, interpretabilidad y monitoreo de baja latencia para seguridad en el transporte y evaluación de factores humanos.",
+
     // Demos
     "demos_label": "Demostraciones",
     "demos_title": "Investigación en Acción",
@@ -188,14 +209,16 @@ const translations = {
     "demo2_gif1_desc": "Análisis de ojos en tiempo real en NVIDIA Jetson Nano. Detección de micro-sueños con alertas visuales a <15ms de latencia.",
     "demo2_gif2_title": "Detección de Bostezos (MAR)",
     "demo2_gif2_desc": "Análisis de Mouth Aspect Ratio (MAR) para detección de fatiga en tiempo real. Integrado con seguimiento de puntos faciales.",
+
     // Publications
     "pubs_label": "Publicaciones",
     "pubs_title": "Publicaciones Seleccionadas",
     "pubs_full_list": "Lista completa en",
     "filter_all": "Todas",
-    "filter_cogni": "Monitoreo Cognitivo",
+    "filter_cogni": "Monitoreo del Conductor",
     "filter_cv": "Visión Computacional",
     "cit": "citas",
+
     // Teaching
     "teaching_label": "Docencia",
     "teaching_title": "Experiencia Docente",
@@ -205,6 +228,7 @@ const translations = {
     "course3": "Robótica",
     "course4": "Laboratorio de Electrónica",
     "course_level": "Pregrado · Ingeniería Electrónica",
+
     // Achievements
     "ach_label": "Logros",
     "ach_title": "Logros Destacados",
@@ -213,7 +237,8 @@ const translations = {
     "ach3": "Investigador RENACYT Nivel V, reconocimiento nacional CONCYTEC.",
     "ach4": "Revisor activo para revistas internacionales incluyendo ACM TIST y Scientific Reports.",
     "ach5": "Primer lugar en competencias regionales/nacionales incluyendo Primera Hackathon Andina (6 países).",
-    "ach6": "Envío objetivo 2026, sistema multimodal basado en visión para monitoreo del estado del conductor a revista de alto impacto.",
+    "ach6": "Envío objetivo 2026: monitoreo multimodal del estado del conductor para conducción automatizada y seguridad en el transporte.",
+
     // Peer Review
     "review_label": "Revisión por Pares",
     "review_title": "Actividad como Revisor",
@@ -221,17 +246,19 @@ const translations = {
     "review_th2": "Editorial",
     "review_th3": "Revisiones",
     "review_orcid_note": "Verificado vía ORCID iD:",
+
     // Contact
     "contact_label": "Contacto",
     "contact_title": "Ponerse en Contacto",
-    "contact_text": "Estoy abierto a colaboraciones de investigación, intercambio de datos, publicaciones conjuntas, intercambios académicos y oportunidades de doctorado en ingeniería de factores humanos, monitoreo del estado del conductor, detección fisiológica multimodal o sistemas de transporte inteligente.",
+    "contact_text": "Estoy abierto a colaboraciones de investigación, intercambio de datos, publicaciones conjuntas, intercambios académicos y oportunidades de doctorado en IA centrada en el humano, monitoreo del estado del conductor, seguridad en el transporte y sistemas de transporte inteligente.",
     "open_title": "Disponible para",
     "open1": "Colaboraciones de investigación",
     "open2": "Intercambio de datasets",
     "open3": "Publicaciones conjuntas",
     "open4": "Intercambios académicos",
-    "open5": "Doctorado en factores humanos y STI",
+    "open5": "Doctorado en IA centrada en el humano y STI",
     "open6": "Alianzas con la industria",
+
     // Footer
     "footer": "© 2026 Ruben Dario Florez-Zela · UNSAAC · Cusco, Perú"
   }
