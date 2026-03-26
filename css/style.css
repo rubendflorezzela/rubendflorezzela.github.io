@@ -180,8 +180,8 @@ nav {
 }
 
 .profile-ring {
-  width: 220px;
-  height: 220px;
+  width: 250px;
+  height: 250px;
   border-radius: 12px; /* border-radius: 50%; */
   background: linear-gradient(135deg, var(--accent), var(--teal));
   padding: 3px;
