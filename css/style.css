@@ -161,7 +161,7 @@ nav {
 }
 
 .hero-inner {
-  max-width: 2000px; /* max-width: 860px; */
+  max-width: 860px; /* max-width: 860px; */
   margin: 0 auto;
   position: relative;
   z-index: 1;
