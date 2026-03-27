@@ -1,6 +1,5 @@
 /* ============================================================
    RUBEN DARIO FLOREZ-ZELA · Academic Portfolio
-   Dark theme — al-folio inspired
    ============================================================ */
 
 :root {
@@ -168,6 +167,17 @@ nav {
 .about-bio p { margin-bottom: 1rem; }
 .about-bio a { color: var(--accent); }
 .about-bio a:hover { color: #7ab8ff; text-decoration: underline; }
+
+.phd-note {
+  margin-top: 0.8rem;
+  padding: 0.7rem 1rem;
+  border-left: 2px solid var(--teal);
+  background: var(--teal-dim);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.87rem;
+  color: var(--text);
+  line-height: 1.6;
+}
 
 /* Social icons */
 .social-row {
@@ -596,6 +606,13 @@ nav {
   font-size: 0.72rem;
   color: var(--accent);
   white-space: nowrap;
+}
+
+.course-en {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-left: 0.2rem;
 }
 
 /* ── CV PAGE ────────────────────────────────────────────── */
