@@ -53,65 +53,79 @@
   </ul>
 </nav>
 
-<!-- ── HERO ────────────────────────────────────────────────── -->
+<!-- ── HERO CON FOTO A LA DERECHA Y CONTENIDO A LA IZQUIERDA ── -->
 <div class="hero">
   <div class="hero-grid"></div>
-  <div class="hero-inner">
-    <div class="profile-container">
-      <div class="profile-ring">
-        <img src="assets/images/profile.jpg" alt="Ruben Dario Florez-Zela" class="profile-img">
-      </div>
-    </div>
-    <div class="hero-content">
+  <div class="hero-inner" style="display: flex; align-items: flex-start; gap: 4rem; flex-wrap: wrap;">
+    
+    <!-- COLUMNA IZQUIERDA: TODO EL TEXTO DE ABOUT -->
+    <div class="hero-content" style="flex: 2; min-width: 300px;">
       <span class="hero-tag">Human-Centered AI for Intelligent Transportation Systems</span>
       <h1>Ruben Dario<br><span>Florez-Zela</span></h1>
-      <p class="hero-subtitle">Multimodal Driver-State Modeling for Automated Driving and Transportation Safety · LIECAR Lab, UNSAAC · Cusco, Peru</p>
-      <div class="hero-metrics">
+      
+      <div class="about-text" style="margin-top: 1rem;">
+        <p>I develop <strong>multimodal AI systems for real-time driver-state monitoring</strong> in intelligent transportation environments. My work integrates computer vision, eye-tracking, gaze dynamics, facial landmark modeling, and deep learning to detect drowsiness, distraction, and cognitive load under real-world operating conditions — with a strong emphasis on deployable, on-vehicle inference.</p>
+        <p>My research is grounded in <strong>human factors engineering</strong> and focuses on building interpretable systems that are trustworthy enough to support safer automated driving, driver assistance, and transportation safety evaluation. A central challenge I address is the gap between laboratory-based cognitive monitoring research and practical deployment on resource-constrained embedded platforms such as the <strong>NVIDIA Jetson Nano</strong>.</p>
+        <p>I am a researcher at the <a href="https://liecar.unsaac.edu.pe" target="_blank" style="color: var(--accent);">LIECAR Laboratory</a> and lecturer at the <a href="https://www.unsaac.edu.pe" target="_blank" style="color: var(--accent);">Universidad Nacional de San Antonio Abad del Cusco (UNSAAC)</a>, Peru, recognized as a <strong>RENACYT Level V researcher</strong> by CONCYTEC. I serve as peer reviewer for <a href="https://www.nature.com/srep/" target="_blank" style="color: var(--accent);">Scientific Reports (Nature Portfolio)</a> and <a href="https://dl.acm.org/journal/tist" target="_blank" style="color: var(--accent);">ACM Transactions on Intelligent Systems and Technology</a>, among 9 international journals (14+ reviews, verified via ORCID).</p>
+      </div>
+      
+      <div class="about-badges" style="margin-top: 1.5rem;">
+        <span class="badge">Driver State Estimation</span>
+        <span class="badge">Multimodal AI</span>
+        <span class="badge">Embedded Deep Learning</span>
+        <span class="badge">Human Factors Engineering</span>
+        <span class="badge">Intelligent Transportation Systems</span>
+        <span class="badge">Explainable AI</span>
+        <span class="badge">Computer Vision</span>
+        <span class="badge">Gaze Modeling</span>
+        <span class="badge">Transportation Safety</span>
+      </div>
+      
+      <div class="phd-statement" style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+        <p>I am actively seeking <strong>PhD opportunities</strong> (Fall 2026 / Fall 2027) in programs related to Human Factors Engineering, Industrial & Systems Engineering, Computer Science (HCI/AI), or Transportation Engineering. I am open to research collaborations, dataset sharing, and joint publications. Feel free to reach out at <a href="mailto:rubendfz2206@gmail.com" style="color: var(--accent);">rubendfz2206@gmail.com</a>.</p>
+      </div>
+    </div>
+    
+    <!-- COLUMNA DERECHA: FOTO + MÉTRICAS + BOTONES -->
+    <div style="flex: 1; min-width: 260px; display: flex; flex-direction: column; align-items: center;">
+      
+      <!-- Foto -->
+      <div class="profile-container" style="margin-bottom: 1.5rem;">
+        <div class="profile-ring">
+          <img src="assets/images/profile.jpg" alt="Ruben Dario Florez-Zela" class="profile-img">
+        </div>
+      </div>
+      
+      <!-- Subtítulo debajo de la foto -->
+      <p style="text-align: center; color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 1.5rem; max-width: 280px;">
+        Multimodal Driver-State Modeling for Automated Driving and Transportation Safety · LIECAR Lab, UNSAAC · Cusco, Peru
+      </p>
+      
+      <!-- Métricas -->
+      <div class="hero-metrics" style="justify-content: center; margin-bottom: 1.5rem;">
         <div class="metric"><div class="metric-num">150+</div><div class="metric-label">Citations</div></div>
         <div class="metric"><div class="metric-num">5</div><div class="metric-label">h-index</div></div>
         <div class="metric"><div class="metric-num">11</div><div class="metric-label">Publications</div></div>
         <div class="metric"><div class="metric-num">14</div><div class="metric-label">Peer Reviews</div></div>
       </div>
-      <div class="hero-links">
+      
+      <!-- Botones -->
+      <div class="hero-links" style="justify-content: center;">
         <a href="publications.html" class="btn-primary">View Publications</a>
         <a href="pdf/RubenFlorezZela_CV.pdf" download class="btn-cv-hero">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12h12"/></svg>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12h12"/></svg>
           <span>Download CV</span>
         </a>
+      </div>
+      <div class="hero-links" style="justify-content: center; margin-top: 0.8rem;">
         <a href="contact.html" class="btn-outline">Contact</a>
         <a href="https://www.linkedin.com/in/rubenflorez/" class="btn-outline" target="_blank">LinkedIn</a>
         <a href="https://orcid.org/0000-0002-9833-0213" class="btn-outline" target="_blank">ORCID</a>
       </div>
+      
     </div>
   </div>
 </div>
-
-<!-- ── ABOUT (SOLO EL TEXTO QUE PEDISTE) ─────────────────────── -->
-<section id="about">
-  <div class="section-inner">
-    <div class="about-text">
-      <p>I develop <strong>multimodal AI systems for real-time driver-state monitoring</strong> in intelligent transportation environments. My work integrates computer vision, eye-tracking, gaze dynamics, facial landmark modeling, and deep learning to detect drowsiness, distraction, and cognitive load under real-world operating conditions — with a strong emphasis on deployable, on-vehicle inference.</p>
-      <p>My research is grounded in <strong>human factors engineering</strong> and focuses on building interpretable systems that are trustworthy enough to support safer automated driving, driver assistance, and transportation safety evaluation. A central challenge I address is the gap between laboratory-based cognitive monitoring research and practical deployment on resource-constrained embedded platforms such as the <strong>NVIDIA Jetson Nano</strong>.</p>
-      <p>I am a researcher at the <a href="https://liecar.unsaac.edu.pe" target="_blank" style="color: var(--accent);">LIECAR Laboratory</a> and lecturer at the <a href="https://www.unsaac.edu.pe" target="_blank" style="color: var(--accent);">Universidad Nacional de San Antonio Abad del Cusco (UNSAAC)</a>, Peru, recognized as a <strong>RENACYT Level V researcher</strong> by CONCYTEC. I serve as peer reviewer for <a href="https://www.nature.com/srep/" target="_blank" style="color: var(--accent);">Scientific Reports (Nature Portfolio)</a> and <a href="https://dl.acm.org/journal/tist" target="_blank" style="color: var(--accent);">ACM Transactions on Intelligent Systems and Technology</a>, among 9 international journals (14+ reviews, verified via ORCID).</p>
-    </div>
-
-    <div class="about-badges" style="margin-top: 1.5rem;">
-      <span class="badge">Driver State Estimation</span>
-      <span class="badge">Multimodal AI</span>
-      <span class="badge">Embedded Deep Learning</span>
-      <span class="badge">Human Factors Engineering</span>
-      <span class="badge">Intelligent Transportation Systems</span>
-      <span class="badge">Explainable AI</span>
-      <span class="badge">Computer Vision</span>
-      <span class="badge">Gaze Modeling</span>
-      <span class="badge">Transportation Safety</span>
-    </div>
-
-    <div class="phd-statement" style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border);">
-      <p>I am actively seeking <strong>PhD opportunities</strong> (Fall 2026 / Fall 2027) in programs related to Human Factors Engineering, Industrial & Systems Engineering, Computer Science (HCI/AI), or Transportation Engineering. I am open to research collaborations, dataset sharing, and joint publications. Feel free to reach out at <a href="mailto:rubendfz2206@gmail.com" style="color: var(--accent);">rubendfz2206@gmail.com</a>.</p>
-    </div>
-  </div>
-</section>
 
 <footer>
   <span>© 2026 Ruben Dario Florez-Zela · UNSAAC · Cusco, Peru</span>
