@@ -287,6 +287,89 @@ nav {
 .btn-cv-hero:hover { background: var(--teal-light); transform: translateY(-2px); }
 .btn-cv-hero svg { width: 15px; height: 15px; stroke: white; }
 
+/* ── PROSPECTIVE PHD SECTION ───────────────────────────────── */
+.phd-section {
+  background: linear-gradient(135deg, #f8faff, white);
+  border-bottom: 1px solid var(--border);
+}
+
+.phd-card-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.phd-card {
+  flex: 1;
+  min-width: 250px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+.phd-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(37,99,235,0.15);
+  border-color: var(--accent);
+}
+
+.phd-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.phd-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.phd-card li {
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.phd-card li::before {
+  content: '✓';
+  color: var(--teal);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.phd-button-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.btn-phd {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--teal);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-phd:hover {
+  background: var(--teal-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(13,148,136,0.3);
+}
+
 /* Responsive para móviles */
 @media (max-width: 768px) {
   .hero-inner {
