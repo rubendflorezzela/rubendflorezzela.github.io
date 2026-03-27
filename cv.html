@@ -4,88 +4,196 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CV · Ruben Dario Florez-Zela</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <nav>
-  <span class="nav-name">R. D. Florez-Zela</span>
-  <ul class="nav-center">
-    <li><a href="index.html">About</a></li>
-    <li><a href="publications.html">Publications</a></li>
-    <li><a href="teaching.html">Teaching</a></li>
-    <li><a href="cv.html" class="active">CV</a></li>
+  <a class="nav-brand" href="index.html">Ruben Dario Florez-Zela</a>
+  <ul class="nav-links">
+    <li><a href="index.html">about</a></li>
+    <li><a href="publications.html">publications</a></li>
+    <li><a href="projects.html">projects</a></li>
+    <li><a href="teaching.html">teaching</a></li>
+    <li><a href="cv.html" class="active">cv</a></li>
+    <li><a href="mailto:rubendfz2206@gmail.com">contact</a></li>
   </ul>
-  <div class="nav-right">
-    <a href="pdf/RubenFlorezZela_CV.pdf" download class="btn-cv-nav">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12h12"/></svg>
-      <span>Download PDF</span>
-    </a>
-  </div>
+  <a href="CV_Florez_EN.pdf" download class="nav-cv soc">↓ CV</a>
 </nav>
 
-<main style="max-width: 1100px; margin: 4rem auto; padding: 0 2rem;">
-  <div class="section-label">Curriculum Vitae</div>
-  <h1 style="font-family: 'DM Serif Display', serif; font-size: 2.5rem; margin-bottom: 0.5rem;">Ruben Dario Florez-Zela</h1>
-  <p style="color: var(--text-muted); margin-bottom: 2rem;">Researcher in Multimodal AI for Driver-State Monitoring · UNSAAC, Cusco, Peru</p>
+<div class="page">
+
+  <span class="label">Curriculum Vitae</span>
+  <h1 class="page-title">CV</h1>
+
+  <a href="CV_Florez_EN.pdf" download class="cv-download-btn">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12h12"/></svg>
+    Download PDF
+  </a>
 
   <!-- Education -->
-  <h2 style="font-size: 1.3rem; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;">Education</h2>
-  <p><strong>B.Sc. in Electronic Engineering</strong><br>Universidad Nacional de San Antonio Abad del Cusco (UNSAAC), Cusco, Peru<br><em>Graduated</em> · Professional License (CIP): 336757</p>
-  <p style="margin-top: 0.5rem;"><strong>M.Sc. in Electronic Engineering (in progress)</strong><br>Universidad Nacional de San Agustín de Arequipa (UNSA), Arequipa, Peru<br><em>2023 – Present</em></p>
+  <div class="cv-section">
+    <div class="cv-section-title">Education</div>
+    <div class="cv-item">
+      <div class="cv-date">2017 – 2023</div>
+      <div class="cv-body">
+        <strong>B.Sc. in Electronic Engineering</strong>
+        <small>Universidad Nacional de San Antonio Abad del Cusco (UNSAAC) · Cusco, Peru</small>
+      </div>
+    </div>
+  </div>
 
   <!-- Academic Position -->
-  <h2 style="font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;">Academic Position</h2>
-  <p><strong>Lecturer & Researcher</strong> — UNSAAC, School of Electronic Engineering · April 2024 – Present<br>LIECAR Laboratory researcher · Peer reviewer for 9 international journals</p>
+  <div class="cv-section">
+    <div class="cv-section-title">Academic Position</div>
+    <div class="cv-item">
+      <div class="cv-date">Apr 2024 – Present</div>
+      <div class="cv-body">
+        <strong>Lecturer &amp; Researcher</strong>
+        <small>UNSAAC, School of Electronic Engineering · LIECAR Laboratory</small>
+        Courses: Artificial Intelligence, Digital Image Processing, Robotics, Embedded Systems, Control.
+      </div>
+    </div>
+  </div>
 
-  <!-- Recognitions -->
-  <h2 style="font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;">Recognitions & Awards</h2>
-  <ul style="margin-left: 1.5rem; color: var(--text-muted);">
-    <li><strong>RENACYT Level V Researcher</strong> — CONCYTEC, Peru's national researcher registry</li>
-    <li><strong>#1 Most Cited</strong> — real-time CNN-based eye-state drowsiness detection (85+ citations)</li>
-    <li><strong>150+ total citations</strong>, h-index 5, i10-index 3 (Google Scholar, March 2026)</li>
-    <li><strong>1st Place — First Andean Hackathon</strong> (6 countries)</li>
-    <li><strong>1st Place</strong> — Regional and national robotics competitions (×3 total)</li>
-  </ul>
+  <!-- Research Interests -->
+  <div class="cv-section">
+    <div class="cv-section-title">Research Interests</div>
+    <div style="font-size:0.87rem; color:var(--text); line-height:1.9;">
+      Driver State Monitoring &amp; Human Factors Engineering ·
+      Human-Centered AI for Intelligent Transportation Systems ·
+      Embedded Deep Learning on Edge Platforms (NVIDIA Jetson Nano) ·
+      Computer Vision, Gaze Modeling &amp; Facial Dynamics ·
+      Explainable &amp; Interpretable AI for Safety-Critical Systems ·
+      Multimodal AI Fusion · Intelligent Transportation Systems (ITS)
+    </div>
+  </div>
+
+  <!-- Metrics -->
+  <div class="cv-section">
+    <div class="cv-section-title">Academic Impact</div>
+    <div class="ach-row">
+      <div class="ach-item">
+        <div class="ach-num">150+</div>
+        <div class="ach-label">Citations<br><span style="font-size:0.65rem;opacity:0.6;">Google Scholar · Mar 2026</span></div>
+      </div>
+      <div class="ach-item">
+        <div class="ach-num">5</div>
+        <div class="ach-label">h-index</div>
+      </div>
+      <div class="ach-item">
+        <div class="ach-num">3</div>
+        <div class="ach-label">i10-index</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recognition -->
+  <div class="cv-section">
+    <div class="cv-section-title">Recognition &amp; Awards</div>
+    <div class="cv-item">
+      <div class="cv-date">2024</div>
+      <div class="cv-body">
+        <strong>RENACYT Level V Researcher</strong>
+        <small>CONCYTEC — Peru's national researcher registry</small>
+      </div>
+    </div>
+    <div class="cv-item">
+      <div class="cv-date">2023</div>
+      <div class="cv-body">
+        <strong>#1 Most Cited</strong> on real-time CNN-based eye-state drowsiness detection
+        <small>85 citations within 2 years of publication</small>
+      </div>
+    </div>
+    <div class="cv-item">
+      <div class="cv-date">2022</div>
+      <div class="cv-body">
+        <strong>1st Place — First Andean Hackathon</strong>
+        <small>6-country competition</small>
+      </div>
+    </div>
+    <div class="cv-item">
+      <div class="cv-date">2019–2021</div>
+      <div class="cv-body">
+        <strong>1st Place ×3</strong> — Regional and national robotics competitions
+      </div>
+    </div>
+  </div>
 
   <!-- Peer Review -->
-  <h2 style="font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;">Peer Review Activity</h2>
-  <ul style="margin-left: 1.5rem; color: var(--text-muted);">
-    <li>Scientific Reports (Nature Portfolio) — 2 reviews</li>
-    <li>ACM Transactions on Intelligent Systems and Technology — 1 review</li>
-    <li>Journal of Ambient Intelligence and Humanized Computing — 1 review</li>
-    <li>Discover Applied Sciences — 3 reviews</li>
-    <li>Discover Artificial Intelligence — 1 review</li>
-    <li>Discover Electronics — 1 review</li>
-    <li>Discover Internet of Things — 1 review</li>
-    <li>IAES International Journal of Artificial Intelligence — 2 reviews</li>
-    <li>Indian Journal of Science and Technology — 1 review</li>
-  </ul>
-  <p class="review-orcid">Verified via ORCID iD: <a href="https://orcid.org/0000-0002-9833-0213" target="_blank">0000-0002-9833-0213</a></p>
+  <div class="cv-section">
+    <div class="cv-section-title">Peer Review Activity</div>
+    <table class="review-table">
+      <thead>
+        <tr>
+          <th>Journal</th>
+          <th>Publisher</th>
+          <th>Reviews</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="j-main">Scientific Reports</td><td>Nature Portfolio</td><td><span class="rev-count">2</span></td></tr>
+        <tr><td class="j-main">ACM Transactions on Intelligent Systems and Technology</td><td>ACM</td><td><span class="rev-count">1</span></td></tr>
+        <tr><td>Journal of Ambient Intelligence and Humanized Computing</td><td>Springer</td><td><span class="rev-count">1</span></td></tr>
+        <tr><td>Discover Applied Sciences</td><td>Springer</td><td><span class="rev-count">3</span></td></tr>
+        <tr><td>Discover Artificial Intelligence</td><td>Springer</td><td><span class="rev-count">1</span></td></tr>
+        <tr><td>Discover Electronics</td><td>Springer</td><td><span class="rev-count">1</span></td></tr>
+        <tr><td>Discover Internet of Things</td><td>Springer</td><td><span class="rev-count">1</span></td></tr>
+        <tr><td>IAES International Journal of Artificial Intelligence</td><td>IAES</td><td><span class="rev-count">2</span></td></tr>
+        <tr><td>Indian Journal of Science and Technology</td><td>IJST</td><td><span class="rev-count">1</span></td></tr>
+      </tbody>
+    </table>
+    <p class="orcid-note">
+      Verified via ORCID iD:
+      <a href="https://orcid.org/0000-0002-9833-0213" target="_blank">0000-0002-9833-0213</a>
+    </p>
+  </div>
 
   <!-- Technical Skills -->
-  <h2 style="font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;">Technical Skills</h2>
-  <ul style="margin-left: 1.5rem; color: var(--text-muted);">
-    <li><strong>Deep Learning & ML:</strong> TensorFlow, PyTorch, TensorRT, OpenCV, MediaPipe, YOLO, CNN</li>
-    <li><strong>Embedded Systems:</strong> NVIDIA Jetson Nano, edge inference optimization</li>
-    <li><strong>Signal Processing:</strong> Eye-tracking, gaze dynamics, facial landmark analysis, RGB-NIR imaging</li>
-    <li><strong>Programming:</strong> Python, C++, MATLAB</li>
-    <li><strong>Tools:</strong> LaTeX (Overleaf), Git/GitHub, Jekyll</li>
-  </ul>
+  <div class="cv-section">
+    <div class="cv-section-title">Technical Skills</div>
+    <div class="cv-item">
+      <div class="cv-date">Deep Learning</div>
+      <div class="cv-body">TensorFlow · PyTorch · TensorRT · OpenCV · MediaPipe · YOLO</div>
+    </div>
+    <div class="cv-item">
+      <div class="cv-date">Edge / Embedded</div>
+      <div class="cv-body">NVIDIA Jetson Nano · edge inference optimization · real-time deployment</div>
+    </div>
+    <div class="cv-item">
+      <div class="cv-date">Signal Processing</div>
+      <div class="cv-body">Eye-tracking · gaze dynamics · facial landmark analysis · RGB-NIR imaging</div>
+    </div>
+    <div class="cv-item">
+      <div class="cv-date">Programming</div>
+      <div class="cv-body">Python · C++ · MATLAB</div>
+    </div>
+    <div class="cv-item">
+      <div class="cv-date">Tools</div>
+      <div class="cv-body">LaTeX · Git / GitHub · Jekyll</div>
+    </div>
+    <div class="cv-item">
+      <div class="cv-date">Languages</div>
+      <div class="cv-body">Spanish (native) · English (professional)</div>
+    </div>
+  </div>
 
-  <!-- Languages -->
-  <h2 style="font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;">Languages</h2>
-  <ul style="margin-left: 1.5rem; color: var(--text-muted);">
-    <li><strong>Spanish</strong> — Native</li>
-    <li><strong>English</strong> — Professional working proficiency</li>
-  </ul>
+  <!-- PhD -->
+  <div class="cv-section">
+    <div class="cv-section-title">PhD — Prospective</div>
+    <div style="font-size:0.87rem; color:var(--text); line-height:1.9;">
+      Seeking PhD opportunities (Fall 2026 / Fall 2027) in <strong>Human Factors Engineering</strong>,
+      Industrial &amp; Systems Engineering, Computer Science (HCI/AI), or Transportation Engineering.
+      Research focus: human-centered AI for driver-state monitoring, intelligent transportation systems,
+      and deployable edge AI. Open to collaborations and joint publications.
+      Contact: <a href="mailto:rubendfz2206@gmail.com">rubendfz2206@gmail.com</a>
+    </div>
+  </div>
 
-  <p style="margin-top: 2rem; text-align: center;"><a href="pdf/RubenFlorezZela_CV.pdf" download class="btn-primary">📄 Download Full CV (PDF)</a></p>
-</main>
+</div>
 
-<footer style="margin-top: 4rem;">
-  <span>© 2026 Ruben Dario Florez-Zela · UNSAAC · Cusco, Peru</span>
-</footer>
+<footer>© 2026 Ruben Dario Florez-Zela · UNSAAC · Cusco, Peru</footer>
+
 </body>
 </html>
