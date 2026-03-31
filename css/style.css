@@ -749,6 +749,70 @@ nav {
 
 .orcid-note a { color: var(--accent); font-family: 'DM Mono', monospace; }
 
+
+.about-tagline {
+  font-size: 0.95rem;
+  color: var(--teal);
+  margin-bottom: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.about-highlight {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  border-left: 2px solid var(--accent);
+  background: var(--accent-dim);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.87rem;
+  line-height: 1.6;
+}
+
+.section-block-first {
+  margin-top: 0.5rem;
+}
+
+.focus-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.focus-list span {
+  font-size: 0.75rem;
+  font-family: 'DM Mono', monospace;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--border-mid);
+  border-radius: 20px;
+  color: var(--text-dim);
+  transition: all 0.2s;
+}
+
+.focus-list span:hover {
+  color: var(--teal);
+  border-color: var(--teal);
+}
+
+.pub-highlight {
+  display: inline-block;
+  margin-top: 0.45rem;
+  font-size: 0.65rem;
+  color: var(--teal);
+  font-family: 'DM Mono', monospace;
+  padding: 0.12rem 0.5rem;
+  border-radius: 3px;
+  border: 1px solid rgba(45,212,191,0.22);
+  background: var(--teal-dim);
+  letter-spacing: 0.02em;
+}
+
+.proj-impact {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-top: 0.55rem;
+  line-height: 1.6;
+}
+
 /* ── FOOTER ─────────────────────────────────────────────── */
 footer {
   border-top: 1px solid var(--border);
@@ -763,6 +827,7 @@ footer {
 /* ── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 768px) {
   .about-grid { grid-template-columns: 1fr; }
+  .about-tagline { font-size: 0.9rem; }
   .about-photo-col { flex-direction: row; align-items: center; gap: 1.2rem; }
   .profile-photo { width: 90px; height: 90px; }
   .projects-grid { grid-template-columns: 1fr; }
