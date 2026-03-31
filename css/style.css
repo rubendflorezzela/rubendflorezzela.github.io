@@ -517,7 +517,17 @@ nav {
   border-radius: 3px;
 }
 
-.t-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+.t-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; table-layout: fixed; }
+
+.t-table th:first-child,
+.t-table td:first-child {
+  width: 140px;
+}
+
+.t-table th:last-child,
+.t-table td:last-child {
+  width: auto;
+}
 
 .t-table th {
   text-align: left;
