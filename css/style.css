@@ -395,6 +395,26 @@ nav {
   letter-spacing: 0.02em;
 }
 
+/* Selected publications on index — badge above, citation next to title */
+.pub-item-sel {
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.pub-item-sel:last-child { border-bottom: none; }
+
+.pub-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.28rem;
+}
+
+.pub-title-row .pub-title { flex: 1; margin-bottom: 0; }
+.pub-title-row .cit-badge { flex-shrink: 0; margin-top: 2px; }
+
 .pub-link {
   font-family: 'DM Mono', monospace;
   font-size: 0.61rem;
