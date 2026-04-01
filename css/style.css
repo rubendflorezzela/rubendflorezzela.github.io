@@ -384,6 +384,7 @@ nav {
 
 .pub-badge {
   display: inline-block;
+  align-self: flex-start;
   font-family: 'DM Mono', monospace;
   font-size: 0.62rem;
   color: var(--teal);
