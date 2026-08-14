@@ -6,9 +6,9 @@ Personal academic website for **Ruben Dario Florez-Zela**, focused on Human-Cent
 
 The site uses `data/scholar_stats.json` as the single source of truth for citation metrics. `scripts/scholar-metrics.js` loads that file on every page and updates total citations, h-index, i10-index, and per-paper citation badges without duplicating numbers in multiple HTML files.
 
-The workflow `.github/workflows/sync-scholar.yml` runs **weekly on Monday** and can also be triggered manually from **GitHub → Actions → Sync Google Scholar metrics → Run workflow**. If Google Scholar temporarily blocks automated access, the crawler keeps the last valid cache instead of replacing the site with zero/partial metrics.
+The workflow `.github/workflows/sync-scholar.yml` runs **weekly on Monday at 11:23 UTC (06:23 in Peru)** and can also be triggered manually from **GitHub → Actions → Sync Google Scholar metrics → Run workflow**.
 
-> Google Scholar does not provide an official public metrics API. The sync therefore uses the `scholarly` package and should be treated as best-effort automation. The embedded fallback values keep the site usable if Scholar blocks a scheduled run.
+Metrics are retrieved through the **SerpApi Google Scholar Author API**. The private API key is stored only as the GitHub Actions repository secret `SERPAPI_KEY`; it is never committed to the repository or exposed to the public website. If an API request fails or returns invalid data, `data/scholar_stats.json` is left unchanged and the workflow fails visibly instead of publishing partial metrics.
 
 ## Local check
 
@@ -19,6 +19,12 @@ python -m http.server 8000
 
 Then open `http://localhost:8000/`.
 
+To test the live Scholar fetch locally, set `SERPAPI_KEY` in your shell environment first and then run:
+
+```bash
+python google_scholar_crawler/crawler.py
+```
+
 ## Deployment
 
-GitHub Pages is deployed by `.github/workflows/static.yml` on normal pushes to `main`. The Scholar workflow commits `data/scholar_stats.json` and then deploys Pages **within the same workflow run**. This is intentional: commits pushed by a workflow with the repository `GITHUB_TOKEN` do not trigger a second Pages build.
+GitHub Pages is deployed by `.github/workflows/static.yml` on normal pushes to `main`. The Scholar workflow commits `data/scholar_stats.json` when the metrics change and deploys Pages within the same workflow run.
