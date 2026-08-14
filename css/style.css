@@ -708,3 +708,104 @@ footer {
   .ach-row { grid-template-columns: 1fr 1fr; }
   .cv-item { grid-template-columns: 1fr; gap: 0.1rem; }
 }
+
+
+/* ── 2026 PORTFOLIO REFINEMENTS ────────────────────────── */
+.eyebrow {
+  display: block;
+  margin-bottom: .45rem;
+  font-family: 'DM Mono', monospace;
+  font-size: .64rem;
+  color: var(--teal);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.home-title {
+  max-width: 760px;
+  margin: 0 0 1.35rem;
+  color: var(--text-bright);
+  font-size: clamp(1.65rem, 3.8vw, 2.35rem);
+  line-height: 1.17;
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+
+.metric-note,
+.metric-inline {
+  font-family: 'DM Mono', monospace;
+  color: var(--text-dim);
+}
+.metric-note { margin: -.55rem 0 1.25rem; font-size: .62rem; }
+.metric-inline { font-size: .58rem; opacity: .75; }
+.impact-row { margin-bottom: .75rem; }
+
+.project-featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.research-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.15rem;
+}
+.research-card:hover { border-color: var(--border-mid); }
+.research-card h2 {
+  margin: .55rem 0 .55rem;
+  color: var(--text-bright);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+.research-card p { font-size: .79rem; color: var(--text-dim); line-height: 1.65; }
+.research-card .proj-tags { margin-top: .8rem; }
+.research-card .pub-links { margin-top: .8rem; }
+.research-card-top { display: flex; justify-content: space-between; gap: .7rem; align-items: baseline; flex-wrap: wrap; }
+.project-status,
+.research-domain {
+  font-family: 'DM Mono', monospace;
+  font-size: .57rem;
+  letter-spacing: .03em;
+}
+.project-status { color: var(--teal); }
+.research-domain { color: var(--text-dim); }
+
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
+
+@media (max-width: 860px) {
+  nav {
+    padding: 0 .9rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .nav-cv { margin-left: 1rem; flex: 0 0 auto; }
+  .project-featured { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .layout { padding: 0 1rem; }
+  .sidebar { padding-left: .5rem; padding-right: .5rem; }
+  .main { padding-left: .35rem; padding-right: .35rem; }
+  .sidebar-stats { max-width: 330px; }
+  .news-row { grid-template-columns: 70px 1fr; gap: .65rem; }
+  .pub-title-row { flex-direction: column; gap: .35rem; }
+  .t-table { font-size: .72rem; }
+  .t-table th:first-child, .t-table td:first-child { width: 105px; }
+}
