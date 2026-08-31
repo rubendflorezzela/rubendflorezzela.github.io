@@ -3,9 +3,9 @@
     "scholar_id": "Xf8JgfsAAAAJ",
     "name": "Ruben Dario Florez-Zela",
     "affiliation": "Human-Centered AI for Intelligent Transportation Systems · UNSA",
-    "last_updated": "2026-08-24T11:48:22+00:00",
+    "last_updated": "2026-08-31T18:02:09+00:00",
     "source": "google_scholar_via_serpapi",
-    "total_citations": 220,
+    "total_citations": 221,
     "h_index": 5,
     "i10_index": 3,
     "publication_count": 12
@@ -27,7 +27,7 @@
     },
     "Xf8JgfsAAAAJ:Y0pCki6q_DkC": {
       "title": "Coffee-leaf diseases and pests detection based on yolo models",
-      "citations": 30,
+      "citations": 31,
       "year": "2025",
       "venue": "Applied Sciences 15 (9), 5040, 2025",
       "authors": "J Fragoso, C Silva, T Paixão, AB Alvarez, OC Júnior, R Florez, ..."
