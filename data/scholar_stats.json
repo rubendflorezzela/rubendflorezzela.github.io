@@ -3,9 +3,9 @@
     "scholar_id": "Xf8JgfsAAAAJ",
     "name": "Ruben Dario Florez-Zela",
     "affiliation": "Human-Centered AI for Intelligent Transportation Systems · UNSA",
-    "last_updated": "2026-09-07T16:32:16+00:00",
+    "last_updated": "2026-09-21T17:06:42+00:00",
     "source": "google_scholar_via_serpapi",
-    "total_citations": 223,
+    "total_citations": 226,
     "h_index": 5,
     "i10_index": 3,
     "publication_count": 12
@@ -20,14 +20,14 @@
     },
     "Xf8JgfsAAAAJ:Tyk-4Ss8FVUC": {
       "title": "A real-time embedded system for driver drowsiness detection based on visual analysis of the eyes and mouth using convolutional neural network and mouth aspect ratio",
-      "citations": 57,
+      "citations": 59,
       "year": "2024",
       "venue": "Sensors 24 (19), 6261, 2024",
       "authors": "R Florez, F Palomino-Quispe, AB Alvarez, RJ Coaquira-Castillo, ..."
     },
     "Xf8JgfsAAAAJ:Y0pCki6q_DkC": {
       "title": "Coffee-leaf diseases and pests detection based on yolo models",
-      "citations": 31,
+      "citations": 32,
       "year": "2025",
       "venue": "Applied Sciences 15 (9), 5040, 2025",
       "authors": "J Fragoso, C Silva, T Paixão, AB Alvarez, OC Júnior, R Florez, ..."
