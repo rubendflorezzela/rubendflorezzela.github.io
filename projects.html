@@ -4,9 +4,10 @@
 <head>
 <meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Research Projects · Ruben Dario Florez-Zela</title>
+<script>(function(){try{var c=localStorage.getItem('rdfz-theme')||'dark';var t=c==='system'?(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):c;document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}})();</script>
 <meta content="ZgCDzuQTmPh1dXDX9uJMfZyUTxDvZF4V-6cgORlWuMQ" name="google-site-verification">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
-<meta content="Research projects by Ruben Dario Florez-Zela on deployment-aware driver monitoring, conformal risk control, embedded deep learning, and intelligent vehicle systems." name="description"/><link href="https://rubendflorezzela.github.io/projects.html" rel="canonical"/><meta content="#1a1a1a" name="theme-color"/><meta content="website" property="og:type"/><meta content="https://rubendflorezzela.github.io/projects.html" property="og:url"/><meta content="Research Projects · Ruben Dario Florez-Zela" property="og:title"/><meta content="Research projects by Ruben Dario Florez-Zela on deployment-aware driver monitoring, conformal risk control, embedded deep learning, and intelligent vehicle systems." property="og:description"/><meta content="https://rubendflorezzela.github.io/assets/images/profile.jpg" property="og:image"/><meta content="summary" name="twitter:card"/><meta content="Research Projects · Ruben Dario Florez-Zela" name="twitter:title"/><meta content="Research projects by Ruben Dario Florez-Zela on deployment-aware driver monitoring, conformal risk control, embedded deep learning, and intelligent vehicle systems." name="twitter:description"/><meta content="https://rubendflorezzela.github.io/assets/images/profile.jpg" name="twitter:image"/><link href="css/style.css" rel="stylesheet"/>
+<meta content="Research projects by Ruben Dario Florez-Zela on trustworthy AI, driver monitoring, explainable pedestrian detection, conformal risk control, RGB-D vision, and intelligent vehicle systems." name="description"/><link href="https://rubendflorezzela.github.io/projects.html" rel="canonical"/><meta content="#1a1a1a" name="theme-color"/><meta content="website" property="og:type"/><meta content="https://rubendflorezzela.github.io/projects.html" property="og:url"/><meta content="Research Projects · Ruben Dario Florez-Zela" property="og:title"/><meta content="Research projects by Ruben Dario Florez-Zela on trustworthy AI, driver monitoring, explainable pedestrian detection, conformal risk control, RGB-D vision, and intelligent vehicle systems." property="og:description"/><meta content="https://rubendflorezzela.github.io/assets/images/profile.jpg" property="og:image"/><meta content="summary" name="twitter:card"/><meta content="Research Projects · Ruben Dario Florez-Zela" name="twitter:title"/><meta content="Research projects by Ruben Dario Florez-Zela on trustworthy AI, driver monitoring, explainable pedestrian detection, conformal risk control, RGB-D vision, and intelligent vehicle systems." name="twitter:description"/><meta content="https://rubendflorezzela.github.io/assets/images/profile.jpg" name="twitter:image"/><link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
 <nav aria-label="Primary navigation">
@@ -19,10 +20,11 @@
 <li><a href="mailto:rubendfz2206@gmail.com">contact</a></li>
 </ul>
 <a class="nav-cv" download="" href="pdf/RubenFlorezZela_CV.pdf">↓ CV</a>
+<div class="theme-control"><label for="theme-select">theme</label><select id="theme-select" class="theme-select" data-theme-select aria-label="Color theme"><option value="dark">Dark</option><option value="light">Light</option><option value="system">System</option></select></div>
 </nav>
 <div class="layout">
 <aside class="sidebar">
-<img alt="Ruben Dario Florez-Zela" class="sidebar-photo" src="assets/images/profile.jpg"/>
+<img alt="Ruben Dario Florez-Zela" class="sidebar-photo" data-dark-src="assets/images/profile.jpg" data-light-src="assets/images/profile-color.jpg" src="assets/images/profile.jpg"/>
 <div class="sidebar-name">Ruben Dario<br/>Florez-Zela</div>
 <div class="sidebar-affil">Human-Centered AI for ITS<br/>M.Sc. candidate · UNSA<br/>Cusco, Peru · RENACYT Level V</div>
 <div class="sidebar-stats">
@@ -93,16 +95,26 @@
 <p>Human-aware supervision for Level 2 automated driving using pre-event gaze and fixation dynamics, driver-grouped conformal risk control, and a graded HUMAN–ASSIST–FALLBACK policy. The study evaluates predictive reliability and downstream safety through counterfactual longitudinal simulation.</p>
 <div class="proj-tags"><span class="proj-tag">Conformal risk control</span><span class="proj-tag">Gaze dynamics</span><span class="proj-tag">L2 automated driving</span><span class="proj-tag">Human factors</span><span class="proj-tag">Safety simulation</span></div>
 </article>
+<article class="research-card">
+<div class="research-card-top"><span class="project-status">Accepted · IEEE ICVES 2026</span><span class="research-domain">XAI / Pedestrian Detection</span></div>
+<h2>Confidence-controlled XAI auditing for pedestrian detection under domain shift</h2>
+<p>An auditing framework for pedestrian detection that stratifies explanations by detector confidence and evaluates explanation behavior under domain shift. The study combines confidence-controlled sampling with perturbation- and activation-based XAI to examine whether explanations remain informative across operating regimes.</p>
+<div class="proj-tags"><span class="proj-tag">Explainable AI</span><span class="proj-tag">Pedestrian detection</span><span class="proj-tag">Domain shift</span><span class="proj-tag">D-RISE</span><span class="proj-tag">EigenCAM</span></div>
+<div class="pub-links"><a class="pub-link" href="https://github.com/rubendflorezzela/confidence-controlled-xai-auditing" rel="noopener noreferrer" target="_blank">GitHub repository</a></div>
+</article>
 </section>
 <div class="section-block">
 <h2 class="section-h">Open-source tools &amp; tutorials</h2>
 <section class="project-featured project-single">
-<article class="research-card">
+<article class="research-card research-card--media">
+<div class="research-card-media"><img alt="Orbbec Astra Stereo S U3 multi-stream viewer demo showing RGB, infrared, depth and live metrics" loading="lazy" src="https://raw.githubusercontent.com/rubendflorezzela/orbbec-astra-viewer/main/assets/demo.gif"/></div>
+<div class="research-card-content">
 <div class="research-card-top"><span class="project-status">Open-source tutorial · 2026</span><span class="research-domain">RGB-D Vision / Developer Tooling</span></div>
 <h2>Orbbec Astra Stereo S U3 multi-stream viewer</h2>
 <p>A practical Python and OpenCV viewer for real-time RGB, infrared, and depth streams from the Orbbec Astra Stereo S U3. The repository includes interactive exposure, gain, depth-range, and LDP controls, live performance metrics, synchronized frame capture, and a reproducible Windows setup and troubleshooting guide.</p>
 <div class="proj-tags"><span class="proj-tag">RGB-D</span><span class="proj-tag">Orbbec Astra</span><span class="proj-tag">OpenCV</span><span class="proj-tag">Python</span><span class="proj-tag">Real-time vision</span></div>
 <div class="pub-links"><a class="pub-link" href="https://github.com/rubendflorezzela/orbbec-astra-viewer" rel="noopener noreferrer" target="_blank">GitHub repository</a></div>
+</div>
 </article>
 </section>
 </div>
@@ -120,5 +132,5 @@
 </main>
 </div>
 <footer>© 2026 Ruben Dario Florez-Zela · Human-Centered AI for Intelligent Transportation Systems · Cusco, Peru</footer>
-<script defer src="scripts/scholar-metrics.js"></script></body>
+<script defer src="scripts/scholar-metrics.js"></script><script defer src="scripts/theme.js"></script></body>
 </html>
