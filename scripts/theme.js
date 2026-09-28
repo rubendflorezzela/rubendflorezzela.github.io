@@ -32,7 +32,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    const saved = localStorage.getItem(STORAGE_KEY) || 'dark';
+    const saved = localStorage.getItem(STORAGE_KEY) || 'system';
     applyChoice(saved);
     document.querySelectorAll('[data-theme-select]').forEach((select) => {
       select.addEventListener('change', (event) => {
@@ -44,6 +44,6 @@
   });
 
   mq.addEventListener?.('change', () => {
-    if ((localStorage.getItem(STORAGE_KEY) || 'dark') === 'system') applyChoice('system');
+    if ((localStorage.getItem(STORAGE_KEY) || 'system') === 'system') applyChoice('system');
   });
 })();

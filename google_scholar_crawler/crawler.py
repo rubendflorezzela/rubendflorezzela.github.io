@@ -1,3 +1,4 @@
+import html
 import json
 import os
 import re
@@ -126,6 +127,66 @@ def comparable(stats: dict) -> dict:
     return clone
 
 
+
+def normalize_title(value: str) -> str:
+    """Normalize publication titles consistently with the browser-side matcher."""
+    value = str(value or "")
+    value = re.sub(r"[\u2010-\u2015]", "-", value)
+    value = re.sub(r"[^a-zA-Z0-9]+", " ", value)
+    return value.strip().lower()
+
+
+def update_html_fallbacks(stats: dict):
+    """
+    Keep the static HTML fallbacks aligned with the last successful Scholar sync.
+
+    The browser still loads data/scholar_stats.json dynamically, but updating the
+    embedded values prevents stale citation counts from appearing before JavaScript
+    runs or when the JSON request is unavailable.
+    """
+    meta = stats.get("metadata", {})
+    paper_map = {
+        normalize_title(paper.get("title")): paper
+        for paper in (stats.get("papers", {}) or {}).values()
+        if paper and paper.get("title")
+    }
+
+    changed_files = []
+    for path in Path(".").glob("*.html"):
+        text = path.read_text(encoding="utf-8")
+        original = text
+
+        for key in ("total_citations", "h_index", "i10_index"):
+            value = meta.get(key)
+            if value is None:
+                continue
+            pattern = re.compile(
+                rf'(<[^>]+data-scholar-stat="{re.escape(key)}"[^>]*>)([^<]*)(</[^>]+>)'
+            )
+            text = pattern.sub(lambda m, v=str(int(value)): m.group(1) + v + m.group(3), text)
+
+        title_pattern = re.compile(
+            r'(<[^>]+data-scholar-title="([^"]+)"[^>]*>)([^<]*)(</[^>]+>)'
+        )
+
+        def replace_citation(match):
+            title = html.unescape(match.group(2))
+            paper = paper_map.get(normalize_title(title))
+            if not paper:
+                return match.group(0)
+            count = int(paper.get("citations", 0) or 0)
+            label = f"{count} {'citation' if count == 1 else 'citations'}"
+            return match.group(1) + label + match.group(4)
+
+        text = title_pattern.sub(replace_citation, text)
+
+        if text != original:
+            path.write_text(text, encoding="utf-8")
+            changed_files.append(str(path))
+
+    return changed_files
+
+
 def main():
     scholar_id = clean_scholar_id(os.getenv("SCHOLAR_ID", DEFAULT_SCHOLAR_ID))
     api_key = os.getenv("SERPAPI_KEY", "").strip()
@@ -157,6 +218,9 @@ def main():
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(stats, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    changed_html = update_html_fallbacks(stats)
+    if changed_html:
+        print("Updated static Scholar fallbacks in: " + ", ".join(changed_html))
     meta = stats["metadata"]
     print(
         f"Updated: {meta['total_citations']} citations, h-index {meta['h_index']}, "
