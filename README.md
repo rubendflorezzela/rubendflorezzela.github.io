@@ -16,11 +16,11 @@ Personal academic website of **Ruben Dario Florez-Zela**, presenting my research
 
 ## Website sections
 
-- **About** — academic and research profile.
-- **Publications** — journal articles, conference papers, and preprints.
-- **Projects** — research and open-source projects.
-- **Teaching** — university teaching experience.
-- **CV** — academic and professional background.
+- **About**: academic and research profile.
+- **Publications**: journal articles, conference papers, and preprints.
+- **Projects**: research and open-source projects.
+- **Teaching**: university teaching experience.
+- **CV**: academic and professional background.
 
 ## Contact
 
